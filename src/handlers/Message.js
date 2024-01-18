@@ -55,7 +55,7 @@ module.exports = MessageHandler = async (messages, client) => {
                 if (groupCode !== groupNow) {
                     await client.sendMessage(from, { delete: M.key })
                      await client.groupParticipantsUpdate(from, [sender], 'remove')
-                     return M.reply('Successfully removed an intruder!!!!')
+                     return M.reply('🟥 *Dont send a group link or you will be next*')
                 }
             }
         }
@@ -71,7 +71,7 @@ module.exports = MessageHandler = async (messages, client) => {
         //Banned system
         if (banned.includes(sender)) return M.reply('🟥 *Bro You are banned from using the bot commands*')
         
-//     const Deryl = ('263788671478@s.whatsapp.net')
+//     const Deryl = '263788671478@s.whatsapp.net';
         
     //    if (M.sender === Deryl) {
     //       const reactionMessage = { react: { text: '🐦‍⬛', key: M.key } };
