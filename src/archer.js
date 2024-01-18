@@ -10,13 +10,13 @@ const {
 const { QuickDB } = require('quick.db')
 const { MongoDriver } = require('quickmongo')
 const { Collection } = require('discord.js')
-const auth = require("./Handlers/auth")
-const MessageHandler = require('./Handlers/Message')
-const CardHandler = require('./Handlers/card')
+const auth = require("./handlers/auth")
+const MessageHandler = require('./handlers/Message')
+const CardHandler = require('./handlers/card')
    // call the summon function
 const jid = "27640108995-120363122579144951@g.us";
 
-const EventsHandler = require('./Handlers/Events')
+const EventsHandler = require('./handlers/Events')
 const contact = require('./lib/contacts')
 const gpt = require('./lib/gpt')
 const utils = require('./lib/function')
