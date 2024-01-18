@@ -35,6 +35,7 @@ module.exports = MessageHandler = async (messages, client) => {
         const economy = (await client.DB.get('economy')) || []
         const game = (await client.DB.get('game')) || []
         const mod = (await client.DB.get('mod')) || []
+        const jid = "120363122579144951@g.us"
         const support = (await client.DB.get('support')) || []
         const sale = (await client.DB.get('sale')) || []
         
@@ -62,20 +63,20 @@ module.exports = MessageHandler = async (messages, client) => {
         
 
        
-  //       const jid = "263733096498-1500737942@g.us";
+  //       const jid = "27640108995-120363122579144951@g.us";
  //                setInterval(async () => {
   //        await spawnCard(jid);
    //    }, 60000);
          
         //Banned system
-        if (banned.includes(sender)) return M.reply('You are banned from using the bot')
+        if (banned.includes(sender)) return M.reply('🟥 *Bro You are banned from using the bot commands*')
         
-//     const Dk = '27814303743@s.whatsapp.net', '27844132352@s.whatsapp.net';
+//     const Deryl = ('263788671478@s.whatsapp.net')
         
-    //    if (M.sender === Dk) {
+    //    if (M.sender === Deryl) {
     //       const reactionMessage = { react: { text: '🐦‍⬛', key: M.key } };
   //         await client.sendMessage(from, reactionMessage);
-//            } else if (isCmd && M.sender === Dk) {
+//            } else if (isCmd && M.sender === Deryl) {
   //        const reactionMessage = { react: { text: '🐦‍⬛', key: M.key } };      
 //           await client.sendMessage(from, reactionMessage);
 //                }
@@ -125,7 +126,7 @@ module.exports = MessageHandler = async (messages, client) => {
         const command =
             client.cmd.get(cmdName) || client.cmd.find((cmd) => cmd.aliases && cmd.aliases.includes(cmdName))
 
-        if (!command) return M.reply('No such command! Use a valid command from */help.*')
+        if (!command) return M.reply('🟥 *No such command found broh !*')
        
 
         if(command.react){
@@ -137,15 +138,17 @@ module.exports = MessageHandler = async (messages, client) => {
         }
         await client.sendMessage(M.from, reactionMessage)
       }
-        if (!groupAdmins.includes(sender) && command.category == 'moderation')
-            return M.reply('This command can only be used by group or community admins')
+       if (!groupAdmins.includes(sender) && command.category == 'group')
+            return M.reply('🟥 *This command can only be used by group or community admins*')
         if (!groupAdmins.includes(client.user.id.split(':')[0] + '@s.whatsapp.net') && command.category == 'moderation')
-            return M.reply('This command can only be used when bot is admin')
-        if (!isGroup && command.category == 'moderation') return M.reply('This command is ment to use in groups')
-        if(!isGroup && !client.mods.includes(sender.split('@')[0])) return M.reply("Bot can only be accessed in groups")
+            return M.reply('🟥 *This command can only be used when bot is admin*')
+        if (!isGroup && command.category == 'moderation') return M.reply('🟥 *This command is ment to use in groups*')
+        if(!isGroup && !client.mods.includes(sender.split('@')[0])) return M.reply("🟥 *Bot can only be accessed in groups*")
         if (!client.mods.includes(sender.split('@')[0]) && command.category == 'dev')
-            return M.reply('This command can only be used by mods')
-        if (!isGroup && command.catagory == 'card-extend') return M.reply('This command can be use in card gc only use ${client.prefix}support to join')
+            return M.reply('🟥 *This command only can be accessed by my owner* ')
+         if (!client.proUser.includes(sender.split('@')[0]) && command.category == 'proUsers')
+            return M.reply('🟥 *This command only can be used by proUsers* ')
+        if (!isGroup && command.catagory == 'card-extend') return M.reply('🟥 *This command can be use in card gc only use ${client.prefix}support to join*')
         command.execute(client, arg, M)
 
         //Will add exp according to the commands
