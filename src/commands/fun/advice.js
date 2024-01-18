@@ -18,7 +18,7 @@ module.exports = {
         
      .then((response) => {
             
-      const text = `Advice for you: ${response.data.slip.advice}`
+      const text = `🧘 *Advice for you:* ${response.data.slip.advice}`
             
       M.reply(text)
      }).catch((err) => {
