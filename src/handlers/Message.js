@@ -63,10 +63,10 @@ module.exports = MessageHandler = async (messages, client) => {
         
 
        
-  //       const jid = "27640108995-120363122579144951@g.us";
+  //       const jid = "120363122579144951@g.us";
  //                setInterval(async () => {
   //        await spawnCard(jid);
-   //    }, 60000);
+   //    }, 300);
          
         //Banned system
         if (banned.includes(sender)) return M.reply('🟥 *Bro You are banned from using the bot commands*')
