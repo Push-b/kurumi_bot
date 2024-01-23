@@ -52,7 +52,7 @@ const archer = (await client.DB.get('archer')) || []
          externalAdReply: {
          title: `A.R.C.H.E.R`
          body: ''
-        image:{url:'https://telegra.ph/file/505307775b32d70bb432e.jpg'},
+        image:{url:'https://telegra.ph/file/505307775b32d70bb432e.jpg'}
         mediaType: 1
         mediaUrl: ''
         sourceUrl: ''
