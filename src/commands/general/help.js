@@ -60,7 +60,6 @@ const archer = (await client.DB.get('archer')) || []
                 }
              }
           }
-        }
         
         const command = client.cmd.get(arg) || client.cmd.find((cmd) => cmd.aliases && cmd.aliases.includes(arg));
         
