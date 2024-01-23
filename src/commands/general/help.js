@@ -48,18 +48,20 @@ const archer = (await client.DB.get('archer')) || []
         
         let message = `*👋 Hello ${pushName} l'm ${process.env.NAME}. A whatsApp-Bot created by the NCT Association*\n\n💡 *Tips:➪ Warning: Dont use the bot in dm or you will be banned.* \n\n💡 *Tips:➪ Warning: Dont call the bot or you will be banned.*\n\n*╭⁠☞ Our Github*: github.com/NCT-Association\n\n 📝  *My commamd list*  📝: \n\n${commands}`
         message += `⛩️ *Thanks for using Archer. If you find me helpful, please share me with your friends and leave a review.* `
-        contextInfo: {
-         externalAdReply: {
-         title: `A.R.C.H.E.R`
-         body: ''
-        image:{url:'https://telegra.ph/file/505307775b32d70bb432e.jpg'}
-        mediaType: 1
-        mediaUrl: ''
-        sourceUrl: ''
-        ShowAdAttribution: true
-                }
-             }
+        const buffer = await client.utils.getBuffer('https://i.imgur.com/ZgrSw7W.jpg')
+        
+        await client.sendMessage(
+          M.from,
+          {
+            image:{url:'https://telegra.ph/file/505307775b32d70bb432e.jpg'},
+            caption: message,
+          },
+          {
+            quoted: M
           }
+          )
+          return
+        }
         
         const command = client.cmd.get(arg) || client.cmd.find((cmd) => cmd.aliases && cmd.aliases.includes(arg));
         
