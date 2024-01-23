@@ -32,10 +32,10 @@ const archer = (await client.DB.get('archer')) || []
       let commands = ''
       
       for (const category of commandList) {
-        commands += `*━━━━━━❰   ${client.utils.capitalize(
+        commands += `*━━━❰ ❐  ${client.utils.capitalize(
           category,
           true
-          )}   ❱━━━━━━*  \n\`\`\`➜${categories[category].map((cmd) => 
+          )}  ❐ ❱━━━*  \n\`\`\`☞${categories[category].map((cmd) => 
             `${cmd}`).join('⁠ ・⁠・ ')}\`\`\`\n\n`
         
         }
@@ -47,20 +47,17 @@ const archer = (await client.DB.get('archer')) || []
   
         
         let message = `*👋 Hello ${pushName} l'm ${process.env.NAME}. A whatsApp-Bot created by the NCT Association*\n\n💡 *Tips:➪ Warning: Dont use the bot in dm or you will be banned.* \n\n💡 *Tips:➪ Warning: Dont call the bot or you will be banned.*\n\n*╭⁠☞ Our Github*: github.com/NCT-Association\n\n 📝  *My commamd list*  📝: \n\n${commands}`
-        message += `⛩️ *Thanks for using Archer. If you find me helpful, please share me with your friends and leave a review.*⭐ `
+        message += `⛩️ *Thanks for using Archer. If you find me helpful, please share me with your friends and leave a review.* `
+        contextInfo: {
+         externalAdReply: {
+         title: `${client.env.NAME}'s Commands`,
+         body: '',
         const buffer = await client.utils.getBuffer('https://i.imgur.com/ZgrSw7W.jpg')
+        mediaType: 1,
+        mediaUrl: '',
+        sourceUrl: '',
+        ShowAdAttribution: true
         
-        await client.sendMessage(
-          M.from,
-          {
-            image:{url:'https://telegra.ph/file/505307775b32d70bb432e.jpg'},
-            caption: message,
-          },
-          {
-            quoted: M
-          }
-          )
-          return
         }
         
         const command = client.cmd.get(arg) || client.cmd.find((cmd) => cmd.aliases && cmd.aliases.includes(arg));
