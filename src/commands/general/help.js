@@ -50,12 +50,12 @@ const archer = (await client.DB.get('archer')) || []
         message += `⛩️ *Thanks for using Archer. If you find me helpful, please share me with your friends and leave a review.* `
         contextInfo: {
          externalAdReply: {
-         title: `${client.env.NAME}'s Commands`,
-         body: '',
+         title: `A.R.C.H.E.R`
+         body: ''
         const buffer = await client.utils.getBuffer('https://i.imgur.com/ZgrSw7W.jpg')
-        mediaType: 1,
-        mediaUrl: '',
-        sourceUrl: '',
+        mediaType: 1
+        mediaUrl: ''
+        sourceUrl: ''
         ShowAdAttribution: true
                 }
              }
