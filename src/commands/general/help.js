@@ -51,7 +51,7 @@ const archer = (await client.DB.get('archer')) || []
         contextInfo: {
          externalAdReply: {
          title: `${client.env.NAME}'s Commands`,
-         body: '',
+         body '',
         const buffer = await client.utils.getBuffer('https://i.imgur.com/ZgrSw7W.jpg')
         mediaType: 1,
         mediaUrl: '',
