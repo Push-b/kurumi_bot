@@ -52,7 +52,7 @@ const archer = (await client.DB.get('archer')) || []
          externalAdReply: {
          title: `A.R.C.H.E.R`
          body: ''
-        const buffer = await client.utils.getBuffer('https://i.imgur.com/ZgrSw7W.jpg')
+        thumbnail: await client.utils.fetchBuffer('https://i.imgur.com/22WppSh.jpg')
         mediaType: 1
         mediaUrl: ''
         sourceUrl: ''
