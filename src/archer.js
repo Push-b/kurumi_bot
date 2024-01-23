@@ -165,8 +165,6 @@ const start = async () => {
         }
     })
 
-    CardHandler(client)
-
     app.get('/', (req, res) => {
         res.status(300).setHeader('Content-Type', 'image/png').send(client.QR)
     })
