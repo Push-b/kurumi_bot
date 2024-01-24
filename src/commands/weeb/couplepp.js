@@ -2,7 +2,7 @@ const axios  = require("axios")
 module.exports = {
     name: 'couplepp',
     // aliases: ['coffee'],
-    category: 'weeb',
+    category: 'utils',
     cool: 10,
     react: "✅",
     description: 'Sends an image of random anime couple?',
