@@ -18,9 +18,9 @@ module.exports = {
     async execute(client, arg, M) {
         const invemtory = await client.rpg.get(M.sender)
         if (!invemtory) return M.reply('You have no inventory')
-        let text = '*━━━❰☆YOUR__INVENTORY☆❱━━━*\n\n'
+        let text = '*━━━❰🌀YOUR_INVENTORY🌀❱━━━*\n\n'
         for (const [key, value] of Object.entries(invemtory)) {
-            text += `> *${key}:* ${typeof value == 'number' ? value : '\n' + objToString(value)}\n`
+            text += `➜ *${key}:* ${typeof value == 'number' ? value : '\n' + objToString(value)}\n`
         }
         M.reply(text)
     }
