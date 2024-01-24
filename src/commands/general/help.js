@@ -32,10 +32,10 @@ const archer = (await client.DB.get('archer')) || []
       let commands = ''
       
       for (const category of commandList) {
-        commands += `*━━━❰ ❐  ${client.utils.capitalize(
+        commands += `*━━━━❰  ${client.utils.capitalize(
           category,
           true
-          )}  ❐ ❱━━━*  \n\`\`\`☞${categories[category].map((cmd) => 
+          )}   ❱━━━━*  \n\`\`\`⁠➜${categories[category].map((cmd) => 
             `${cmd}`).join('⁠ ・⁠・ ')}\`\`\`\n\n`
         
         }
@@ -46,8 +46,8 @@ const archer = (await client.DB.get('archer')) || []
         //   )}*\n\n${categories[category].map((cmd) => `${client.prefix}${cmd}`).join(', ')}\`\`\`\n\n`
   
         
-        let message = `*👋 Hello ${pushName} l'm ${process.env.NAME}. A whatsApp-Bot created by the NCT Association*\n\n💡 *Tips:➪ Warning: Dont use the bot in dm or you will be banned.* \n\n💡 *Tips:➪ Warning: Dont call the bot or you will be banned.*\n\n*╭⁠☞ Our Github*: github.com/NCT-Association\n\n 📝  *My commamd list*  📝: \n\n${commands}`
-        message += `⛩️ *Thanks for using Archer. If you find me helpful, please share me with your friends and leave a review.* `
+        let message = `*👋 Hello ${pushName} l'm ${process.env.NAME}. A whatsApp-Bot created by the NCT Association*\n\n💡 *Tips:➪ Warning: Dont use the bot in dm or you will be banned.* \n\n💡 *Tips:➪ Warning: Dont call the bot or you will be banned.*\n\n*╭⁠☞ Our Github*: github.com/NCT-Association\n\n 🎁  *Menu list to help you get started*  🎁: \n\n${commands}`
+        message += `⛩️ *Thanks for using Archer. If you find me helpful, please share me with your friends and leave a review.*⭐ `
         const buffer = await client.utils.getBuffer('https://i.imgur.com/ZgrSw7W.jpg')
         
         await client.sendMessage(
