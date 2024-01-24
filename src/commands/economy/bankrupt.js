@@ -9,9 +9,6 @@ module.exports = {
       
       await client.DB.delete(`${M.sender}.wallet`) || 0
       M.reply('You have declared bankruptcy. Your bank account has been reset to 0 dollars.')
-      } else {
-        M.reply('Cancelled bankruptcy declaration')
       }
-      
-  }
+   }
 }
