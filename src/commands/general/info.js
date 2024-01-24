@@ -10,7 +10,7 @@ module.exports = {
     const archer = (await client.DB.get('archer')) || []
    if (!archer.includes(M.from)) return M.reply(` *🟥 Bot is not enabled in current group ask mods to activate* `)
     
-        let cpus = os.cpus()
+        
         const getGroups = await client.groupFetchAllParticipating()
         const groups = Object.entries(getGroups)
         .slice(0)
@@ -33,7 +33,6 @@ module.exports = {
 *│  📝 COMMANDS:* ${client.cmd.size}
 *│  🛡️ Groups:* ${groupCount}
 *│     Nodejs: ${process.version}
-*│     Memory: ${client.utils.formatSize(os.totalmem() - os.freemem()) + '/' + client.utils.formatSize(os.totalmem()) }
 *│     Platform: ${os.platform()}
 *│    º º º º「By Deryl」º º º º*
 *╰────────────┈`
