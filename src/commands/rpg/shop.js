@@ -77,6 +77,7 @@ module.exports = {
             const price = parseInt(Object.values(items[command][sellItems.indexOf(term[0].toLowerCase())]).join(''))
             await client.rpg.sub(
                 `${M.sender}[${term[0].toLowerCase()}]`,
+                'all' == term[1].toLowerCase() ? itemQuantity : 1
             )
             await client.cradit.add(`${M.sender}.wallet`, price * ('all' == term[1].toLowerCase() ? itemQuantity : 1))
             M.reply(
