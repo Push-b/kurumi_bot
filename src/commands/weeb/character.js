@@ -3,7 +3,7 @@ const axios = require('axios')
 module.exports = {
     name: 'character',
     aliases: ['char'],
-    category: 'weeb',
+    category: 'utils',
     react: "✅",
     cool: 10,
     description: 'Gives you the info of a character from anime',
