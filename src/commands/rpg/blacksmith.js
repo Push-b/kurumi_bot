@@ -134,6 +134,8 @@ module.exports = {
     react: "✅",
     description: 'Blacksmith where weapons are made',
     async execute(client, arg, M) {
+     const rpg = (await client.DB.get('rpg')) || []
+   if (!rpg.includes(M.from)) return M.reply(` *🟥 rpg is not enabled in current group ask mods to activate* `)
         const command = M.body.split(' ')[0].toLowerCase().slice(client.prefix.length).trim()
         if (command === 'blacksmith') {
             const objKeys = Object.keys(blacksmith)
