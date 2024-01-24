@@ -34,8 +34,8 @@ module.exports = {
     async execute(client, arg, M) {
         const command = M.body.split(' ')[0].toLowerCase().slice(client.prefix.length).trim()
         if (command == 'shop') {
-            const typeEmoji = ['⚖️']
-            const moneyEmoji = ['💵']
+            const typeEmoji = ['🛍️','⚖️']
+            const moneyEmoji = ['💵','💵']
             const types = Object.keys(items)
             let text = '*━━━━❰⭐SHOP⭐❱━━━━*'
             for (const type of types) {
@@ -49,7 +49,7 @@ module.exports = {
             text += `\n\n🧧 Use ${client.prefix}buy <item_name> / ${client.prefix}sell <item_name>\n🎴 Example: ${client.prefix}buy potion/ ${client.prefix}sell potion`
             M.reply(text)
         }
-        if (command == 'items to buy') {
+        if (command == 'buy') {
             if (!arg) return M.reply('Please give a item name')
             const term = arg.split(' ')
             const buyItems = Object.keys(Object.assign({}, ...items[command]))
@@ -67,7 +67,7 @@ module.exports = {
                 }_*`
             )
         }
-        if (command == 'items you can sell') {
+        if (command == 'sell') {
             if (!arg) return M.reply('Please give a item name')
             const term = arg.split(' ')
             const sellItems = Object.keys(Object.assign({}, ...items[command]))
