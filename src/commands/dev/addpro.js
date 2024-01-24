@@ -1,6 +1,6 @@
 module.exports = {
-  name: 'addmods',
-  aliases: ['addmod'],
+  name: 'addpro',
+  aliases: ['addpro'],
   category: 'dev',
   react: '✅',
   description: 'Adds a new mod to the bot',
