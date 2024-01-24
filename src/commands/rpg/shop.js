@@ -21,6 +21,8 @@ module.exports = {
     react: "✅",
     description: 'Buy or Sell any thing here',
     async execute(client, arg, M) {
+    const rpg = (await client.DB.get('rpg')) || []
+   if (!rpg.includes(M.from)) return M.reply(` *🟥 rpg is not enabled in current group ask mods to activate* `)
         const command = M.body.split(' ')[0].toLowerCase().slice(client.prefix.length).trim()
         if (command == 'shop') {
             const typeEmoji = ['🛍️','⚖️']
