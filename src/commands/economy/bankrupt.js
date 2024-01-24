@@ -11,4 +11,3 @@ module.exports = {
       M.reply('You have declared bankruptcy. Your bank account has been reset to 0 dollars.')
       }
    }
-}
