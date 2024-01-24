@@ -18,7 +18,7 @@ module.exports = {
     };
     
     // Validate the bet amount
-    const maxBetAmount = 1000;
+    const maxBetAmount = 10000;
     if (arg > maxBetAmount) {
       return M.reply(`You can't bet more than ${maxBetAmount}.\n\n*Note:* This action has been taken to avoid bans.`);
     }
@@ -49,35 +49,35 @@ module.exports = {
     text += payoutMultiplier <= 0 ? `📉 You lost ${betAmount} gold` : `📈 You won ${resultAmount} gold`;
     
     // Add diamond and emerald
-    const diamondAmount = payoutMultiplier > 0 ? Math.floor(resultAmount / 250) : 0;
-    const emeraldAmount = payoutMultiplier > 0 ? Math.floor(resultAmount / 100) : 0;
-    const ironAmount = payoutMultiplier > 0 ? Math.floor(resultAmount / 500) : 0;
-    const goldAmount = payoutMultiplier > 0 ? Math.floor(resultAmount / 700) : 0;
-    const woodAmount = payoutMultiplier > 0 ? Math.floor(resultAmount / 1000) : 0;
+    const diamondAmount = payoutMultiplier > 0 ? Math.floor(resultAmount / 10) : 0;
+    const emeraldAmount = payoutMultiplier > 0 ? Math.floor(resultAmount / 5) : 0;
+    const ironAmount = payoutMultiplier > 0 ? Math.floor(resultAmount / 7) : 0;
+    const goldAmount = payoutMultiplier > 0 ? Math.floor(resultAmount / 6) : 0;
+    const woodAmount = payoutMultiplier > 0 ? Math.floor(resultAmount / 8) : 0;
  
     if (diamondAmount > 0) {
       await client.rpg.add(`${M.sender}.diamond`, diamondAmount);
-      text += `\n\nYou also won ${diamondAmount} diamond(s).`;
+      text += `\n\n>>You also won ${diamondAmount} diamond(s).`;
     }
     
     if (ironAmount > 0) {
       await client.rpg.add(`${M.sender}.iron`, ironAmount);
-      text += `\n\nYou also won ${ironAmount} iron(s).`;
+      text += `\n\n>>You also won ${ironAmount} iron(s).`;
     }
     
     if (emeraldAmount > 0) {
       await client.rpg.add(`${M.sender}.emerald`, emeraldAmount);
-      text += `\n\nYou also won ${emeraldAmount} emerald(s).`;
+      text += `\n\n>>You also won ${emeraldAmount} emerald(s).`;
     }
 
     if (woodAmount > 0) {
       await client.rpg.add(`${M.sender}.wood`, woodAmount);
-      text += `\n\nYou also won ${woodAmount} wood(s).`;
+      text += `\n\n>>You also won ${woodAmount} wood(s).`;
     }
 
     if (goldAmount > 0) {
       await client.rpg.add(`${M.sender}.gold`, goldAmount);
-      text += `\n\nYou also won ${goldAmount} golds(s).`;
+      text += `\n\n>>You also won ${goldAmount} golds(s).`;
     }
     
     M.reply(text);
