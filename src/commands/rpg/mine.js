@@ -44,9 +44,9 @@ module.exports = {
     
     await client.cradit.add(`${M.sender}.wallet`, resultAmount);
     
-    let text = '🎰 *FOREST* 🎰\n\n';
+    let text = '🎰 *MINING IN THE FOREST* 🎰\n\n';
     text += `Spin Result: ${spinResult}\n\n`;
-    text += payoutMultiplier <= 0 ? `📉 You lost ${betAmount} gold` : `📈 You won ${resultAmount} gold`;
+    text += payoutMultiplier <= 0 ? `📉 You lost ${betAmount} dollars` : `📈 You won ${resultAmount} dollars`;
     
     // Add diamond and emerald
     const diamondAmount = payoutMultiplier > 0 ? Math.floor(resultAmount / 10) : 0;
