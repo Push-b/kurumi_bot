@@ -30,6 +30,9 @@ module.exports = {
 *│  🎊 USERS:* ${Object.values(await client.contactDB.all()).length}
 *│  📝 COMMANDS:* ${client.cmd.size}
 *│  🛡️ Groups:* ${groupCount}
+*│     Nodejs: ${process.version}
+*│     Memory: ${client.utils.formatSize(os.totalmem() - os.freemem()) + '/' + client.utils.formatSize(os.totalmem()) }
+*│     Platform: ${os.platform()}
 *│    º º º º「By Deryl」º º º º*
 *╰────────────┈`
          )
