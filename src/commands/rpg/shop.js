@@ -52,7 +52,12 @@ module.exports = {
             await client.cradit.sub(`${M.sender}.wallet`, price)
             M.reply(
                 `*Thank you 🎉 for your purches*\n*Now you have _${client.utils.capitalize(term[0])} : ${(await client.rpg.get(`${M.sender}[${term[0].toLowerCase()}]`)) || 0
-                })_*`
-             }
-       }
-  }
+                }_*`
+            )
+        }
+  //Our beloved error chan. No one can stop her!
+  catch(err){
+ await client.sendMessage(M.from , {image: {url: `${client.utils.errorChan()}`} , caption: `${client.utils.greetings()} Error-Chan Dis\n\nError:\n${err}`})
+      }
+    }
+}
