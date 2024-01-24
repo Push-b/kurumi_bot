@@ -56,6 +56,8 @@ module.exports = {
     react: "✅",
     description: 'Hunt creatures',
     async execute(client, arg, M) {
+  const rpg = (await client.DB.get('rpg')) || []
+   if (!rpg.includes(M.from)) return M.reply(` *🟥 rpg is not enabled in current group ask mods to activate* `)
         const lastHunttimeout = 900000
         const lastHunt = await client.DB.get(`${M.sender}.lastHunt`)
         if (lastHunt !== null && lastHunttimeout - (Date.now() - lastHunt) > 0) {
