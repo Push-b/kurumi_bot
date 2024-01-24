@@ -33,7 +33,6 @@ module.exports = {
 *│  📝 COMMANDS:* ${client.cmd.size}
 *│  🛡️ Groups:* ${groupCount}
 *│     Nodejs: ${process.version}
-*│     Platform: ${os.platform()}
 *│    º º º º「By Deryl」º º º º*
 *╰────────────┈`
          )
