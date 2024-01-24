@@ -75,7 +75,7 @@ module.exports = {
             const itemQuantity = await client.rpg.get(`${M.sender}[${term[0].toLowerCase()}]`)
             if (!itemQuantity) return M.reply('You do not have enough quantity to sell')
             const price = parseInt(Object.values(items[command][sellItems.indexOf(term[0].toLowerCase())]).join(''))
-            await client.rpg.sub(`${M.sender}.${term[1]`,
+            await client.rpg.sub(`${M.sender}.${term} , [1]`,
             )
             await client.cradit.add(`${M.sender}.wallet`, price * ('all' == term[1].toLowerCase() ? itemQuantity : 1))
             M.reply(
