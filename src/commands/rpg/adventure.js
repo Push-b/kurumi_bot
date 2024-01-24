@@ -8,6 +8,8 @@ const reward = (level) => {
         reward: {
             trash: Math.round(Math.random() * 5) * level,
             potion: Math.round(Math.random() * 2) * level,
+            armor: Math.round(Math.random() * 3) * level,
+            sword: Math.round(Math.random() * 5) * level,
             wood: Math.round(Math.random() * 8) * level,
             string: Math.round(Math.random() * 8) * level,
             iron: Math.round(Math.random() * 5) * level,
@@ -47,13 +49,13 @@ module.exports = {
                 armor
             )}, ${percentageCal(5, sword)} respectively damage*`
         )
-        await client.rpg.sub(`${M.sender}.armor`, percentageCal(30, armor))
-        await client.rpg.set(`${M.sender}.health`, health - percentageCal(10, health))
-        await client.rpg.sub(`${M.sender}.sword`, percentageCal(5, sword))
-        let text = '🔖 *Adventure Rewards:*\n\n'
+        await client.rpg.sub(`${M.sender}.armor`, percentageCal(40, armor))
+        await client.rpg.set(`${M.sender}.health`, health - percentageCal(30, health))
+        await client.rpg.sub(`${M.sender}.sword`, percentageCal(10, sword))
+        let text = '🔖 *Your Adventure Reward:*\n\n'
         for (const rewardItem in reward(level).reward) {
             await client.rpg.add(`${M.sender}[${rewardItem}]`, reward(level).reward[rewardItem])
-            text += `*> ${rewardItem}: _${reward(level).reward[rewardItem]}_*\n`
+            text += `*>>> ${rewardItem}: _${reward(level).reward[rewardItem]}_*\n`
         }
         setTimeout(() => {
             M.reply(text)
