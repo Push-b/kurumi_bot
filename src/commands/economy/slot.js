@@ -76,13 +76,15 @@ module.exports = {
 
         const cradits = (await client.cradit.get(`${M.sender}.wallet`)) || 0
 
-        if (amount > 2000000000000) return M.reply('🟥 *You cannot slot more than 2000000000000 dollars in slot machine*')
+        if (amount > 20000) return M.reply('🟥 *You cannot slot more than 20000 dollars in slot machine*')
 
         const machine = new SlotMachine(3, symbols).play()
 
         const lines = machine.lines.filter((line) => !line.diagonal)
 
         const points = machine.lines.reduce((total, line) => total + line.points, 0)
+
+         // Set win rate to 30%
 
         const resultAmount = points <= 0 ? -amount : amount * points
 
