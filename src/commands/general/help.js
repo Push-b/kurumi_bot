@@ -32,11 +32,11 @@ const archer = (await client.DB.get('archer')) || []
       let commands = ''
       
       for (const category of commandList) {
-        commands += `*━━━━❰  ${client.utils.capitalize(
+        commands += `*━━━━━❰  ${client.utils.capitalize(
           category,
           true
-          )}   ❱━━━━*  \n\`\`\`⁠➜${categories[category].map((cmd) => 
-            `${cmd}`).join('⁠ ・⁠・ ')}\`\`\`\n\n`
+          )}   ❱━━━━━*  \n\`\`\`⁠➜${categories[category].map((cmd) => 
+            `${cmd}`).join('⁠ •• ')}\`\`\`\n\n`
         
         }
 
