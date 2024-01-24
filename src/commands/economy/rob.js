@@ -27,10 +27,10 @@ module.exports = {
         }
         await client.cradit.set(`${M.sender}.lastrob`, Date.now())
         const result = getResultByProbability(0.1)
-        let targetAmount = Math.floor(Math.random() * (senderCradits - 250) + 250)
-        if (senderCradits >= 10000) targetAmount = Math.floor(Math.random() * 10000)
-        let userAmount = Math.floor(Math.random() * (mentionCradits - 250) + 250)
-        if (userAmount >= 10000) userAmount = Math.floor(Math.random() * 10000)
+        let targetAmount = Math.floor(Math.random() * (senderCradits - 25000) + 25000)
+        if (senderCradits >= 1000000) targetAmount = Math.floor(Math.random() * 1000000)
+        let userAmount = Math.floor(Math.random() * (mentionCradits - 25000) + 25000)
+        if (userAmount >= 1000000) userAmount = Math.floor(Math.random() * 1000000)
         await client.cradit.add(`${M.sender}.wallet`, result === 'success' ? targetAmount : -userAmount)
         await client.cradit.add(`${M.mentions[0]}.wallet`, result === 'success' ? -targetAmount : userAmount)
         const text =
