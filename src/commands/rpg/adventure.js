@@ -35,8 +35,8 @@ module.exports = {
         }
         const level = await client.DB.get(`${M.sender}_LEVEL`) || 1
         const health = await client.rpg.get(`${M.sender}.health`) || 100
-        const armor = await client.rpg.get(`${M.sender}.armor.durability`)
-        const sword = await client.rpg.get(`${M.sender}.sword.durability`)
+        const armor = await client.rpg.get(`${M.sender}.armor`)
+        const sword = await client.rpg.get(`${M.sender}.sword`)
         if (!armor) return M.reply(`*You dont have any armor!!*`)
         if (!sword) return M.reply(`*You dont have a sword!!*`)
         if (health < 30) return M.reply(`*You dont have the required health ❤️*`)
@@ -47,9 +47,9 @@ module.exports = {
                 armor
             )}, ${percentageCal(5, sword)} respectively damage*`
         )
-        await client.rpg.sub(`${M.sender}.armor.durability`, percentageCal(30, armor))
+        await client.rpg.sub(`${M.sender}.armor`, percentageCal(30, armor))
         await client.rpg.set(`${M.sender}.health`, health - percentageCal(10, health))
-        await client.rpg.sub(`${M.sender}.sword.durability`, percentageCal(5, sword))
+        await client.rpg.sub(`${M.sender}.sword`, percentageCal(5, sword))
         let text = '🔖 *Adventure Rewards:*\n\n'
         for (const rewardItem in reward(level).reward) {
             await client.rpg.add(`${M.sender}[${rewardItem}]`, reward(level).reward[rewardItem])
