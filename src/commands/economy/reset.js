@@ -10,7 +10,7 @@ module.exports = {
    const sender = M.sender
     if (!M.mentions.length) return M.reply('*You must mention a user profile to continue*')
      await client.cradit.delete(`${M.sender}.wallet`) || 0
-      await client.cradit.delete(${M.sender}.bank`) || 0
+      await client.cradit.delete(`${M.sender}.bank`) || 0
       M.reply('successfuly reset account to 0 dollars.')
       }
    }
