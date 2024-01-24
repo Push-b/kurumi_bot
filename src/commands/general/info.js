@@ -28,11 +28,11 @@ module.exports = {
         //client.contactDB
         M.reply(
          `\n*╭─「 ❯─「 Archer's info」─❮ 」*
-*│  🎚️ UPTIME:* ${uptime}
-*│  🎊 USERS:* ${Object.values(await client.contactDB.all()).length}
-*│  📝 COMMANDS:* ${client.cmd.size}
-*│  🛡️ Groups:* ${groupCount}
-*│     Nodejs: ${process.version}
+*│  🔋 UPTIME:* ${uptime}
+*│  🧸 USERS:* ${Object.values(await client.contactDB.all()).length}
+*│  🗂️ COMMANDS:* ${client.cmd.size}
+*│  📡 Groups:* ${groupCount}
+*│  🌀 Nodejs:* ${process.version}
 *│    º º º º「By Deryl」º º º º*
 *╰────────────┈`
          )
