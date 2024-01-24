@@ -9,7 +9,7 @@ module.exports = {
 
     const archer = (await client.DB.get('archer')) || []
    if (!archer.includes(M.from)) return M.reply(` *🟥 Bot is not enabled in current group ask mods to activate* `)
-        let cpus = os.cpus(),
+    
         const getGroups = await client.groupFetchAllParticipating()
         const groups = Object.entries(getGroups)
         .slice(0)
@@ -21,6 +21,7 @@ module.exports = {
             const minutes = Math.floor((seconds % (60 * 60)) / 60)
             const secs = Math.floor(seconds % 60)
             return `${pad(hours)}:${pad(minutes)}:${pad(secs)}`
+            let cpus = os.cpus(),
         }
         const uptime = formatTime(process.uptime())
         //client.contactDB
