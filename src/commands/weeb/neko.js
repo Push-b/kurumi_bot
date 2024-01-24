@@ -3,7 +3,7 @@ const axios = require('axios')
 module.exports = {
     name: 'neko',
     aliases: ['catgirl'],
-    category: 'weeb',
+    category: 'utils',
     cool: 10,
     react: "✅",
     description: 'Sends an image of random neko',
