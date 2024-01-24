@@ -11,6 +11,8 @@ module.exports = {
     react: "✅",
     description: 'Fishing to add stuff to the inventory',
     async execute(client, arg, M) {
+     const rpg = (await client.DB.get('rpg')) || []
+   if (!rpg.includes(M.from)) return M.reply(` *🟥 rpg is not enabled in current group ask mods to activate* `)
         const fishingrod = await client.rpg.get(`${M.sender}.fishingrod`)
         if (!fishingrod) return M.reply("You don't have any fishingrod in your inventory")
         const lastfishingtimeout = 420000
