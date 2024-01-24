@@ -148,10 +148,10 @@ module.exports = {
                     for (let __c in blacksmith[v][abc].material) {
                         material += blacksmith[v][abc].material[__c] + __c + ' '
                     }
-                    items += `\n\n📗 *Type*: ${client.utils.capitalize(
+                    items += `\n\n⛄ *Type*: ${client.utils.capitalize(
                         abc
-                    )}\n⚖️ *Required*: ${material}\n💙 *Durability*: ${blacksmith[v][abc].durability}\n🪙 *Price*: ${blacksmith[v][abc].durability * 5
-                        }\n*Example*: ${client.prefix}${v} ${abc}\n\n`
+                    )}\n⚖️ *Required*: ${material}\n🌀 *Durability*: ${blacksmith[v][abc].durability}\n💵 *Price*: ${blacksmith[v][abc].durability * 5
+                        }\n*>>Example*: ${client.prefix}${v} ${abc}\n\n`
                 }
                 text += `${typeEmoji[objKeys.indexOf(v)]} *${client.utils.capitalize(v, true)}* ${items}`
             }
