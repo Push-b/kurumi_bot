@@ -1,7 +1,7 @@
 module.exports = {
     name: 'stalk',
     aliases: ['stalknumber'],
-    category: 'misc',
+    category: 'group',
     react: "✅",
     description: 'To find all WhatsApp numbers in the provided range',
     async execute(
