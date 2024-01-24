@@ -8,19 +8,19 @@ module.exports = {
   async execute(client, arg, M) {
     const rouletteNumbers = ['0', '00', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35', '36'];
     const payoutTable = {
-      '0': 30,
+     '0': 36,
       '00': 36,
-      '0-18': 2,
+      '1-18': 2,
       '19-36': 2,
       '1st 12': 3,
-      '2nd 12': 0,
-      '3rd 12': 0,
+      '2nd 12': 3,
+      '3rd 12': 3,
     };
     
     // Validate the bet amount
-    const maxBetAmount = 10000;
+    const maxBetAmount = 500;
     if (arg > maxBetAmount) {
-      return M.reply(`You can't bet more than ${maxBetAmount}.\n\n*Note:* This action has been taken to avoid bans.`);
+      return M.reply(`⛏️👴 Broh You can't spend more than ${maxBetAmount} dollars in a mine`);
     }
     
     if (!arg) {
@@ -49,11 +49,11 @@ module.exports = {
     text += payoutMultiplier <= 0 ? `📉 You lost ${betAmount} dollars` : `📈 You won ${resultAmount} dollars`;
     
     // Add diamond and emerald
-    const diamondAmount = payoutMultiplier > 0 ? Math.floor(resultAmount / 10) : 0;
-    const emeraldAmount = payoutMultiplier > 0 ? Math.floor(resultAmount / 5) : 0;
-    const ironAmount = payoutMultiplier > 0 ? Math.floor(resultAmount / 7) : 0;
-    const goldAmount = payoutMultiplier > 0 ? Math.floor(resultAmount / 6) : 0;
-    const woodAmount = payoutMultiplier > 0 ? Math.floor(resultAmount / 8) : 0;
+    const diamondAmount = payoutMultiplier > 0 ? Math.floor(resultAmount / 250) : 0;
+    const emeraldAmount = payoutMultiplier > 0 ? Math.floor(resultAmount / 100) : 0;
+    const ironAmount = payoutMultiplier > 0 ? Math.floor(resultAmount / 500) : 0;
+    const goldAmount = payoutMultiplier > 0 ? Math.floor(resultAmount / 700) : 0;
+    const woodAmount = payoutMultiplier > 0 ? Math.floor(resultAmount / 1000) : 0;
  
     if (diamondAmount > 0) {
       await client.rpg.add(`${M.sender}.diamond`, diamondAmount);
