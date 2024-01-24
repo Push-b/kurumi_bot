@@ -8,13 +8,13 @@ module.exports = {
   async execute(client, arg, M) {
     const rouletteNumbers = ['0', '00', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31', '32', '33', '34', '35', '36'];
     const payoutTable = {
-      '0': 36,
-      '00': 36,
-      '1-18': 2,
+      '0': 30,
+      '1': 36,
+      '0-18': 2,
       '19-36': 2,
       '1st 12': 3,
-      '2nd 12': 3,
-      '3rd 12': 3,
+      '2nd 12': 0,
+      '3rd 12': 0,
     };
     
     // Validate the bet amount
@@ -45,7 +45,7 @@ module.exports = {
     await client.cradit.add(`${M.sender}.wallet`, resultAmount);
     
     let text = '⛏️👴 *MINING IN THE FOREST* 👴⛏️\n\n';
-    text += `Spin Result: ${spinResult}\n\n`;
+    text += `>>Spin Result: ${spinResult}\n\n`;
     text += payoutMultiplier <= 0 ? `📉 You lost ${betAmount} dollars` : `📈 You won ${resultAmount} dollars`;
     
     // Add diamond and emerald
