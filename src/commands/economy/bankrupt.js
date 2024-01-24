@@ -12,7 +12,7 @@ module.exports = {
       }
       
       if (arg.startsWith('-yes') || arg.startsWith('-yes')) {
-      await client.DB.sub(`${M.sender}.wallet`) || 0
+      await client.DB.delete(`${M.sender}.wallet`) || 0
       M.reply('You have declared bankruptcy. Your bank account has been reset to 0 coins.')
       } else {
         M.reply('Cancelled bankruptcy declaration')
