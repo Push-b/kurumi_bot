@@ -3,17 +3,17 @@ const blacksmith = {
         iron: {
             id: 3,
             material: {
-                wood: 5,
-                iron: 7,
-                string: 4
+                wood: 10,
+                iron: 9,
+                string: 11
             },
             durability: 125
         },
         gold: {
             id: 4,
             material: {
-                wood: 5,
-                string: 4,
+                wood: 8,
+                string: 15,
                 gold: 7
             },
             durability: 150
@@ -21,18 +21,18 @@ const blacksmith = {
         diamond: {
             id: 6,
             material: {
-                wood: 5,
-                string: 4,
-                diamond: 7
+                wood: 13,
+                string: 9,
+                diamond: 19
             },
             durability: 200
         },
         emerald: {
             id: 7,
             material: {
-                wood: 5,
-                string: 4,
-                emerald: 7
+                wood: 9,
+                string: 13,
+                emerald: 9
             },
             durability: 175
         }
@@ -41,17 +41,17 @@ const blacksmith = {
         iron: {
             id: 3,
             material: {
-                wood: 5,
-                iron: 7,
-                string: 4
+                wood: 16,
+                iron: 9,
+                string: 14
             },
             durability: 125
         },
         gold: {
             id: 4,
             material: {
-                wood: 5,
-                string: 4,
+                wood: 9,
+                string: 10,
                 gold: 7
             },
             durability: 150
@@ -60,7 +60,7 @@ const blacksmith = {
             id: 6,
             material: {
                 wood: 5,
-                string: 4,
+                string: 9,
                 diamond: 7
             },
             durability: 502
@@ -81,7 +81,7 @@ const blacksmith = {
             material: {
                 wood: 5,
                 iron: 7,
-                string: 4
+                string: 9
             },
             durability: 125
         },
@@ -97,9 +97,9 @@ const blacksmith = {
         diamond: {
             id: 6,
             material: {
-                wood: 5,
-                string: 4,
-                diamond: 7
+                wood: 9,
+                string: 12,
+                diamond: 9
             },
             durability: 900
         },
@@ -173,10 +173,10 @@ module.exports = {
         )
         const metalType = Object.keys(blacksmith[command])
         if (!metalType.includes(arg.trim())) return M.reply('Please give a valid type!')
-       await client.cradit.get(`${M.sender}.wallet`) || 0;
         for (const [key, value] of Object.entries(blacksmith[command][arg.trim()].material)) {
             const item = await client.rpg.get(`${M.sender}[${key}]`) || 0
-            if ((item - blacksmith[command][[arg.trim()]].durability * 5) < 0) return M.reply('You dont have that much in your wallet')
+            await client.cradit.get(`${M.sender}.wallet`) || 0;
+            if ((price - blacksmith[command][[arg.trim()]].durability * 5) < 0) return M.reply('You dont have that much in your wallet')
             if ((item - value) < 0) return M.reply(`You are short of ${key}\n`)
             await client.rpg.sub(`${M.sender}[${key}]`, value)
             await client.rpg.set(`${M.sender}[${type}].type`, arg.trim())
