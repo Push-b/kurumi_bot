@@ -34,7 +34,7 @@ module.exports = {
                     }
                 })
             }
-            text += `\n\n🧧 Use ${client.prefix}buy <item_name> / ${client.prefix}sell <item_name>\n🎴 Example: ${client.prefix}buy potion/ ${client.prefix}sell potion`
+            text += `\n\n🧧 Use ${client.prefix}buy <item_name>`
             M.reply(text)
         }
         if (command == 'buy') {
