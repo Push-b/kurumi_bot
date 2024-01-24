@@ -1,7 +1,7 @@
 module.exports = {
     name: 'ping',
     aliases: ['speed'],
-    category: 'misc',
+    category: 'general',
     cool: 30,
     react: "✅",
     description: 'Bot response in second',
