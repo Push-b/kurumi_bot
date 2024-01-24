@@ -9,18 +9,6 @@ const items = {
         { ironpickaxe: 1000000 },
         { goldpickaxe: 1000000 },
         { emerald: 80050 }
-    ],
-    sell: [
-        { potion: 12050 },
-        { trash: 3499 },
-        { iron: 8000 },
-        { gold: 17050 },
-        { wood: 3090 },
-        { string: 1800 },
-        { diamond: 31850 },
-        { emerald: 40850 },
-        { fish: 580 },
-        { monster_valuables: 9500 }
     ]
 }
 
@@ -67,23 +55,3 @@ module.exports = {
                 }_*`
             )
         }
-        if (command == 'sell') {
-            if (!arg) return M.reply('Please give a item name')
-            const term = arg.split(' ')
-            const sellItems = Object.keys(Object.assign({}, ...items[command]))
-            if (!sellItems.includes(term[0].toLowerCase())) return M.reply('Please give a valid item name')
-            const itemQuantity = await client.rpg.get(`${M.sender}[${term[0].toLowerCase()}]`)
-            if (!itemQuantity) return M.reply('You do not have enough quantity to sell')
-            const price = parseInt(Object.values(items[command][sellItems.indexOf(term[0].toLowerCase())]).join(''))
-            await client.rpg.sub(`${M.sender}.${term} , [1]`,
-            )
-            await client.cradit.add(`${M.sender}.wallet`, price * ('all' == term[1].toLowerCase() ? itemQuantity : 1))
-            M.reply(
-                `*Congratulations 🎉 you have gained ${price} by selling ${'all' == term[1].toLowerCase() ? itemQuantity : 1
-                } ${client.utils.capitalize(term[0])}*\n*Now you have _${await client.cradit.get(
-                    `${M.sender}.wallet`
-                )}_ in your wallet*`
-            )
-        }
-    }
-}
