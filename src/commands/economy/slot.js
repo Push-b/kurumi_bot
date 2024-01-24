@@ -30,7 +30,7 @@ module.exports = {
 
     points: 2,
 
-    weight: 40
+    weight: 10
 
   }),
 
@@ -40,7 +40,7 @@ module.exports = {
 
     points: 4,
 
-    weight: 30
+    weight: 15
 
   }),
 
@@ -76,7 +76,7 @@ module.exports = {
 
         const cradits = (await client.cradit.get(`${M.sender}.wallet`)) || 0
 
-        if (amount > 200000000) return M.reply('🟥 *You cannot slot more than 200000000💵 in slot machine*')
+        if (amount > 2000000000000) return M.reply('🟥 *You cannot slot more than 2000000000000 dollars in slot machine*')
 
         const machine = new SlotMachine(3, symbols).play()
 
@@ -92,7 +92,7 @@ module.exports = {
 
         text += machine.visualize()
 
-        text += points <= 0 ? `\n\n📉 You lost 💵${amount} dollars` : `\n\n📈 You won 💵${resultAmount} dollars`
+        text += points <= 0 ? `\n\n📉 You lost ${amount} dollars` : `\n\n📈 You won ${resultAmount} dollars`
 
         M.reply(text)
 
