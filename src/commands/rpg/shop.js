@@ -53,7 +53,6 @@ module.exports = {
             M.reply(
                 `*Thank you 🎉 for your purches*\n*Now you have _${client.utils.capitalize(term[0])} : ${(await client.rpg.get(`${M.sender}[${term[0].toLowerCase()}]`)) || 0
                 }_*`
-            )
         }
   //Our beloved error chan. No one can stop her!
   catch(err){
