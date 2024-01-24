@@ -44,7 +44,7 @@ module.exports = {
     
     await client.cradit.add(`${M.sender}.wallet`, resultAmount);
     
-    let text = '🎰 *MINING IN THE FOREST* 🎰\n\n';
+    let text = '⛏️👴 *MINING IN THE FOREST* 👴⛏️\n\n';
     text += `Spin Result: ${spinResult}\n\n`;
     text += payoutMultiplier <= 0 ? `📉 You lost ${betAmount} dollars` : `📈 You won ${resultAmount} dollars`;
     
@@ -57,27 +57,27 @@ module.exports = {
  
     if (diamondAmount > 0) {
       await client.rpg.add(`${M.sender}.diamond`, diamondAmount);
-      text += `\n\n>>You also won ${diamondAmount} diamond(s).`;
+      text += `\n\n>>You also found ${diamondAmount} diamond(s).`;
     }
     
     if (ironAmount > 0) {
       await client.rpg.add(`${M.sender}.iron`, ironAmount);
-      text += `\n\n>>You also won ${ironAmount} iron(s).`;
+      text += `\n\n>>You also found ${ironAmount} iron(s).`;
     }
     
     if (emeraldAmount > 0) {
       await client.rpg.add(`${M.sender}.emerald`, emeraldAmount);
-      text += `\n\n>>You also won ${emeraldAmount} emerald(s).`;
+      text += `\n\n>>You also found ${emeraldAmount} emerald(s).`;
     }
 
     if (woodAmount > 0) {
       await client.rpg.add(`${M.sender}.wood`, woodAmount);
-      text += `\n\n>>You also won ${woodAmount} wood(s).`;
+      text += `\n\n>>You also found ${woodAmount} wood(s).`;
     }
 
     if (goldAmount > 0) {
       await client.rpg.add(`${M.sender}.gold`, goldAmount);
-      text += `\n\n>>You also won ${goldAmount} golds(s).`;
+      text += `\n\n>>You also found ${goldAmount} golds(s).`;
     }
     
     M.reply(text);
