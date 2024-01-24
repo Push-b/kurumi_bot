@@ -9,7 +9,7 @@ module.exports = {
 
     const archer = (await client.DB.get('archer')) || []
    if (!archer.includes(M.from)) return M.reply(` *🟥 Bot is not enabled in current group ask mods to activate* `)
-        
+        let cpus = os.cpus(),
         const getGroups = await client.groupFetchAllParticipating()
         const groups = Object.entries(getGroups)
         .slice(0)
