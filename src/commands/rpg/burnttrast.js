@@ -5,6 +5,8 @@ module.exports = {
     react: "✅",
     description: 'Destroy a specified item from the inventory',
     async execute(client, arg, M) {
+    const rpg = (await client.DB.get('rpg')) || []
+   if (!rpg.includes(M.from)) return M.reply(` *🟥 rpg is not enabled in current group ask mods to activate* `)
         if (!arg) return M.reply('Please specify an item to destroy')
         const burnable = ['sword', 'armor', 'fishingrod', 'pickaxe']
         if (!burnable.includes(arg)) return M.reply('That item does not exist in game.')
