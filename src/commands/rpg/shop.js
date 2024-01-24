@@ -2,8 +2,11 @@ const items = {
     buy: [
         { potion: 17500 },
         { iron: 10000 },
+        { pickaxe: 90000 },
         { gold: 37500 },
         { wood: 3000 },
+        { armor: 44500 },
+        { sword: 300000 },
         { string: 1000 },
         { diamond: 61500 },
         { ironpickaxe: 1000000 },
