@@ -1,7 +1,7 @@
 module.exports = {
     name: 'toimg',
     aliases: ['img'],
-    category: 'utils',
+    category: 'general',
     cool: 10,
     react: "✅",
     description: 'Converts sticker to image/gif',
