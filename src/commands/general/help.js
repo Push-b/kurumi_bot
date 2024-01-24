@@ -36,7 +36,7 @@ const archer = (await client.DB.get('archer')) || []
           category,
           true
           )}   ❱━━━━━*  \n\`\`\`⁠➜${categories[category].map((cmd) => 
-            `${cmd}`).join('⁠ •• ')}\`\`\`\n\n`
+            `${cmd}`).join('⁠ ••• ')}\`\`\`\n\n`
         
         }
 
