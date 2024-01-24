@@ -173,7 +173,7 @@ module.exports = {
         )
         const metalType = Object.keys(blacksmith[command])
         if (!metalType.includes(arg.trim())) return M.reply('Please give a valid type!')
-       await client.cradit.get(`${M.sender}.wallet`
+       await client.cradit.get(`${M.sender}.wallet`) || 0;
         for (const [key, value] of Object.entries(blacksmith[command][arg.trim()].material)) {
             const item = await client.rpg.get(`${M.sender}[${key}]`) || 0
             if ((cradits - blacksmith[command][[arg.trim()]].durability * 5) < 0) return M.reply('You dont have that much in your wallet')
