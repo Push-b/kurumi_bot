@@ -2,7 +2,7 @@ const { getStats } = require('../../lib/stats')
 const sortArray = require('sort-array')
 
 module.exports = {
-    name: 'leaderboard',
+    name: 'general',
     aliases: ['lb'],
     category: 'general',
     react: "✅",
