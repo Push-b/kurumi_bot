@@ -3,7 +3,7 @@ const axios = require('axios')
 module.exports = {
     name: 'waifu',
     aliases: ['animegirl'],
-    category: 'weeb',
+    category: 'utils',
     cool: 10,
     react: "✅",
     description: 'Sends an image of a random waifu',
