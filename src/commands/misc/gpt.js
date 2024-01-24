@@ -1,7 +1,7 @@
 module.exports = {
     name: 'gpt',
     aliases: ['g'],
-    category: 'misc',
+    category: 'group',
     exp: 5,
     react: "✅",
     description: 'Let you chat with GPT chat bot',
