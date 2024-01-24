@@ -24,6 +24,8 @@ module.exports = {
     react: "✅",
     description: 'Get random elements from the mine and create stuff.',
     async execute(client, arg, M) {
+   const rpg = (await client.DB.get('rpg')) || []
+   if (!rpg.includes(M.from)) return M.reply(` *🟥 rpg is not enabled in current group ask mods to activate* `)
         const cooldown = 300000
         const lastmine = await client.DB.get(`${M.sender}.mine`)
         const pickaxe = await client.rpg.get(`${M.sender}.pickaxe`)
