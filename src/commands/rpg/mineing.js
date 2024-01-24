@@ -18,7 +18,7 @@ const elements = {
 }
 
 module.exports = {
-    name: 'mine',
+    name: 'mineing',
     aliases: ['dig'],
     category: 'rpg',
     react: "✅",
