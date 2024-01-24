@@ -1,7 +1,7 @@
 module.exports = {
     name: 'alive',
     aliases: ['a'],
-    category: 'misc',
+    category: 'group',
     cool: 30,
     react: "✅",
     description: 'Testing stuff',
