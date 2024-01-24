@@ -50,13 +50,36 @@ module.exports = {
                 return M.reply(`You dont have that much in your wallet to buy ${term[0].toLowerCase()} ${term[1] || 1}`)
             await client.rpg.add(`${M.sender}[${term[0].toLowerCase()}]`, 1 * parseInt(term[1] || 1))
             await client.cradit.sub(`${M.sender}.wallet`, price)
-            M.reply(
+             M.reply(
                 `*Thank you 🎉 for your purches*\n*Now you have _${client.utils.capitalize(term[0])} : ${(await client.rpg.get(`${M.sender}[${term[0].toLowerCase()}]`)) || 0
                 }_*`
+            )
         }
-  //Our beloved error chan. No one can stop her!
-  catch(err){
- await client.sendMessage(M.from , {image: {url: `${client.utils.errorChan()}`} , caption: `${client.utils.greetings()} Error-Chan Dis\n\nError:\n${err}`})
+        if (command == 'sell') {
+            if (!arg) return M.reply('Please give a item name')
+            const term = arg.split(' ')
+            const sellItems = Object.keys(Object.assign({}, ...items[command]))
+            if (!sellItems.includes(term[0].toLowerCase())) return M.reply('Please give a valid item name')
+            const itemQuantity = await client.rpg.get(`${M.sender}[${term[0].toLowerCase()}]`)
+            if (!itemQuantity) return M.reply('You do not have enough quantity to sell')
+            const price = parseInt(Object.values(items[command][sellItems.indexOf(term[0].toLowerCase())]).join(''))
+            await client.rpg.sub(
+                `${M.sender}[${term[0].toLowerCase()}]`,
+                'all' == term[1].toLowerCase() ? itemQuantity : 1
+            )
+            const senderEcon = await client.econ.findOne({ userId: M.sender });
+            senderEcon.wallet += price * ('all' == term[1].toLowerCase() ? itemQuantity : 1)
+            await senderEcon.save()
+            M.reply(
+                `*Congratulations 🎉 you have gained ${price} by selling ${'all' == term[1].toLowerCase() ? itemQuantity : 1
+                } ${client.utils.capitalize(term[0])}*\n*Now you have _${senderEcon.wallet}_ in your wallet*`
+            )
+        }
+        
+       }
+       //Our beloved error chan. No one can stop her!
+    catch(err){
+        await client.sendMessage(M.from , {image: {url: `${client.utils.errorChan()}`} , caption: `${client.utils.greetings()} Error-Chan Dis\n\nError:\n${err}`})
       }
     }
 }
