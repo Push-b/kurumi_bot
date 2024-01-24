@@ -27,6 +27,8 @@ module.exports = {
     exp: 8,
     description: 'RPG games for adventure',
     async execute(client, arg, M) {
+    const rpg = (await client.DB.get('rpg')) || []
+   if (!rpg.includes(M.from)) return M.reply(` *🟥 rpg is not enabled in current group ask mods to activate* `)
         const cooldown = 300000
         const lastadvn = await client.DB.get(`${M.sender}.adventure`)
         if (lastadvn !== null && cooldown - (Date.now() - lastadvn) > 0) {
