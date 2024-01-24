@@ -4,7 +4,7 @@ const cx = require('canvacord')
 module.exports = {
     name: 'rank',
     aliases: ['rk'],
-    category: 'misc',
+    category: 'group',
     react: "✅",
     description: 'Gives you your rank',
     async execute(client, arg, M) {
