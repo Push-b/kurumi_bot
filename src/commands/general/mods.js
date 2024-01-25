@@ -15,17 +15,14 @@ module.exports = {
   async execute(client, arg, M) {
 
   let mods = client.mods
+    
+    let number = '263788671478@s.whatsapp.net'
+    
+    const mods = number
 
   let mo=`*❯──「 Archer Moderators 」──❮*\n\n`
 
-  for(let i=0;i<mods.length;i++){
-         
-  let hmm = mods[i]
-         
- const um= (await client.contact.getContact(hmm, client)).username;
-         
-  mo+=`\n#${i+1}\n*Name* @${mods.split('@')[0]}\n*Contact:* http://wa.me/+${mods[i]}\n`
-   }
-     M.reply(mo)
-  }
+  mo+=`\n#${i+1}\n*Name:* @${owner.split('@')[0]}`
+        await client.sendMessage(M.from , {text , mentions: [mods]} , {quoted: M})
+    }
 }
