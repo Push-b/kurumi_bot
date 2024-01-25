@@ -24,7 +24,9 @@ module.exports = {
       
   let hmm = mods[i]
 
-  mo+=`\n#${i+1}\n*Name:* @${owner.split('@')[0]}`
-        await client.sendMessage(M.from , {text , mentions: [mods]} , {quoted: M})
-    }
+  mo+=`\n#${i+1}\n*Name:* @${mods.split('@')[0]}`
+    
+   }
+      M.reply(mo)
+  }
 }
