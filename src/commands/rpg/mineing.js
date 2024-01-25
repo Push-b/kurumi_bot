@@ -1,18 +1,18 @@
 const elements = {
     iron: {
-        damage: 5,
+        damage: 10,
         amount: Math.floor(Math.random() * 7) + 1
     },
     gold: {
-        damage: 20,
+        damage: 30,
         amount: Math.floor(Math.random() * 4) + 1
     },
     diamond: {
-        damage: 10,
+        damage: 40,
         amount: Math.floor(Math.random() * 3) + 1
     },
     emerald: {
-        damage: 30,
+        damage: 50,
         amount: Math.floor(Math.random() * 2) + 1
     }
 }
