@@ -24,7 +24,7 @@ module.exports = {
          
  const um= (await client.contact.getContact(hmm, client)).username;
          
-  mo+=`\n#${i+1}\n*Contact:* http://wa.me/+${mods[i]}\n`
+  mo+=`\n#${i+1}\n*Name* @${mods.split('@')[0]}\n*Contact:* http://wa.me/+${mods[i]}\n`
    }
      M.reply(mo)
   }
