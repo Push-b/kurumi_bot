@@ -46,7 +46,7 @@ const archer = (await client.DB.get('archer')) || []
         //   )}*\n\n${categories[category].map((cmd) => `${client.prefix}${cmd}`).join(', ')}\`\`\`\n\n`
   
         
-        let message = `🎀 *❯──「 A.R.C.H.E.R」──❮* 🎀\n\n*👋 Hello ${pushName} l am a whatsApp-Bot created by the NCT Association*\n\n💡 *➜ Our Github*: github.com/NCT-Association\n\n*>>>> This help menu is designed to help you get started with the bot* \n\n${commands}`
+        let message =             `💠 *❯───「 A.R.C.H.E.R 」───❮ 💠*\n\n*👋 Hello ${pushName} l am a whatsApp-Bot created by the NCT Association*\n\n💡 *➜ Our Github*: github.com/NCT-Association\n\n*>>>> This help menu is designed to help you get started with the bot* \n\n${commands}`
         message += `⛩️ *Thanks for using Archer. If you find me helpful, please share me with your friends and leave a review.*⭐ `
         const buffer = await client.utils.getBuffer('https://i.imgur.com/ZgrSw7W.jpg')
         
