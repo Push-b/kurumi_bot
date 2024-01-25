@@ -16,7 +16,7 @@ module.exports = {
         const random = Math.floor(Math.random() * 50) + 1
         await client.cradit.get(`${M.sender}.wallet`) || 0
         return M.reply(
-            `You destroyed ${arg} from your inventory. You recived ${random} yens as a result of this action`
+            `You destroyed ${arg} from your inventory. You recived ${random} dollars as a result of this action`
         )
     }
 }
