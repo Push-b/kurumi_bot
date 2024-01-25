@@ -15,8 +15,6 @@ module.exports = {
   async execute(client, arg, M) {
 
   let mods = client.mods
-    
-    let number = '263788671478@s.whatsapp.net'
 
   let mo=`*❯──「 Archer Moderators 」──❮*\n\n`
      
@@ -24,9 +22,8 @@ module.exports = {
       
   let hmm = mods[i]
 
-  mo+=`\n#${i+1}\n*Name:* @${mods.split('@')[0]}`
-    
-   }
+  mo+=`\n#${i+1}\n*Contact:* http://wa.me/+${mods[i]}\n`
+      }
       M.reply(mo)
   }
 }
