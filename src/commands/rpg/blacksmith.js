@@ -56,15 +56,6 @@ const blacksmith = {
             },
             durability: 150
         },
-        diamond: {
-            id: 6,
-            material: {
-                wood: 5,
-                string: 9,
-                diamond: 7
-            },
-            durability: 502
-        },
         emerald: {
             id: 7,
             material: {
