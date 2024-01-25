@@ -19,6 +19,10 @@ module.exports = {
     let number = '263788671478@s.whatsapp.net'
 
   let mo=`*❯──「 Archer Moderators 」──❮*\n\n`
+     
+  for(let i=0;i<mods.length;i++){
+      
+  let hmm = mods[i]
 
   mo+=`\n#${i+1}\n*Name:* @${owner.split('@')[0]}`
         await client.sendMessage(M.from , {text , mentions: [mods]} , {quoted: M})
