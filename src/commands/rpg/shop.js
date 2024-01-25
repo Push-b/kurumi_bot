@@ -4,8 +4,6 @@ const items = {
         { iron: 10000 },
         { pickaxe: 90000 },
         { gold: 37500 },
-        { sword: 90000 },
-        { armor: 37500 },
         { wood: 3000 },
         { string: 1000 },
         { diamond: 61500 },
