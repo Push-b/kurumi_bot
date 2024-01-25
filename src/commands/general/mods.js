@@ -17,8 +17,6 @@ module.exports = {
   let mods = client.mods
     
     let number = '263788671478@s.whatsapp.net'
-    
-    const mods = number
 
   let mo=`*❯──「 Archer Moderators 」──❮*\n\n`
 
