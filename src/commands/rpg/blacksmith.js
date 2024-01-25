@@ -178,7 +178,6 @@ module.exports = {
         for (const [key, value] of Object.entries(blacksmith[command][arg.trim()].material)) {
             const item = await client.rpg.get(`${M.sender}[${key}]`) || 0
             await client.cradit.get(`${M.sender}.wallet`) || 0;
-            if ((cradits - blacksmith[command][[arg.trim()]].durability * 5) < 0) return M.reply('You dont have that much in your wallet')
             if ((item - value) < 0) return M.reply(`You are short of ${key}\n`)
             await client.rpg.sub(`${M.sender}[${key}]`, value)
             await client.rpg.set(`${M.sender}[${type}].type`, arg.trim())
