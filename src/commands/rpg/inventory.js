@@ -22,7 +22,7 @@ module.exports = {
         if (!invemtory) return M.reply('You have no inventory')
         let text = '*━━━❰🌀YOUR_INVENTORY🌀❱━━━*\n\n'
         for (const [key, value] of Object.entries(invemtory)) {
-            text += `>>> *${key}:* ${typeof value == 'number' ? value : '\n' + objToString(value)}\n`
+            text += `>>> *${key}:* ${typeof value == 'number' ? value : + objToString(value)}`
         }
         M.reply(text)
     }
