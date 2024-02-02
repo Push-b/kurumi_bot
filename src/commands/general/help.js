@@ -45,6 +45,7 @@ const archer = (await client.DB.get('archer')) || []
   
         let message = `🕊️ *❯───「 A.R.C.H.E.R 」───❮ 🕊️*\n\n*👋 Hello ${pushName} l am a whatsApp-Bot created by the NCT Association*\n\n*>>>> This help menu is designed to help you get started with the bot* \n\n${commands}`
         message += `⛩️ *Thanks for using Archer. If you find me helpful, please share me with your friends and leave a review.*⭐ `
+       const buffer = await client.utils.getBuffer('https://i.imgur.com/ZgrSw7W.jpg')
     }
    const command = client.cmd.get(arg) || client.cmd.find((cmd) => cmd.aliases && cmd.aliases.includes(arg));
         
