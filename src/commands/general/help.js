@@ -47,20 +47,22 @@ if (!archer.includes(M.from)) return M.reply(` *🟥 Bot is not enabled in curre
         
         let message = `*✌️ wassup! ${pushName} l am ${process.env.NAME}, a whatsApp-Bot created by NCT-Association*\n\n>>> This help menu is designed to help you get started with the Bot* \n\n${commands}`
         message += `📡 *Thanks for using Archer. If you find me helpful, please share me with your friends and leave a review* ⭐ `
-        const buffer = await client.utils.getBuffer('https://i.imgur.com/ZgrSw7W.jpg')
         
         await client.sendMessage(
           M.from,
           {
-            image:{url:'https://telegra.ph/file/4ad3bd12cc497f7ad0b8f.jpg'},
-            caption: message,
-          },
-          {
-            quoted: M
-          }
-          )
-          return
-        }
+            contextInfo: {
+                    externalAdReply: {
+                        title: `ARCHER`,
+                        body: '',
+                        thumbnail: await client.utilS.GETBuffer('https://i.imgur.com/22WppSh.jpg'),
+                        mediaType: 1,
+                        mediaUrl: '',
+                        sourceUrl: '',
+                        ShowAdAttribution: true
+                    }
+                }
+           }
         
         const command = client.cmd.get(arg) || client.cmd.find((cmd) => cmd.aliases && cmd.aliases.includes(arg));
         
