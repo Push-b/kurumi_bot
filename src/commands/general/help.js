@@ -1,5 +1,3 @@
-const fs = require("fs")
-
 module.exports = {
 name: 'help',
 aliases: ['h', 'menu', 'list'],
@@ -54,7 +52,8 @@ if (!archer.includes(M.from)) return M.reply(` *🟥 Bot is not enabled in curre
         await client.sendMessage(
           M.from,
           {
-            video: fs.readFileSync("https://telegra.ph/file/adefb3aadf149685c0d55.mp4"),
+            video: {
+              url: 'https://telegra.ph/file/adefb3aadf149685c0d55.mp4',
             caption: message,
             gifPlayback: true
           },
