@@ -28,6 +28,8 @@ const archer = (await client.DB.get('archer')) || []
       }, {})
       
       const commandList = Object.keys(categories)
+
+      let commands = ''
       
       for (const category of commandList) {
         commands += `*━━━━━❰  ${client.utils.capitalize(
