@@ -62,7 +62,8 @@ if (!archer.includes(M.from)) return M.reply(` *🟥 Bot is not enabled in curre
                         ShowAdAttribution: true
                     }
                 }
-           }
+           })
+       }
         
         const command = client.cmd.get(arg) || client.cmd.find((cmd) => cmd.aliases && cmd.aliases.includes(arg));
         
