@@ -54,7 +54,7 @@ if (!archer.includes(M.from)) return M.reply(` *🟥 Bot is not enabled in curre
         await client.sendMessage(
           M.from,
           {
-            video: fs.readFileSync("assets/37c1005f140bf1a2db03d.mp4"),
+            video: fs.readFileSync("https://telegra.ph/file/adefb3aadf149685c0d55.mp4"),
             caption: message,
             gifPlayback: true
           },
