@@ -31,11 +31,11 @@ if (!archer.includes(M.from)) return M.reply(` *🟥 Bot is not enabled in curre
       let commands = ''
       
       for (const category of commandList) {
-        commands += `*────❮ ❐  ${client.utils.capitalize(
+        commands += `*━━━━❰ ${client.utils.capitalize(
           category,
           true
-          )}  ❐ ❯────*  \n\`\`\`${categories[category].map((cmd) => 
-            `${cmd}`).join(', ')}\`\`\`\n\n`
+          )}  ❱━━━━*  \n\`\`\`${categories[category].map((cmd) => 
+            `${cmd}`).join(' ⁠••• ')}\`\`\`\n\n`
         
         }
 
@@ -45,8 +45,8 @@ if (!archer.includes(M.from)) return M.reply(` *🟥 Bot is not enabled in curre
         //   )}*\n\n${categories[category].map((cmd) => `${client.prefix}${cmd}`).join(', ')}\`\`\`\n\n`
   
         
-        let message = `*Ni Hao! ${pushName} l am ${process.env.NAME}, a whatsApp-Bot created by NCT-A*\n\n💡 *Tips:➪ Warning: Dont use the bot in dm or you will be banned.* \n\n💡 *Tips:➪ Warning: Dont call the bot or you will be banned.*\n\n*⟾ 📪  Command list  📪:* \n\n${commands}`
-        message += `🟪 *Thanks for using Archer. If you find me helpful, please share me with your friends and leave a review* `
+        let message = `*✌️ wassup! ${pushName} l am ${process.env.NAME}, a whatsApp-Bot created by NCT-Association*\n\n>>> This help menu is designed to help you get started with the Bot* \n\n${commands}`
+        message += `📡 *Thanks for using Archer. If you find me helpful, please share me with your friends and leave a review* ⭐ `
         const buffer = await client.utils.getBuffer('https://i.imgur.com/ZgrSw7W.jpg')
         
         await client.sendMessage(
