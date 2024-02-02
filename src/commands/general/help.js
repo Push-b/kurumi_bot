@@ -56,7 +56,7 @@ if (!archer.includes(M.from)) return M.reply(` *🟥 Bot is not enabled in curre
                         title: `ARCHER`,
                         body: '',
                         thumbnail: await client.utils.getBuffer('https://i.imgur.com/22WppSh.jpg'),
-                        mediaType: 1,
+                        mediaType: 2,
                         mediaUrl: '',
                         sourceUrl: '',
                         ShowAdAttribution: true
