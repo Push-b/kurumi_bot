@@ -49,13 +49,11 @@ if (!archer.includes(M.from)) return M.reply(` *🟥 Bot is not enabled in curre
         message += `📡 *Thanks for using Archer. If you find me helpful, please share me with your friends and leave a review* ⭐ `
         const buffer = await client.utils.getBuffer('https://i.imgur.com/ZgrSw7W.jpg')
         
-        await client.sendMessage(
+         await client.sendMessage(
           M.from,
           {
-            video: {
-              url: 'https://telegra.ph/file/adefb3aadf149685c0d55.mp4',
+            image:{url:''},
             caption: message,
-            gifPlayback: true
           },
           {
             quoted: M
