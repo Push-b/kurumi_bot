@@ -29,7 +29,7 @@ const archer = (await client.DB.get('archer')) || []
       
       const commandList = Object.keys(categories)
       
-      let commands = ''
+       let text = `🕊️ *❯───「 A.R.C.H.E.R 」───❮ 🕊️*\n\n*👋 Hello ${pushName} l am a whatsApp-Bot created by the NCT Association*\n\n*>>>> This help menu is designed to help you get started with the bot* \n\n${commands}`
       
       for (const category of commandList) {
         commands += `*━━━━━❰  ${client.utils.capitalize(
@@ -45,25 +45,21 @@ const archer = (await client.DB.get('archer')) || []
         //   true
         //   )}*\n\n${categories[category].map((cmd) => `${client.prefix}${cmd}`).join(', ')}\`\`\`\n\n`
   
-        
-        let message =             `🕊️ *❯───「 A.R.C.H.E.R 」───❮ 🕊️*\n\n*👋 Hello ${pushName} l am a whatsApp-Bot created by the NCT Association*\n\n*>>>> This help menu is designed to help you get started with the bot* \n\n${commands}`
-        message += `⛩️ *Thanks for using Archer. If you find me helpful, please share me with your friends and leave a review.*⭐ `
-        const buffer = await client.utils.getBuffer('https://i.imgur.com/ZgrSw7W.jpg')
-        
-        await client.sendMessage(
-          M.from,
-          {
-            image:{url:'https://telegra.ph/file/505307775b32d70bb432e.jpg'},
-            caption: message,
-          },
-          {
-            quoted: M
-          }
-          )
-          return
+        return M.replyRaw({
+        text: `⛩️ *Thanks for using Archer. If you find me helpful, please share me with your friends and leave a review.*⭐ `
+        contextInfo: {
+                externalAdReply: {
+                    title: `Archer`,
+                    body: ``,
+                    thumbnail: await client.utils.getBuffer('https://i.imgur.com/22WppSh.jpg'),
+                    mediaType: 1,
+                    mediaUrl: '',
+                    sourceUrl: 'github.com/NCT-Association',
+                    ShowAdAttribution: true
+                }
+            }
         }
-        
-        const command = client.cmd.get(arg) || client.cmd.find((cmd) => cmd.aliases && cmd.aliases.includes(arg));
+   const command = client.cmd.get(arg) || client.cmd.find((cmd) => cmd.aliases && cmd.aliases.includes(arg));
         
         if (!command) {
           return M.reply('Command not found');
