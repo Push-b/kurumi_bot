@@ -1,3 +1,5 @@
+const fs = require("fs")
+
 module.exports = {
 name: 'help',
 aliases: ['h', 'menu', 'list'],
