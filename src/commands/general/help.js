@@ -25,6 +25,8 @@ module.exports = {
                 // Generating the command list
                 message = `*❱━━「 A.R.C.H.E.R 」━━❰*\n\n*👋 Hello* ${pushName}. \n\nThis help menu is designed to help you get started with the bot.\n\n⟾ *📪Command List📪*\n\n${commands}`;
                 message += `📚Notes: *➪Use ${client.prefix}help <command_name> for more info of a specific command.*\n*➪Example: /help hello.*`;
+               const buffer = await client.utils.getBuffer('https://i.imgur.com/ZgrSw7W.jpg')
+        
             } else {
                 // Retrieving detailed info about a specific command
                 const command = client.cmd.get(arg) || client.cmd.find((cmd) => cmd.aliases && cmd.aliases.includes(arg))
