@@ -47,7 +47,7 @@ if (!archer.includes(M.from)) return M.reply(` *🟥 Bot is not enabled in curre
         
         let message = `*✌️ wassup! ${pushName} l am ${process.env.NAME}, a whatsApp-Bot created by NCT-Association*\n\n>>> This help menu is designed to help you get started with the Bot* \n\n${commands}`
         message += `📡 *Thanks for using Archer. If you find me helpful, please share me with your friends and leave a review* ⭐ `
-        const thumbnailUrls: string[] = [
+        const thumbnailUrls = [
          "https://images3.alphacoders.com/107/1078895.png",
         "https://images6.alphacoders.com/103/1037400.png",
         "https://images6.alphacoders.com/102/1020806.jpg",
@@ -62,7 +62,7 @@ if (!archer.includes(M.from)) return M.reply(` *🟥 Bot is not enabled in curre
         "https://images2.alphacoders.com/125/1258571.jpg",
         "https://images2.alphacoders.com/125/1254189.jpg",
       ];
-      private thumbnailUrls: string { 
+      const thumbnailUrlLogo =
       const randomIndex = Math.floor(Math.random() * client.thumbnailUrls.length);
         
         await client.sendMessage(
