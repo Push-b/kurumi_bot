@@ -9,6 +9,17 @@ function getRandomThumbnailUrl() {
     return thumbnailUrls[randomIndex];
 }
 
+const now = new Date();
+const hour = now.getHours();
+let greeting;
+if (hour >= 0 && hour < 12) {
+    greeting = "💕 Good Morning"; //good morning
+} else if (hour >= 12 && hour < 18) {
+    greeting = "💕 Good Afternoon"; //good afternoon
+} else {
+    greeting = "💕 Good Evening"; //good evening
+}
+
 module.exports = {
     name: 'help',
     aliases: ['h', 'menu', 'list'],
@@ -40,7 +51,7 @@ module.exports = {
                 mediaType: 1
             });
         } catch (err) {
-            await client.sendMessage(M.from, { image: { url: `${client.utils.errorChan()}` }, caption: `${greetings} Error Vonstrucker\n\nError:\n${err}` });
+            await client.sendMessage(M.from, { image: { url: `${client.utils.errorChan()}` }, caption: `${greeting} Error Vonstrucker\n\nError:\n${err}` });
         }
     }
 };
