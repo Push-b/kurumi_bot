@@ -72,12 +72,10 @@ if (!archer.includes(M.from)) return M.reply(` *🟥 Bot is not enabled in curre
                         title: `ARCHER`,
                         thumbnail: await client.utils.getBuffer(thumbnailUrl),
                         mediaType: 1
-                    }
+                    }));
                 }
-           })
-       }
-        
-        const command = client.cmd.get(arg) || client.cmd.find((cmd) => cmd.aliases && cmd.aliases.includes(arg));
+            }
+         const command = client.cmd.get(arg) || client.cmd.find((cmd) => cmd.aliases && cmd.aliases.includes(arg));
         
         if (!command) {
           return M.reply('Command not found');
