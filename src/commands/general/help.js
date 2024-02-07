@@ -68,7 +68,6 @@ module.exports = {
                 const command = client.cmd.get(arg) || client.cmd.find((cmd) => cmd.aliases && cmd.aliases.includes(arg))
                 if (!command) return M.reply('Command not found');
                 message = `*CMD INFO*\n\n*🔴 Name:* ${command.name}\n*🟠 Aliases:* ${command.aliases.join(', ')}\n*𒉽 🟢:* ${command.description}`;
-            }
 
             await M.reply(message, 'text', undefined, undefined, undefined, [M.sender.jid], {
                 title: client.utils.capitalize(`${client.config.name} Commands`),
