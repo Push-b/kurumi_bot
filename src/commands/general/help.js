@@ -40,7 +40,7 @@ module.exports = {
                 mediaType: 1
             });
         } catch (err) {
-            await client.sendMessage(M.from, { image: { url: `${client.utils.errorChan()}` }, caption: `${greeting} Error Vonstrucker\n\nError:\n${err}` });
+            await client.sendMessage(M.from, { image: { url: `${client.utils.errorChan()}` }, caption: `${greetings} Error Vonstrucker\n\nError:\n${err}` });
         }
     }
 };
