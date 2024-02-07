@@ -41,6 +41,7 @@ module.exports = {
         const message = `🔴 *Command*: ${command.name}\n🟤 *Aliases*: ${aliases}\n🟢 *Category*: ${command.category}\n⚪ *Cooldown*: ${cooldown}\n🟠 *Desc*: ${description}`;
 
         M.reply(message)   
-        }
-    })
+          }
+       }
+   })
  }
