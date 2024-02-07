@@ -27,7 +27,8 @@ module.exports = {
                 // Generating the command list
                 message = `*❱━━━「A.R.C.H.E.R」━━━❰*\n\n*${greeting}* ${pushName}. \n\nThis help menu is designed to help you get started with the bot.\n\n⟾ *📪Command List📪*\n\n${commands}`;
                 message += `📚Notes: *➪Use ${client.prefix}help <command_name> for more info of a specific command.*\n*➪Example: /help hello.*`;
-    
+                const buffer = await client.utils.getBuffer('https://i.imgur.com/ZgrSw7W.jpg')
+        
            await M.reply(message, 'text', undefined, undefined, undefined, [M.sender.jid], {
                 title: client.utils.capitalize(`${client.config.name} Commands`),
                 thumbnail: await client.utils.getBuffer(thumbnailUrl),
@@ -40,8 +41,11 @@ module.exports = {
 
         const message = `🔴 *Command*: ${command.name}\n🟤 *Aliases*: ${aliases}\n🟢 *Category*: ${command.category}\n⚪ *Cooldown*: ${cooldown}\n🟠 *Desc*: ${description}`;
 
-        M.reply(message)   
-          }
-       }
-   })
- }
+     M.reply(message);
+
+  }catch(err){
+    await client.sendMessage(M.from , {image: {url: `${client.utils.errorChan()}`} , caption: `${client.utils.greetings()} Error-Chan Dis\n\nError:\n${err}`})
+  }
+          
+    }
+}
