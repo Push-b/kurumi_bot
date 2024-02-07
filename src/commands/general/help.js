@@ -63,8 +63,7 @@ module.exports = {
         let message = `*👋 Hello ${pushName} l'm ${process.env.NAME}. A whatsApp-Bot created by the NCT Association*\n\n💡 *Tips:➪ Warning: Dont use the bot in dm or you will be banned.* \n\n💡 *Tips:➪ Warning: Dont call the bot or you will be banned.*\n\n*╭⁠☞ Our Github*: github.com/NCT-Association\n\n 📝  *My commamd list*  📝: \n\n${commands}`
         message += `⛩️ *Thanks for using Archer. If you find me helpful, please share me with your friends and leave a review.* `
         const buffer = await client.utils.getBuffer('https://i.imgur.com/ZgrSw7W.jpg')
-        
-            } else {
+            } 
                 // Retrieving detailed info about a specific command
                 const command = client.cmd.get(arg) || client.cmd.find((cmd) => cmd.aliases && cmd.aliases.includes(arg))
                 if (!command) return M.reply('Command not found');
