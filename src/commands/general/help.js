@@ -37,6 +37,14 @@ module.exports = {
                 thumbnail: await client.utils.getBuffer(thumbnailUrl),
                 mediaType: 1
             });
+
+        const aliases = command.aliases ? command.aliases.join(', ') : 'No Aliases';
+        const cooldown = command.cool ? command.cool : 'No cooldown';
+        const description = command.description ? command.description : 'No Description'
+
+        const message = `🔴 *Command*: ${command.name}\n🟤 *Aliases*: ${aliases}\n🟢 *Category*: ${command.category}\n⚪ *Cooldown*: ${cooldown}\n🟠 *Desc*: ${description}`;
+
+        M.reply(message);
         } catch (err) {
            await client.sendMessage(M.from , {image: {url: `${client.utils.errorChan()}`} , caption: `${client.utils.greetings()} Error-Chan Dis\n\nError:\n${err}`})
         }
