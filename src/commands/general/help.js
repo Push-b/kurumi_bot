@@ -75,7 +75,7 @@ module.exports = {
 
             await M.reply(message, 'text', undefined, undefined, undefined, [M.sender.jid], {
                 title: client.utils.capitalize(`${client.config.name} Commands`),
-                const thumbnailUrl = getRandomThumbnailUrl();
+                const thumbnailUrl = await.client.getRandomThumbnailUrl();
                 thumbnail: await client.utils.getBuffer(thumbnailUrl),
                 mediaType: 1
             });
