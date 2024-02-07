@@ -63,7 +63,7 @@ if (!archer.includes(M.from)) return M.reply(` *🟥 Bot is not enabled in curre
         "https://images2.alphacoders.com/125/1254189.jpg",
       ];
       const thumbnailUrlLogo =
-      const randomIndex = Math.floor(Math.random() * client.thumbnailUrls.length);
+      randomIndex = Math.floor(Math.random() * client.thumbnailUrls.length);
         
         await client.sendMessage(
           M.from,
