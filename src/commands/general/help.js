@@ -33,6 +33,10 @@ module.exports = {
 
             let message = '';
             if (!arg) {
+            let pushName = M.pushName.trim();
+           if (pushName.split(' ').length === 1) {
+        pushName = `${pushName} .`;
+      }
                 // Generating the command list
                 message = `*❱━━「 A.R.C.H.E.R 」━━❰*\n\n*👋 Hello* ${pushName}. \n\nThis help menu is designed to help you get started with the bot.\n\n⟾ *📪Command List📪*\n\n${commands}`;
                 message += `📚Notes: *➪Use ${client.prefix}help <command_name> for more info of a specific command.*\n*➪Example: /help hello.*`;
