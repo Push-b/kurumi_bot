@@ -29,14 +29,16 @@ module.exports = {
     description: 'Displays the command list or specific command info',
     async execute(client, arg, M) {
         try {
-            const thumbnailUrl = getRandomThumbnailUrl();
+            
             if (!arg) {
-            let pushName = M.pushName.trim();
-           if (pushName.split(' ').length === 1) {
+    
+      let pushName = M.pushName.trim();
+  
+      if (pushName.split(' ').length === 1) {
         pushName = `${pushName} .`;
       }
-
-        const categories = client.cmd.reduce((obj, cmd) => {
+      
+      const categories = client.cmd.reduce((obj, cmd) => {
         const category = cmd.category || 'Uncategorized'
         obj[category] = obj[category] || []
         obj[category].push(cmd.name)
@@ -46,7 +48,9 @@ module.exports = {
       const commandList = Object.keys(categories)
       
       let commands = ''
-       commands += `*━━━❰   ${client.utils.capitalize(
+      
+      for (const category of commandList) {
+        commands += `*━━━❰   ${client.utils.capitalize(
           category,
           true
           )}   ❱━━━*  \n\`\`\`☞${categories[category].map((cmd) => 
@@ -71,6 +75,7 @@ module.exports = {
 
             await M.reply(message, 'text', undefined, undefined, undefined, [M.sender.jid], {
                 title: client.utils.capitalize(`${client.config.name} Commands`),
+                const thumbnailUrl = getRandomThumbnailUrl();
                 thumbnail: await client.utils.getBuffer(thumbnailUrl),
                 mediaType: 1
             });
