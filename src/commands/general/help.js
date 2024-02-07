@@ -28,9 +28,12 @@ module.exports = {
     react: "🏹",
     description: 'Displays the command list or specific command info',
     async execute(client, arg, M) {
+        
         try {
             
-            if (!arg) {
+       const thumbnailUrl = getRandomThumbnailUrl();
+            
+      if (!arg) {
     
       let pushName = M.pushName.trim();
   
@@ -75,7 +78,6 @@ module.exports = {
 
             await M.reply(message, 'text', undefined, undefined, undefined, [M.sender.jid], {
                 title: client.utils.capitalize(`${client.config.name} Commands`),
-                const thumbnailUrl = await.client.getRandomThumbnailUrl();
                 thumbnail: await client.utils.getBuffer(thumbnailUrl),
                 mediaType: 1
             });
