@@ -40,9 +40,7 @@ module.exports = {
 
         const message = `🔴 *Command*: ${command.name}\n🟤 *Aliases*: ${aliases}\n🟢 *Category*: ${command.category}\n⚪ *Cooldown*: ${cooldown}\n🟠 *Desc*: ${description}`;
 
-        M.reply(message);
-        } catch (err) {
-           await client.sendMessage(M.from , {image: {url: `${client.utils.errorChan()}`} , caption: `${client.utils.greetings()} Error-Chan Dis\n\nError:\n${err}`})
+        M.reply(message)   
         }
     }
-};
+ }
