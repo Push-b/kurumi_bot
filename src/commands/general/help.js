@@ -42,7 +42,7 @@ if (!archer.includes(M.from)) return M.reply(` *🟥 Bot is not enabled in curre
       
       const commandList = Object.keys(categories)
       
-      let commands = ''
+      let message = ''
       
       for (const category of commandList) {
         commands += `*━━━━❰ ${client.utils.capitalize(
@@ -59,9 +59,7 @@ if (!archer.includes(M.from)) return M.reply(` *🟥 Bot is not enabled in curre
         //   )}*\n\n${categories[category].map((cmd) => `${client.prefix}${cmd}`).join(', ')}\`\`\`\n\n`
   
         
-        let message = `*✌️ wassup! ${pushName} l am ${process.env.NAME}, a whatsApp-Bot created by NCT-Association*\n\n>>> This help menu is designed to help you get started with the Bot* \n\n${commands}`
-        message += `📡 *Thanks for using Archer. If you find me helpful, please share me with your friends and leave a review* ⭐ `
-         
+       
         await M.reply(message, 'text', undefined, undefined, undefined, [M.sender.jid], {
                 title: client.utils.capitalize(`${client.config.name} Commands`),
                 thumbnail: await client.utils.getBuffer(thumbnailUrl),
