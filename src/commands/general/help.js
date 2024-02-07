@@ -54,12 +54,8 @@ if (!archer.includes(M.from)) return M.reply(` *🟥 Bot is not enabled in curre
             contextInfo: {
                     externalAdReply: {
                         title: `ARCHER`,
-                        body: '',
-                        thumbnail: 'https://i.imgur.com/22WppSh.jpg',
+                        thumbnail: await client.utils.getBuffer ('https://telegra.ph/file/e435278bda4f546ba3cfa.jpg'),
                         mediaType: 1,
-                        mediaUrl: '',
-                        sourceUrl: '',
-                        ShowAdAttribution: true
                     }
                 }
            })
