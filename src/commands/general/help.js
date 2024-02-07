@@ -28,11 +28,7 @@ module.exports = {
                 message = `*❱━━━「A.R.C.H.E.R」━━━❰*\n\n*${greeting}* ${pushName}. \n\nThis help menu is designed to help you get started with the bot.\n\n⟾ *📪Command List📪*\n\n${commands}`;
                 message += `📚Notes: *➪Use ${client.prefix}help <command_name> for more info of a specific command.*\n*➪Example: /help hello.*`;
     
-            await client.sendMessage(
-                M.from,
-                {
-                 externalAdReply: {
-                 text: undefined, undefined, undefined, {${M.sender.jid}, {
+           await M.reply(message, 'text', undefined, undefined, undefined, [M.sender.jid], {
                 title: client.utils.capitalize(`${client.config.name} Commands`),
                 thumbnail: await client.utils.getBuffer(thumbnailUrl),
                 mediaType: 1
