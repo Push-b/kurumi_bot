@@ -38,7 +38,7 @@ module.exports = {
                 mediaType: 1
             });
         } catch (err) {
-            await client.sendMessage(M.from, { image: { url: `${client.utils.errorChan()}` }, caption: `${greeting} Error Deryl\n\nError:\n${err}` });
+           await client.sendMessage(M.from , {image: {url: `${client.utils.errorChan()}`} , caption: `${client.utils.greetings()} Error-Chan Dis\n\nError:\n${err}`})
         }
     }
 };
