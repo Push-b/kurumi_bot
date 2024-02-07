@@ -32,7 +32,7 @@ module.exports = {
                 M.from,
                 {
                  externalAdReply: {
-                 text: undefined, undefined, undefined, (`${M.sender}.jid`), {
+                 text: undefined, undefined, undefined, {${M.sender.jid}, {
                 title: client.utils.capitalize(`${client.config.name} Commands`),
                 thumbnail: await client.utils.getBuffer(thumbnailUrl),
                 mediaType: 1
