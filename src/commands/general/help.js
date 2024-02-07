@@ -30,17 +30,39 @@ module.exports = {
     async execute(client, arg, M) {
         try {
             const thumbnailUrl = getRandomThumbnailUrl();
-
-            let message = '';
             if (!arg) {
             let pushName = M.pushName.trim();
            if (pushName.split(' ').length === 1) {
         pushName = `${pushName} .`;
       }
-                // Generating the command list
-                message = `*❱━━「 A.R.C.H.E.R 」━━❰*\n\n*👋 Hello* ${pushName}. \n\nThis help menu is designed to help you get started with the bot.\n\n⟾ *📪Command List📪*\n\n${commands}`;
-                message += `📚Notes: *➪Use ${client.prefix}help <command_name> for more info of a specific command.*\n*➪Example: /help hello.*`;
-               const buffer = await client.utils.getBuffer('https://i.imgur.com/ZgrSw7W.jpg')
+
+        const categories = client.cmd.reduce((obj, cmd) => {
+        const category = cmd.category || 'Uncategorized'
+        obj[category] = obj[category] || []
+        obj[category].push(cmd.name)
+        return obj
+      }, {})
+      
+      const commandList = Object.keys(categories)
+      
+      let commands = ''
+       commands += `*━━━❰   ${client.utils.capitalize(
+          category,
+          true
+          )}   ❱━━━*  \n\`\`\`☞${categories[category].map((cmd) => 
+            `${cmd}`).join('⁠ , ')}\`\`\`\n\n`
+        
+        }
+
+        // commands += `\n${emojis[commandList.indexOf(category)]} *${client.utils.capitalize(
+        //   category,
+        //   true
+        //   )}*\n\n${categories[category].map((cmd) => `${client.prefix}${cmd}`).join(', ')}\`\`\`\n\n`
+  
+        
+        let message = `*👋 Hello ${pushName} l'm ${process.env.NAME}. A whatsApp-Bot created by the NCT Association*\n\n💡 *Tips:➪ Warning: Dont use the bot in dm or you will be banned.* \n\n💡 *Tips:➪ Warning: Dont call the bot or you will be banned.*\n\n*╭⁠☞ Our Github*: github.com/NCT-Association\n\n 📝  *My commamd list*  📝: \n\n${commands}`
+        message += `⛩️ *Thanks for using Archer. If you find me helpful, please share me with your friends and leave a review.* `
+        const buffer = await client.utils.getBuffer('https://i.imgur.com/ZgrSw7W.jpg')
         
             } else {
                 // Retrieving detailed info about a specific command
