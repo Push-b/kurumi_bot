@@ -72,7 +72,7 @@ module.exports = {
         await client.sendMessage(
           M.from,
           {
-           text: undefined, undefined, undefined, undefined, (`${client.M.sender}.jid `}, {
+           text: undefined, undefined, undefined, undefined, 
            title: client.utils.capitalize(`${client.config.name} Commands `},
            thumbnail: await client.utils.getBuffer(thumbnailUrl),
             mediaType: 1
