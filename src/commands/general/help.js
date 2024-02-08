@@ -71,7 +71,7 @@ module.exports = {
         await client.sendMessage(
           M.from,
           {
-           text:  += `${text} ⛩️ *Thanks for using Archer. If you find me helpful, please share me with your friends and leave a review.* `
+           text: `${text} ⛩️ *Thanks for using Archer. If you find me helpful, please share me with your friends and leave a review.* `
           contextInfo: {
            externalAdReply: {
            title: client.utils.capitalize(`${process.env.NAME}'s Commands `),
