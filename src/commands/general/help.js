@@ -73,7 +73,7 @@ module.exports = {
           M.from,
           {
            text: undefined, undefined, undefined, undefined, 
-           title: client.utils.capitalize(`${client.config.name} Commands `},
+           title: client.utils.capitalize(`${client.config.name} Commands `),
            thumbnail: await client.utils.getBuffer(thumbnailUrl),
             mediaType: 1
           },
