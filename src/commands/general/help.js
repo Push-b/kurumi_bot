@@ -65,25 +65,11 @@ module.exports = {
         //   )}*\n\n${categories[category].map((cmd) => `${client.prefix}${cmd}`).join(', ')}\`\`\`\n\n`
   
         
-        let text = `*👋 Hello ${pushName} l'm ${process.env.NAME}. A whatsApp-Bot created by the NCT Association*\n\n💡 *Tips:➪ Warning: Dont use the bot in dm or you will be banned.* \n\n💡 *Tips:➪ Warning: Dont call the bot or you will be banned.*\n\n*╭⁠☞ Our Github*: github.com/NCT-Association\n\n 📝  *My commamd list*  📝: \n\n${commands}`
+        let message = `*👋 Hello ${pushName} l'm ${process.env.NAME}. A whatsApp-Bot created by the NCT Association*\n\n💡 *Tips:➪ Warning: Dont use the bot in dm or you will be banned.* \n\n💡 *Tips:➪ Warning: Dont call the bot or you will be banned.*\n\n*╭⁠☞ Our Github*: github.com/NCT-Association\n\n 📝  *My commamd list*  📝: \n\n${commands}`
+         message += `⛩️ *Thanks for using Archer. If you find me helpful, please share me with your friends and leave a review.* `
         const buffer = await client.utils.getBuffer('https://i.imgur.com/ZgrSw7W.jpg')
         const thumbnailUrl = getRandomThumbnailUrl();
-        await client.sendMessage(
-          M.from,
-          {
-           text: `${text} ⛩️ *Thanks for using Archer. If you find me helpful, please share me with your friends and leave a review.* `
-           title: client.utils.capitalize(`${process.env.NAME}'s Commands `),
-           thumbnail: await client.utils.getBuffer(thumbnailUrl),
-            mediaType: 1
-          },
-          {
-            quoted: M
-          }
-          )
-          return
-        }
-        
-        const command = client.cmd.get(arg) || client.cmd.find((cmd) => cmd.aliases && cmd.aliases.includes(arg));
+       const command = client.cmd.get(arg) || client.cmd.find((cmd) => cmd.aliases && cmd.aliases.includes(arg));
         
         if (!command) {
           return M.reply('Command not found');
