@@ -69,6 +69,19 @@ module.exports = {
          message += `⛩️ *Thanks for using Archer. If you find me helpful, please share me with your friends and leave a review.* `
         const buffer = await client.utils.getBuffer('https://i.imgur.com/ZgrSw7W.jpg')
         const thumbnailUrl = getRandomThumbnailUrl();
+
+       await client.sendMessage(
+          M.from,
+          {
+            image:{url:'https://telegra.ph/file/505307775b32d70bb432e.jpg'},
+            caption: message,
+          },
+          {
+            quoted: M
+          }
+          )
+          return
+        }
        const command = client.cmd.get(arg) || client.cmd.find((cmd) => cmd.aliases && cmd.aliases.includes(arg));
         
         if (!command) {
