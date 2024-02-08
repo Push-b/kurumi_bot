@@ -31,8 +31,6 @@ module.exports = {
         
         try {
             
-       const thumbnailUrl = getRandomThumbnailUrl();
-            
    if (!arg) {
     
       let pushName = M.pushName.trim();
@@ -70,12 +68,14 @@ module.exports = {
         let message = `*👋 Hello ${pushName} l'm ${process.env.NAME}. A whatsApp-Bot created by the NCT Association*\n\n💡 *Tips:➪ Warning: Dont use the bot in dm or you will be banned.* \n\n💡 *Tips:➪ Warning: Dont call the bot or you will be banned.*\n\n*╭⁠☞ Our Github*: github.com/NCT-Association\n\n 📝  *My commamd list*  📝: \n\n${commands}`
         message += `⛩️ *Thanks for using Archer. If you find me helpful, please share me with your friends and leave a review.* `
         const buffer = await client.utils.getBuffer('https://i.imgur.com/ZgrSw7W.jpg')
-        
+        const thumbnailUrl = getRandomThumbnailUrl();
         await client.sendMessage(
           M.from,
           {
-            image:{url:'https://telegra.ph/file/505307775b32d70bb432e.jpg'},
-            caption: message,
+           text: undefined, undefined, undefined, undefined, [M.sender.jid], {
+           title: client.utils.capitalize(`${client.config.name} Commands `},
+           thumbnail: await client.utils.getBuffer(thumbnailUrl),
+            mediaType: 1
           },
           {
             quoted: M
