@@ -23,6 +23,7 @@ function getRandomThumbnailUrl() {
     return thumbnailUrls[randomIndex];
 }
  const thumbnailUrl = getRandomThumbnailUrl(); 
+ const buffer = await client.utils.getBuffer('https://i.imgur.com/ZgrSw7W.jpg'
  let wallet = await client.cradit.get(`${M.sender}.wallet`) || 0;
 let thumbnail =  await client.utils.getBuffer(thumbnailUrl)
    
@@ -31,7 +32,7 @@ let thumbnail =  await client.utils.getBuffer(thumbnailUrl)
          externalAdReply: {
           tittle: 'Wallet',
           body: '',
-         mediaType: 2
+         mediaType: 1
             }
          }
       })
