@@ -38,4 +38,5 @@ function getRandomThumbnailUrl() {
          ShowAdAttribution: true
        }
     })
+  }
 }
