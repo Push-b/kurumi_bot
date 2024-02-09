@@ -55,7 +55,7 @@ if (hour >= 0 && hour < 12) {
           category,
           true
           )}   ❱━━━━*  \n\n\`\`\`⁠➜${categories[category].map((cmd) => 
-            `${cmd}`).join('|')}\`\`\`\n\n`
+            `${cmd}`).join('°|°')}\`\`\`\n\n`
         
         }
 
