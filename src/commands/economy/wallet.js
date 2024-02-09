@@ -22,17 +22,15 @@ function getRandomThumbnailUrl() {
     const randomIndex = Math.floor(Math.random() * thumbnailUrls.length);
     return thumbnailUrls[randomIndex];
 }
-   
+ const thumbnailUrl = getRandomThumbnailUrl(); 
  let wallet = await client.cradit.get(`${M.sender}.wallet`) || 0;
-let imageT =  await client.utils.getBuffer(thumbnailUrl),
- const thumbnailUrl = getRandomThumbnailUrl();
+let thumbnail =  await client.utils.getBuffer(thumbnailUrl)
    
-   await client.sendMessage(M.from, {image: imageT, caption: `👤 *Name:* ${(await client.contact.getContact(M.sender, client)).username}\n🔖 *Tag:* #${M.sender.substring(3, 7)}\n💵 *dollars:* ${wallet}`,
+   await client.sendMessage(M.from, {image: thumbnail, caption: `👤 *Name:* ${(await client.contact.getContact(M.sender, client)).username}\n🔖 *Tag:* #${M.sender.substring(3, 7)}\n💵 *dollars:* ${wallet}`,
           contextInfo: {
          externalAdReply: {
           tittle: 'Wallet',
-         thumbnail: await client.utils.getBuffer(thumbnailUrl),
-         body: '',
+          body: '',
          mediaType: 2
             }
          }
