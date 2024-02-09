@@ -31,8 +31,7 @@ function getRandomThumbnailUrl() {
           contextInfo: {
          externalAdReply: {
         tittle: 'Wallet',   
-         body: ''
-       const thumbnail =  await client.utils.getBuffer(thumbnailUrl),
+         body: '',
         mediaType: 1
             }
          }
