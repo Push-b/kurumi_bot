@@ -33,7 +33,7 @@ function getRandomThumbnailUrl() {
           thumbnail: await client.utils.getBuffer (thumbnailUrl),
           mediaType: 1
           }
-       }
+       })
     })
   }
 }
