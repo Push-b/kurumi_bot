@@ -29,15 +29,12 @@ function getRandomThumbnailUrl() {
 
  let text = `👝 *Wallet* 👝\n\n👤 *Name:* ${(await client.contact.getContact(M.sender, client)).username}\n🔖 *Tag:* #${M.sender.substring(3, 7)}\n💵 *dollars:* ${wallet}`
    
-   await client.sendMessage(
-          M.from,
-          {
+   await client.sendMessage(M.from, {image:{url: thumbnailUrl},
+          contextInfo: {
           externalAdReply: {
           tittle: `Wallet`,
           thumbnail: await client.utils.getBuffer (thumbnailUrl),
-          mediaType: 1,
-         ShowAdAttribution: true
+          mediaType: 1
        }
-    })
-  }
-}
+    }
+  })
