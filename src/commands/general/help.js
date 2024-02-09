@@ -77,6 +77,8 @@ if (hour >= 0 && hour < 12) {
             thumbnail: await client.utils.getBuffer(thumbnailUrl),
            mediaType: 1
              }
-         }
-     })
-   }
+          }
+      })
+    }
+  }
+}
