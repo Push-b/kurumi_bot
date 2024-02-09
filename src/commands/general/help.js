@@ -80,7 +80,8 @@ if (hour >= 0 && hour < 12) {
          }
      })
    }
-       const aliases = command.aliases ? command.aliases.join(', ') : 'No Aliases';
+        const command = client.cmd.get(arg) || client.cmd.find((cmd) => cmd.aliases && cmd.aliases.includes(arg));
+        const aliases = command.aliases ? command.aliases.join(', ') : 'No Aliases';
         const cooldown = command.cool ? command.cool : 'No cooldown';
         const description = command.description ? command.description : 'No Description'
 
