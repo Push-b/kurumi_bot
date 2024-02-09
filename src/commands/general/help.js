@@ -1,4 +1,13 @@
-const thumbnailUrls = [
+module.exports = {
+    name: 'help',
+    aliases: ['h', 'menu', 'list'],
+    category: 'general',
+    exp: 10,
+    react: "🏹",
+    description: 'Displays the command list or specific command info',
+    async execute(client, arg, M) {
+
+    const thumbnailUrls = [
     'https://telegra.ph/file/505307775b32d70bb432e.jpg',
     'https://telegra.ph/file/505307775b32d70bb432e.jpg',
     'https://telegra.ph/file/505307775b32d70bb432e.jpg',
@@ -13,23 +22,14 @@ const now = new Date();
 const hour = now.getHours();
 let greeting;
 if (hour >= 0 && hour < 12) {
-    greeting = "💕 Good Morning"; //good morning
+    greeting = " Good Morning"; //good morning
 } else if (hour >= 12 && hour < 18) {
-    greeting = "💕 Good Afternoon"; //good afternoon
+    greeting = " Good Afternoon"; //good afternoon
 } else {
-    greeting = "💕 Good Evening"; //good evening
+    greeting = " Good Evening"; //good evening
 }
-
-module.exports = {
-    name: 'help',
-    aliases: ['h', 'menu', 'list'],
-    category: 'general',
-    exp: 10,
-    react: "🏹",
-    description: 'Displays the command list or specific command info',
-    async execute(client, arg, M) {
         
-        try {
+ try {
             
    if (!arg) {
     
@@ -65,23 +65,23 @@ module.exports = {
         //   )}*\n\n${categories[category].map((cmd) => `${client.prefix}${cmd}`).join(', ')}\`\`\`\n\n`
   
         
-        let message = `*👋 Hello ${pushName} l'm ${process.env.NAME}. A whatsApp-Bot created by the NCT Association*\n\n💡 *Tips:➪ Warning: Dont use the bot in dm or you will be banned.* \n\n💡 *Tips:➪ Warning: Dont call the bot or you will be banned.*\n\n*╭⁠☞ Our Github*: github.com/NCT-Association\n\n 📝  *My commamd list*  📝: \n\n${commands}`
-         message += `⛩️ *Thanks for using Archer. If you find me helpful, please share me with your friends and leave a review.* `
+        let message =`*👋 Hello ${pushName} l'm ${process.env.NAME}. A whatsApp-Bot created by the NCT Association*\n\n💡 *Tips:➪ Warning: Dont use the bot in dm or you will be banned.* \n\n💡 *Tips:➪ Warning: Dont call the bot or you will be banned.*\n\n*╭⁠☞ Our Github*: github.com/NCT-Association\n\n 📝  *My commamd list*  📝: \n\n${commands}`
         const buffer = await client.utils.getBuffer('https://i.imgur.com/ZgrSw7W.jpg')
         const thumbnailUrl = getRandomThumbnailUrl();
 
        await client.sendMessage(
-          M.from,
-          {
-            image:{url:'https://telegra.ph/file/505307775b32d70bb432e.jpg'},
-            caption: message,
-          },
-          {
-            quoted: M
-          }
-          )
-          return
-        }
+          M.from, {
+              text: `⛩️ *Thanks for using Archer. If you find me helpful, please share me with your friends and leave a review.* `,
+             contextInfo: {
+             externalAdReply: {
+             tittle: 'ARCHER', 
+             body: 'ARCHER',
+            thumbnail: await client.utils.getBuffer(thumbnailUrl),
+           mediaType: 1
+             }
+         }
+     })
+   }
        const command = client.cmd.get(arg) || client.cmd.find((cmd) => cmd.aliases && cmd.aliases.includes(arg));
         
         if (!command) {
