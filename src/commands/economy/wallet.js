@@ -28,7 +28,7 @@ function getRandomThumbnailUrl() {
     const thumbnailUrl = getRandomThumbnailUrl();
    
       M.reply( `👝 *Wallet* 👝\n\n👤 *Name:* ${(await client.contact.getContact(M.sender, client)).username}\n🔖 *Tag:* #${M.sender.substring(3, 7)}\n💵 *dollars:* ${wallet}\n`, 'text', undefined, undefined, undefined, [M.sender.jid], {
-          thumbnail: await client.utils.getBuffer(https://telegra.ph/file/505307775b32d70bb432e.jpg),
+          thumbnail: await client.utils.getBuffer ('https://telegra.ph/file/505307775b32d70bb432e.jpg'),
           mediaType: 1
        })
     }
