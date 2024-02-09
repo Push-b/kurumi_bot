@@ -64,18 +64,16 @@ if (hour >= 0 && hour < 12) {
         //   true
         //   )}*\n\n${categories[category].map((cmd) => `${client.prefix}${cmd}`).join(', ')}\`\`\`\n\n`
   
-        
-        let message =`*👋 Hello ${pushName} l'm ${process.env.NAME}. A whatsApp-Bot created by the NCT Association*\n\n💡 *Tips:➪ Warning: Dont use the bot in dm or you will be banned.* \n\n💡 *Tips:➪ Warning: Dont call the bot or you will be banned.*\n\n*╭⁠☞ Our Github*: github.com/NCT-Association\n\n 📝  *My commamd list*  📝: \n\n${commands}`
         const buffer = await client.utils.getBuffer('https://i.imgur.com/ZgrSw7W.jpg')
         const thumbnailUrl = getRandomThumbnailUrl();
 
        await client.sendMessage(
           M.from, {
-              text: `⛩️ *Thanks for using Archer. If you find me helpful, please share me with your friends and leave a review.* `,
+              text: `*👋 Hello ${pushName} l'm ${process.env.NAME}. A whatsApp-Bot created by the NCT Association*\n\n >>> Help menu is designed to help you get started with the Bot  \n\n${commands}` ,
              contextInfo: {
              externalAdReply: {
              tittle: 'ARCHER', 
-             body: 'ARCHER',
+             body: 'A R C H E R',
             thumbnail: await client.utils.getBuffer(thumbnailUrl),
            mediaType: 1
              }
