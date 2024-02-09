@@ -31,8 +31,11 @@ function getRandomThumbnailUrl() {
          await client.sendMessage(
           M.from,
          {
-          thumbnail: await client.utils.getBuffer ('https://telegra.ph/file/505307775b32d70bb432e.jpg'),
-          mediaType: 1
+          externalAdReply: {
+          tittle: `Wallet`,
+          thumbnail: await client.utils.getBuffer (thumbnailUrl),
+          mediaType: 1,
+         ShowAdAttribution: true
        })
     }
 }
