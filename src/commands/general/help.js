@@ -80,8 +80,8 @@ if (hour >= 0 && hour < 12) {
           }
       })
     }
-    M.reply(message);
-
+    M.reply(
+     {
   }catch(err){
     await client.sendMessage(M.from , {image: {url: `${client.utils.errorChan()}`} , caption: `${client.utils.greetings()} Error-Chan Dis\n\nError:\n${err}`})
     }
