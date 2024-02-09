@@ -51,10 +51,10 @@ if (hour >= 0 && hour < 12) {
       let commands = ''
       
       for (const category of commandList) {
-        commands += `*━━━❰   ${client.utils.capitalize(
+        commands += `*━━━━❰   ${client.utils.capitalize(
           category,
           true
-          )}   ❱━━━*  \n\`\`\`☞${categories[category].map((cmd) => 
+          )}   ❱━━━━*  \n\n\`\`\`☞${categories[category].map((cmd) => 
             `${cmd}`).join('⁠ , ')}\`\`\`\n\n`
         
         }
@@ -69,24 +69,18 @@ if (hour >= 0 && hour < 12) {
 
        await client.sendMessage(
           M.from, {
-              text: `*👋 Hello ${pushName} l'm ${process.env.NAME}. A whatsApp-Bot created by the NCT Association*\n\n >>> Help menu is designed to help you get started with the Bot\n\n ${commands}\n\n ⛩️ *Thanks for using Archer. If you find me helpful, please share me with your friends and leave a review.*` ,
+              text: `*👋 Hello ${pushName} l'm ${process.env.NAME}. A whatsApp-Bot created by the NCT Association*\n\n >>> Help menu is designed to help you get started with the Bot\n\n ${commands}\n⛩️ *Thanks for using Archer. If you find me helpful, please share me with your friends and leave a review.*` ,
              contextInfo: {
              externalAdReply: {
              tittle: 'ARCHER', 
-             body: 'A R C H E R',
+             body: 'A   R   C   H   E   R',
             thumbnail: await client.utils.getBuffer(thumbnailUrl),
            mediaType: 1
              }
          }
      })
    }
-       const command = client.cmd.get(arg) || client.cmd.find((cmd) => cmd.aliases && cmd.aliases.includes(arg));
-        
-        if (!command) {
-          return M.reply('');
-        }
-
-        const aliases = command.aliases ? command.aliases.join(', ') : 'No Aliases';
+       const aliases = command.aliases ? command.aliases.join(', ') : 'No Aliases';
         const cooldown = command.cool ? command.cool : 'No cooldown';
         const description = command.description ? command.description : 'No Description'
 
