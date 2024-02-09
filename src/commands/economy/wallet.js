@@ -35,6 +35,7 @@ function getRandomThumbnailUrl() {
           tittle: `Wallet`,
           thumbnail: await client.utils.getBuffer (thumbnailUrl),
           mediaType: 1
-       }
-    }
+        }
+     }
   })
+}
