@@ -69,7 +69,7 @@ if (hour >= 0 && hour < 12) {
 
        await client.sendMessage(
           M.from, {
-              text: `*👋 Hello ${pushName} l'm ${process.env.NAME}. A whatsApp-Bot created by the NCT Association*\n\n >>> Help menu is designed to help you get started with the Bot  \n\n${commands}` ,
+              text: `*👋 Hello ${pushName} l'm ${process.env.NAME}. A whatsApp-Bot created by the NCT Association*\n\n >>> Help menu is designed to help you get started with the Bot\n\n ${commands}\n\n ⛩️ *Thanks for using Archer. If you find me helpful, please share me with your friends and leave a review.*` ,
              contextInfo: {
              externalAdReply: {
              tittle: 'ARCHER', 
@@ -83,7 +83,7 @@ if (hour >= 0 && hour < 12) {
        const command = client.cmd.get(arg) || client.cmd.find((cmd) => cmd.aliases && cmd.aliases.includes(arg));
         
         if (!command) {
-          return M.reply('Command not found');
+          return M.reply('');
         }
 
         const aliases = command.aliases ? command.aliases.join(', ') : 'No Aliases';
