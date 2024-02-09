@@ -27,7 +27,7 @@ function getRandomThumbnailUrl() {
 
  const thumbnailUrl = getRandomThumbnailUrl();
 
- let text = `👝 *Wallet* 👝\n\n👤 *Name:* ${(await client.contact.getContact(M.sender, client)).username}\n🔖 *Tag:* #${M.sender.substring(3, 7)}\n💵 *dollars:* ${wallet}`
+ let text = `👝 *Your Wallet* 👝\n\n👤 *Name:* ${(await client.contact.getContact(M.sender, client)).username}\n🔖 *Tag:* #${M.sender.substring(3, 7)}\n💵 *dollars:* ${wallet}`
    
    await client.sendMessage(M.from, {image:{url: thumbnailUrl},
           contextInfo: {
