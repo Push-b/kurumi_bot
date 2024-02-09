@@ -11,11 +11,25 @@ module.exports = {
         
     const economy = (await client.DB.get('economy')) || []
      if (!economy.includes(M.from)) return M.reply(` *❌ Type .support to get Casino group* `)
+
+    const thumbnailUrls = [
+    'https://telegra.ph/file/505307775b32d70bb432e.jpg',
+    'https://telegra.ph/file/505307775b32d70bb432e.jpg',
+    'https://telegra.ph/file/505307775b32d70bb432e.jpg',
+];
+
+function getRandomThumbnailUrl() {
+    const randomIndex = Math.floor(Math.random() * thumbnailUrls.length);
+    return thumbnailUrls[randomIndex];
+}
    
    let wallet = await client.cradit.get(`${M.sender}.wallet`) || 0;
+
+    const thumbnailUrl = getRandomThumbnailUrl();
    
-   let text = `👝 *Wallet* 👝\n\n👤 *Name:* ${(await client.contact.getContact(M.sender, client)).username}\n🔖 *Tag:* #${M.sender.substring(3, 7)}\n💵 *dollars:* ${wallet}`
-   
-   M.reply(text)
-   }
-  }
+      M.reply( `👝 *Wallet* 👝\n\n👤 *Name:* ${(await client.contact.getContact(M.sender, client)).username}\n🔖 *Tag:* #${M.sender.substring(3, 7)}\n💵 *dollars:* ${wallet}\n`, 'text', undefined, undefined, undefined, [M.sender.jid], {
+          thumbnail: await client.utils.getBuffer(thumbnailUrl),
+          mediaType: 1
+      }));
+    }
+}
