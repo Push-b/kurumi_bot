@@ -32,7 +32,7 @@ function getRandomThumbnailUrl() {
          externalAdReply: {
         tittle: 'Wallet',   
          body: '',
-        thumbnail =  await client.utils.getBuffer('https://telegra.ph/file/505307775b32d70bb432e.jpg'),
+       const thumbnail =  await client.utils.getBuffer(thumbnailUrl),
         mediaType: 1
             }
          }
