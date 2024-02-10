@@ -34,7 +34,7 @@ module.exports = {
         body: videoDetails.ownerChannelName,
          mimetype: 'audio/mpeg',
         fileName: videoDetails.title + '.mp3'
-         }
+         })
        }
     })
   })
