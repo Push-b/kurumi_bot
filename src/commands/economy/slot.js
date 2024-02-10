@@ -50,7 +50,7 @@ module.exports = {
 
     points: 0,
 
-    weight: 20
+    weight: 9
 
   }),
 
@@ -58,21 +58,33 @@ module.exports = {
 
     display: '🃏',
 
-    points: 3,
+    points: 2,
 
-    weight: 10
+    weight: 5
 
   })
 
 ]
 
-        if (!arg) return M.reply('Please provide the amount')
+ const thumbnailUrls = [
+    'https://telegra.ph/file/505307775b32d70bb432e.jpg',
+    'https://telegra.ph/file/505307775b32d70bb432e.jpg',
+    'https://telegra.ph/file/505307775b32d70bb432e.jpg',
+];
 
-        const amount = parseInt(arg)
+function getRandomThumbnailUrl() {
+    const randomIndex = Math.floor(Math.random() * thumbnailUrls.length);
+    return thumbnailUrls[randomIndex];
+}
+ const thumbnailUrl = getRandomThumbnailUrl();  
+        
+ if (!arg) return M.reply('Please provide the amount')
 
-        if (isNaN(amount)) return M.reply('Please provide the amount') 
+  const amount = parseInt(arg)
 
-        if (arg.startsWith('-') || arg.startsWith('+')) return M.reply('Please provide the amount')
+   if (isNaN(amount)) return M.reply('Please provide the amount') 
+
+   if (arg.startsWith('-') || arg.startsWith('+')) return M.reply('Please provide the amount')
 
         const cradits = (await client.cradit.get(`${M.sender}.wallet`)) || 0
 
@@ -84,20 +96,23 @@ module.exports = {
 
         const points = machine.lines.reduce((total, line) => total + line.points, 0)
 
-         // Set win rate to 30%
+         // Set win rate to 10%
 
         const resultAmount = points <= 0 ? -amount : amount * points
 
-        await client.cradit.add(`${M.sender}.wallet`, resultAmount - resultAmount/2)
+        await client.cradit.add(`${M.sender}.wallet`, resultAmount - resultAmount/1)
 
-        let text = '🎰 *──❮ SLOT MACHINE ❯──* 🎰\n\n'
-
-        text += machine.visualize()
-
-        text += points <= 0 ? `\n\n📉 You lost ${amount} dollars` : `\n\n📈 You won ${resultAmount} dollars`
-
-        M.reply(text)
-
+        await client.sendMessage(
+          M.from, {
+          text: `machine.visualize()\npoints <= 0 ?\n\n📉 You lost ${amount} dollars : \n\n📈 You won ${resultAmount} dollars `,
+        contextInfo: {
+         externalAdReply: {
+        tittle: 'Wallet', 
+         body: 'S  L  O  T  M  A  C  H  I  N  E',
+        thumbnail: await client.utils.getBuffer(thumbnailUrl),
+        mediaType: 1
+            }
+         }
+      })
     }
-
-}
+  }
