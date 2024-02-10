@@ -29,18 +29,22 @@ module.exports = {
  await client.sendMessage(M.from, { 
          document: res,
         mimetype: 'audio/mpeg',
-        fileName: videoDetails.title + '.mp3',
-       thumbnail:  await client.utils.getBuffer(`https://i.ytimg.com/vi/${videoDetails.videoId}/maxresdefault.jpg`),
+       contextInfo:{
+        externalAdReply:{
        Title: 'videoDetails.title',
-       body: videoDetails.ownerChannelName,
-        mediaType:2,
-          })
-       })
-    }
-  }
+       body: 'B  Y      D  E  R  Y  L,
+      thumbnail:  await client.utils.getBuffer(`https://i.ytimg.com/vi/${videoDetails.videoId}/maxresdefault.jpg`),
+      fileName: videoDetails.title + '.mp3',
+      mediaType:2,
+          }
+       }
+    })
+  })
 
  .catch((err) => {
 return M.reply(err.toString())
 client.log(err, 'red')
             })
+    }
+}
 //M.quoted.mtype === 'imageMessage',
