@@ -34,7 +34,7 @@ module.exports = {
         contextInfo:{
         externalAdReply:{
         Title: videoDetails.title,
-        body: 'A  R  C  H  E  R',
+        body: 'videoDetails.title',
         thumbnail:  await client.utils.getBuffer(`https://i.ytimg.com/vi/${videoDetails.videoId}/maxresdefault.jpg`),
         mediaType:2,
          }
