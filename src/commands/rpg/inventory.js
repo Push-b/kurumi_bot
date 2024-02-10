@@ -20,9 +20,10 @@ module.exports = {
    if (!rpg.includes(M.from)) return M.reply(` *🟥 rpg is not enabled in current group ask mods to activate* `)
 
   const thumbnailUrls = [
-    'https://telegra.ph/file/505307775b32d70bb432e.jpg',
-    'https://telegra.ph/file/505307775b32d70bb432e.jpg',
-    'https://telegra.ph/file/505307775b32d70bb432e.jpg',
+    'https://telegra.ph/file/a0210abcd2451da334fca.jpg',
+    'https://telegra.ph/file/2392a86e06ae7ff992961.jpg',
+    'https://telegra.ph/file/c36b704c038623ec5a21d.jpg',
+    'https://telegra.ph/file/8a1c35f16bb06c210b8da.jpg',
 ];
 
 function getRandomThumbnailUrl() {
@@ -39,7 +40,7 @@ function getRandomThumbnailUrl() {
          contextInfo: {
          externalAdReply: {
          tittle: 'Wallet', 
-         body: '',
+         body: 'M   I   N   E   R   A   L   S',
         thumbnail: await client.utils.getBuffer(thumbnailUrl),
         mediaType: 1
             }
