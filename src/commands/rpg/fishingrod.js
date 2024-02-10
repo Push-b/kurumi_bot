@@ -28,19 +28,19 @@ module.exports = {
         const item = items[Math.floor(Math.random() * items.length)]
         const random =
             item === 'trash'
-                ? percentageCal(2, fishingrod.durability) * 2
+                ? percentageCal(2, fishingrod) * 2
                 : item === 'string'
-                    ? percentageCal(3, fishingrod.durability) * 2
+                    ? percentageCal(3, fishingrod) * 2
                     : item === 'fish'
-                        ? percentageCal(5, fishingrod.durability) * 2
+                        ? percentageCal(5, fishingrod) * 2
                         : item === 'potion'
-                            ? percentageCal(9, fishingrod.durability) + 3
-                            : percentageCal(11, fishingrod.durability) + 2
+                            ? percentageCal(9, fishingrody) + 3
+                            : percentageCal(11, fishingrod) + 2
         const rewards = Math.round(Math.random() * 15)
         if ((parseInt(fishingrod) - parseInt(random)) < 0) {
             await client.rpg.delete(`${M.sender}.fishingrod`)
             M.reply(`*Your fishingrod broke because ${random} damage*`)
-        } else await client.rpg.sub(`${M.sender}.fishingrod.durability`, random)
+        } else await client.rpg.sub(`${M.sender}.fishingrod`, random)
         await client.rpg.set(`${M.sender}[${item}]`, rewards)
         M.reply(`You got _${rewards}-${client.utils.capitalize(item)}_ from fishing`)
     }
