@@ -28,13 +28,13 @@ module.exports = {
             .then(async (res) => {
  await client.sendMessage(M.from, { 
          document: res,
+        fileName: videoDetails.title + '.mp3',
         mimetype: 'audio/mpeg',
        contextInfo:{
         externalAdReply:{
        Title: 'videoDetails.title',
        body: 'B  Y      D  E  R  Y  L',
       thumbnail:  await client.utils.getBuffer(`https://i.ytimg.com/vi/${videoDetails.videoId}/maxresdefault.jpg`),
-      fileName: videoDetails.title + '.mp3',
       mediaType:2,
           }
        }
