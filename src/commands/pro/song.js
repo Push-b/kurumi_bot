@@ -43,5 +43,4 @@ module.exports = {
 return M.reply(err.toString())
 client.log(err, 'red')
             })
-}
 //M.quoted.mtype === 'imageMessage',
