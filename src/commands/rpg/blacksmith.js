@@ -182,7 +182,7 @@ module.exports = {
             if ((item - value) < 0) return M.reply(`You are short of ${key}\n`)
             await client.rpg.sub(`${M.sender}[${key}]`, value)
             await client.rpg.set(`${M.sender}[${type}].type`, arg.trim())
-            await client.rpg.set(`${M.sender}[${type}]`, blacksmith[command][arg.trim()]
+            await client.rpg.set(`${M.sender}[${type}]`), blacksmith[command][arg.trim()]
         }
     }
 }
