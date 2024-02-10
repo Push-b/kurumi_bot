@@ -6,7 +6,8 @@ const blacksmith = {
                 wood: 5,
                 iron: 7,
                 string: 4
-           
+            },
+            durability: 125
         },
         gold: {
             id: 4,
@@ -14,7 +15,8 @@ const blacksmith = {
                 wood: 5,
                 string: 4,
                 gold: 7
-           
+            },
+            durability: 150
         },
         diamond: {
             id: 6,
@@ -22,7 +24,8 @@ const blacksmith = {
                 wood: 5,
                 string: 4,
                 diamond: 7
-           
+            },
+            durability: 200
         },
         emerald: {
             id: 7,
@@ -30,7 +33,8 @@ const blacksmith = {
                 wood: 5,
                 string: 4,
                 emerald: 7
-          
+            },
+            durability: 175
         }
     },
     createarmor: {
@@ -40,7 +44,8 @@ const blacksmith = {
                 wood: 5,
                 iron: 7,
                 string: 4
-          
+            },
+            durability: 125
         },
         gold: {
             id: 4,
@@ -48,7 +53,8 @@ const blacksmith = {
                 wood: 5,
                 string: 4,
                 gold: 7
-        
+            },
+            durability: 150
         },
         diamond: {
             id: 6,
@@ -56,7 +62,8 @@ const blacksmith = {
                 wood: 5,
                 string: 4,
                 diamond: 7
-            
+            },
+            durability: 502
         },
         emerald: {
             id: 7,
@@ -64,7 +71,8 @@ const blacksmith = {
                 wood: 5,
                 string: 4,
                 emerald: 7
-        
+            },
+            durability: 770
         }
     },
     createpickaxe: {
@@ -74,7 +82,8 @@ const blacksmith = {
                 wood: 5,
                 iron: 7,
                 string: 4
-        
+            },
+            durability: 125
         },
         gold: {
             id: 4,
@@ -82,7 +91,8 @@ const blacksmith = {
                 wood: 5,
                 string: 4,
                 gold: 7
-        
+            },
+            durability: 550
         },
         diamond: {
             id: 6,
@@ -90,7 +100,8 @@ const blacksmith = {
                 wood: 5,
                 string: 4,
                 diamond: 7
-            
+            },
+            durability: 900
         },
         emerald: {
             id: 7,
@@ -98,7 +109,8 @@ const blacksmith = {
                 wood: 5,
                 string: 4,
                 emerald: 7
-    
+            },
+            durability: 1000
         }
     },
     createfishingrod: {
@@ -107,8 +119,12 @@ const blacksmith = {
             material: {
                 wood: 5,
                 string: 15
-            }
+            },
+            durability: 150
         }
+    }
+}
+const createlist = ['createsword', 'createpickaxe', 'createarmor', 'createfishingrod']
 
 module.exports = {
     name: 'blacksmith',
