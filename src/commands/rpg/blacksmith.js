@@ -1,4 +1,13 @@
-const blacksmith = {
+module.exports = {
+    name: 'blacksmith',
+    aliases: [...createlist],
+    category: 'rpg',
+    exp: 8,
+    react: "✅",
+    description: 'Blacksmith where weapons are made',
+    async execute(client, arg, M) {
+
+ const blacksmith = {
     createsword: {
         iron: {
             id: 3,
@@ -107,21 +116,11 @@ const blacksmith = {
             material: {
                 wood: 5,
                 string: 15
-            },
-            durability: 150
         }
     }
 } 
 
-module.exports = {
-    name: 'blacksmith',
-    aliases: [...createlist],
-    category: 'rpg',
-    exp: 8,
-    react: "✅",
-    description: 'Blacksmith where weapons are made',
-    async execute(client, arg, M) {
-     const rpg = (await client.DB.get('rpg')) || []
+ const rpg = (await client.DB.get('rpg')) || []
    if (!rpg.includes(M.from)) return M.reply(` *🟥 rpg is not enabled in current group ask mods to activate* `)
     const createlist = ['createsword', 'createpickaxe', 'createarmor', 'createfishingrod']
       const command = M.body.split(' ')[0].toLowerCase().slice(client.prefix.length).trim()
