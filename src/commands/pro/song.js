@@ -28,13 +28,13 @@ module.exports = {
             .then(async (res) => {
  await client.sendMessage(M.from, { 
          document: res,
-         Title: 'videoDetails.title',
-        thumbnail:  await client.utils.getBuffer(`https://i.ytimg.com/vi/${videoDetails.videoId}/maxresdefault.jpg`),
+        mimetype: 'audio/mpeg',
+        fileName: videoDetails.title + '.mp3',
+       thumbnail:  await client.utils.getBuffer(`https://i.ytimg.com/vi/${videoDetails.videoId}/maxresdefault.jpg`),
+       Title: 'videoDetails.title',
+       body: videoDetails.ownerChannelName,
         mediaType:2,
-        body: videoDetails.ownerChannelName,
-         mimetype: 'audio/mpeg',
-        fileName: videoDetails.title + '.mp3'
-         })
+          }
        }
     })
   })
