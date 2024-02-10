@@ -6,8 +6,7 @@ const blacksmith = {
                 wood: 5,
                 iron: 7,
                 string: 4
-            },
-            durability: 125
+           
         },
         gold: {
             id: 4,
@@ -15,8 +14,7 @@ const blacksmith = {
                 wood: 5,
                 string: 4,
                 gold: 7
-            },
-            durability: 150
+           
         },
         diamond: {
             id: 6,
@@ -24,8 +22,7 @@ const blacksmith = {
                 wood: 5,
                 string: 4,
                 diamond: 7
-            },
-            durability: 200
+           
         },
         emerald: {
             id: 7,
@@ -33,8 +30,7 @@ const blacksmith = {
                 wood: 5,
                 string: 4,
                 emerald: 7
-            },
-            durability: 175
+          
         }
     },
     createarmor: {
@@ -44,8 +40,7 @@ const blacksmith = {
                 wood: 5,
                 iron: 7,
                 string: 4
-            },
-            durability: 125
+          
         },
         gold: {
             id: 4,
@@ -53,8 +48,7 @@ const blacksmith = {
                 wood: 5,
                 string: 4,
                 gold: 7
-            },
-            durability: 150
+        
         },
         diamond: {
             id: 6,
@@ -62,8 +56,7 @@ const blacksmith = {
                 wood: 5,
                 string: 4,
                 diamond: 7
-            },
-            durability: 502
+            
         },
         emerald: {
             id: 7,
@@ -71,8 +64,7 @@ const blacksmith = {
                 wood: 5,
                 string: 4,
                 emerald: 7
-            },
-            durability: 770
+        
         }
     },
     createpickaxe: {
@@ -82,8 +74,7 @@ const blacksmith = {
                 wood: 5,
                 iron: 7,
                 string: 4
-            },
-            durability: 125
+        
         },
         gold: {
             id: 4,
@@ -91,8 +82,7 @@ const blacksmith = {
                 wood: 5,
                 string: 4,
                 gold: 7
-            },
-            durability: 550
+        
         },
         diamond: {
             id: 6,
@@ -100,8 +90,7 @@ const blacksmith = {
                 wood: 5,
                 string: 4,
                 diamond: 7
-            },
-            durability: 900
+            
         },
         emerald: {
             id: 7,
@@ -109,8 +98,7 @@ const blacksmith = {
                 wood: 5,
                 string: 4,
                 emerald: 7
-            },
-            durability: 1000
+    
         }
     },
     createfishingrod: {
@@ -152,7 +140,7 @@ module.exports = {
                     }
                     items += `\n\n⛄ *Type*: ${client.utils.capitalize(
                         abc
-                    )}\n⚖️ *Required*: ${material}\n🌀 *Durability*: ${blacksmith[v][abc].durability}\n💵 *Price*: ${blacksmith[v][abc].durability * 5
+                    )}\n⚖️ *Required*: ${material}\n💵 *Price*: ${blacksmith[v][abc] * 5
                         }\n*>>Example*: ${client.prefix}${v} ${abc}\n\n`
                 }
                 text += `${typeEmoji[objKeys.indexOf(v)]} *${client.utils.capitalize(v, true)}* ${items}`
@@ -170,19 +158,18 @@ module.exports = {
         if (await client.rpg.get(`${M.sender}[${type}]`))
             return M.reply(`👴🏽⛏️ : I see you still have ${type}, come when your ${type} is destroyed`)
         M.reply(
-            `👴🏽⛏️ : Looks like I managed to make your ${arg.trim()} ${type} with durability ${blacksmith[command][arg.trim()].durability
-            }`
+            `👴🏽⛏️ : Looks like I managed to make your ${arg.trim()} ${type} }`
         )
         const metalType = Object.keys(blacksmith[command])
         if (!metalType.includes(arg.trim())) return M.reply('Please give a valid type!')
         for (const [key, value] of Object.entries(blacksmith[command][arg.trim()].material)) {
             const item = await client.rpg.get(`${M.sender}[${key}]`) || 0
             await client.cradit.get(`${M.sender}.wallet`) || 0 
-             if ((arg - blacksmith[command][[arg.trim()]].durability * 5) < 0) return M.reply('You dont have that much in your wallet')
+             if ((arg - blacksmith[command][[arg.trim()]] * 5) < 0) return M.reply('You dont have that much in your wallet')
             if ((item - value) < 0) return M.reply(`You are short of ${key}\n`)
             await client.rpg.sub(`${M.sender}[${key}]`, value)
             await client.rpg.set(`${M.sender}[${type}].type`, arg.trim())
-            await client.rpg.set(`${M.sender}[${type}].durability`, blacksmith[command][arg.trim()].durability)
+            await client.rpg.set(`${M.sender}[${type}]`, blacksmith[command][arg.trim()]
         }
     }
 }
