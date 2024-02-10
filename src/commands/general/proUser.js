@@ -24,7 +24,7 @@ module.exports = {
          
   await client.sendMessage(
           M.from, {
-          text:`#${i+1}\n*Contact:* http://wa.me/+${proUser[i]}`,
+          text:`>>>${i+1}\n*Contact:* http://wa.me/+${proUser[i]}`,
          contextInfo: {
          externalAdReply: {
          tittle: 'Wallet', 
