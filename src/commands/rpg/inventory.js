@@ -44,4 +44,4 @@ function getRandomThumbnailUrl() {
         mediaType: 1
             }
          }
-      }
+      })
