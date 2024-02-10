@@ -39,8 +39,8 @@ module.exports = {
         mediaType:2,
          }
        }
-    })
-  }
+    }
+  })
 
  .catch((err) => {
 return M.reply(err.toString())
