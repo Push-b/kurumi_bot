@@ -111,8 +111,7 @@ const blacksmith = {
             durability: 150
         }
     }
-}
-const createlist = ['createsword', 'createpickaxe', 'createarmor', 'createfishingrod']
+} 
 
 module.exports = {
     name: 'blacksmith',
@@ -124,7 +123,8 @@ module.exports = {
     async execute(client, arg, M) {
      const rpg = (await client.DB.get('rpg')) || []
    if (!rpg.includes(M.from)) return M.reply(` *🟥 rpg is not enabled in current group ask mods to activate* `)
-        const command = M.body.split(' ')[0].toLowerCase().slice(client.prefix.length).trim()
+    const createlist = ['createsword', 'createpickaxe', 'createarmor', 'createfishingrod']
+      const command = M.body.split(' ')[0].toLowerCase().slice(client.prefix.length).trim()
         if (command === 'blacksmith') {
             const objKeys = Object.keys(blacksmith)
             let text = '======🥢 BLACKSMITH🥢======\n\n'
