@@ -102,17 +102,14 @@ function getRandomThumbnailUrl() {
 
         await client.cradit.add(`${M.sender}.wallet`, resultAmount - resultAmount/1)
 
-        await client.sendMessage(
-          M.from, {
-          text: `machine.visualize()\npoints <= 0 ?\n\n📉 You lost ${amount} dollars : \n\n📈 You won ${resultAmount} dollars `,
-        contextInfo: {
-         externalAdReply: {
-        tittle: 'Wallet', 
-         body: 'S  L  O  T  M  A  C  H  I  N  E',
-        thumbnail: await client.utils.getBuffer(thumbnailUrl),
-        mediaType: 1
-            }
-         }
-      })
+        let text = '🎰 *──❮ SLOT MACHINE ❯──* 🎰\n\n'
+
+        text += machine.visualize()
+
+        text += points <= 0 ? `\n\n📉 You lost 💵${amount} dollars` : `\n\n📈 You won 💵${resultAmount} dollars`
+
+        M.reply(text)
+
     }
-  }
+
+}
