@@ -76,9 +76,9 @@ module.exports = {
                 return M.reply(
                     `You do not have enough heath to hunt a *_Level: ${monster.level} monster_* with this much *_Health: ${health}_ (Needed Health: ${monster.requirehealth})*`
                 )
-            const armor = await client.rpg.get(`${M.sender}.armor.durability`)
+            const armor = await client.rpg.get(`${M.sender}.armor`)
             const armorType = await client.rpg.get(`${M.sender}.armor.type`)
-            const sword = await client.rpg.get(`${M.sender}.sword.durability`)
+            const sword = await client.rpg.get(`${M.sender}.sword`)
             const swordType = await client.rpg.get(`${M.sender}.sword.type`)
             const requireArmor = ['diamond', 'emerald']
             if (!sword) return M.reply('Sorry you do not have any sword to fight')
@@ -100,7 +100,7 @@ module.exports = {
                 if (armor) {
                     const armor_damage = monster.requirehealth - amount_damage
                     if ((armor - monster.requirehealth) > 0) {
-                        await client.rpg.sub(`${M.sender}.armor.durability`, armor_damage)
+                        await client.rpg.sub(`${M.sender}.armor`, armor_damage)
                         await client.rpg.sub(`${M.sender}.health`, amount_damage)
                     } else {
                         const getDamage = armor_damage - armor
@@ -120,7 +120,7 @@ module.exports = {
                                 : swordType == 'emerald'
                                     ? rewards * 8
                                     : rewards
-                await client.rpg.sub(`${M.sender}.sword.durability`, 1)
+                await client.rpg.sub(`${M.sender}.sword`, 1)
                 if ((sword - 1) == 0) M.reply(`Your 🗡️ *${swordType}* broke`) && client.rpg.delete(`${M.sender}.sword`)
                 await client.rpg.add(`${M.sender}.monster_valuables`, rewards_quantity)
                 M.reply(
