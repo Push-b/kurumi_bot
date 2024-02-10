@@ -13,9 +13,9 @@ module.exports = {
      if (!economy.includes(M.from)) return M.reply(` *❌ Type .support to get Casino group* `)
 
      const thumbnailUrls = [
-    'https://telegra.ph/file/505307775b32d70bb432e.jpg',
-    'https://telegra.ph/file/505307775b32d70bb432e.jpg',
-    'https://telegra.ph/file/505307775b32d70bb432e.jpg',
+    'https://telegra.ph/file/0ba278843b95f6ad9d4ec.jpg',
+    'https://telegra.ph/file/fdf7042ca9594403dd760.jpg',
+    'https://telegra.ph/file/aab1139a3b8369fe37810.jpg',
 ];
 
 function getRandomThumbnailUrl() {
@@ -33,11 +33,11 @@ const cradits = (await client.cradit.get(`${M.sender}.wallet`)) || 0
  await client.cradit.sub(`${M.sender}.wallet`, amount)
  await client.sendMessage(
           M.from, {
-          text:`You have successfully deposited 💵${amount} in your bank`,
+          text:`>>> successfully deposited 💵${amount} in your bank`,
          contextInfo: {
          externalAdReply: {
         tittle: 'Wallet', 
-         body: 'B   A   C   L   A   Y   S',
+         body: '🏛️  B   A   C   L   A   Y   S   🏛️',
         thumbnail: await client.utils.getBuffer(thumbnailUrl),
         mediaType: 1
             }
