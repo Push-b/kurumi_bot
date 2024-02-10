@@ -27,7 +27,7 @@ module.exports = {
          externalAdReply: {
          tittle: 'Wallet', 
          body: 'M  O  D  S',
-        thumbnail: await client.utils.getBuffer('https://telegra.ph/file/c8864ae2997f1486f363b.jpg'),
+        thumbnail: await client.utils.getBuffer('https://telegra.ph/file/505307775b32d70bb432e.jpg'),
         mediaType: 1
             }
          }
