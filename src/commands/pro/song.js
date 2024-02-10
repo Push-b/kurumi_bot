@@ -35,7 +35,7 @@ module.exports = {
        body: videoDetails.ownerChannelName,
         mediaType:2,
           })
-       }
+       })
     }
   }
 
