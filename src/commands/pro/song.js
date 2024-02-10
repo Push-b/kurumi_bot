@@ -34,10 +34,10 @@ module.exports = {
        Title: 'videoDetails.title',
        body: videoDetails.ownerChannelName,
         mediaType:2,
-          }
+          })
        }
-    })
-  })
+    }
+  }
 
  .catch((err) => {
 return M.reply(err.toString())
