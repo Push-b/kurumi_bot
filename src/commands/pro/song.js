@@ -23,38 +23,28 @@ module.exports = {
         if (!term) return M.reply('🟥 *Please use this command with a valid youtube contant link*')
         if (!YT.validateURL(term.trim())) return M.reply('🟥 *Please use this command with a valid youtube.com link*')
         const { videoDetails } = await YT.getInfo(term)
-        M.reply('*🎧...downloading...🎧*')
-        let text = `*Title:* ${videoDetails.title} | *Type:* Audio | *From:* ${videoDetails.ownerChannelName}`
-        client.sendMessage(
-            M.from,
-            {
-                image: {
-                    url: `https://i.ytimg.com/vi/${videoDetails.videoId}/maxresdefault.jpg`
-                },
-                caption: text
-            },
-            {
-                quoted: M
-            }
-        )
         if (Number(videoDetails.lengthSeconds) > 1800) return M.reply('Cannot download audio longer than 30 minutes')
         const audio = YT.getBuffer(term, 'audio')
             .then(async (res) => {
-                await client.sendMessage(
-                    M.from,
-                    {
-                        document: res,
-                        mimetype: 'audio/mpeg',
-                        fileName: videoDetails.title + '.mp3'
-                    },
-                    {
-                        quoted: M
-                    }
-                )
-            })
-            .catch((err) => {
-                return M.reply(err.toString())
-                client.log(err, 'red')
+ await client.sendMessage(
+          M.from, {
+         document: res,
+         mimetype: 'audio/mpeg',
+        fileName: videoDetails.title + '.mp3',
+        contextInfo:{
+        externalAdReply:{
+        Title: ${videoDetails.title},
+        body: 'A  R  C  H  E  R',
+        thumbnail:  await client.utils.getBuffer(`https://i.ytimg.com/vi/${videoDetails.videoId}/maxresdefault.jpg`),
+        mediaType:2,
+         }
+       }
+    })
+  }
+
+ .catch((err) => {
+return M.reply(err.toString())
+client.log(err, 'red')
             })
     }
 }
