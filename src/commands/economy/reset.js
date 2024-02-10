@@ -8,9 +8,8 @@ module.exports = {
     async execute(client, arg, M) {
 
 const thumbnailUrls = [
-    'https://telegra.ph/file/505307775b32d70bb432e.jpg',
-    'https://telegra.ph/file/505307775b32d70bb432e.jpg',
-    'https://telegra.ph/file/505307775b32d70bb432e.jpg',
+    'https://telegra.ph/file/c8864ae2997f1486f363b.jpg',
+    'https://telegra.ph/file/c8864ae2997f1486f363b.jpg',
 ];
 
 function getRandomThumbnailUrl() {
@@ -25,7 +24,7 @@ function getRandomThumbnailUrl() {
       await client.cradit.delete(`${M.mentions[0]}.bank`) || 0
        await client.sendMessage(
           M.from, {
-          text: `successfuly reset account to 0 dollars and 0 cradits`,
+          text: `✅ successfuly reset account to 0 dollars and 0 cradits`,
          contextInfo: {
          externalAdReply: {
          tittle: 'Wallet', 
