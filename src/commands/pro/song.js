@@ -39,7 +39,7 @@ module.exports = {
         mediaType:2,
          }
        }
-    }
+    })
   })
 
  .catch((err) => {
