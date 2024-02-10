@@ -45,4 +45,3 @@ const cradits = (await client.cradit.get(`${M.sender}.wallet`)) || 0
       })
     }
   }
-}
