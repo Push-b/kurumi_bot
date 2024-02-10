@@ -116,9 +116,7 @@ module.exports = {
             material: {
                 wood: 5,
                 string: 15
-        }
-    }
-} 
+            }
 
  const rpg = (await client.DB.get('rpg')) || []
    if (!rpg.includes(M.from)) return M.reply(` *🟥 rpg is not enabled in current group ask mods to activate* `)
