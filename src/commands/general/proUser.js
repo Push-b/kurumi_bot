@@ -16,16 +16,24 @@ module.exports = {
 
   let proUser = client.proUser
 
-  let mo=`*❯──「 Pro-Users 」──❮*\n\n`
-
   for(let i=0;i<proUser.length;i++){
          
   let hmm = proUser[i]
          
  const um= (await client.contact.getContact(hmm, client)).username;
          
-  mo+=`\n#${i+1}\n*Contact:* http://wa.me/+${proUser[i]}\n`
-   }
-     M.reply(mo)
+  await client.sendMessage(
+          M.from, {
+          text:`#${i+1}\n*Contact:* http://wa.me/+${proUser[i]}`,
+         contextInfo: {
+         externalAdReply: {
+         tittle: 'Wallet', 
+         body: 'P R O   U S E R',
+        thumbnail: await client.utils.getBuffer('https://telegra.ph/file/505307775b32d70bb432e.jpg'),
+        mediaType: 1
+            }
+         }
+      })
+    }
   }
 }
