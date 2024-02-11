@@ -3,9 +3,9 @@ const YT = require('../../lib/YT')
 const yts = require("youtube-yts");
 
 module.exports = {
-    name: 'song',
-    aliases: ['song','yta'],
-    category: 'proUsers',
+    name: 'play',
+    aliases: ['play','song'],
+    category: 'media',
     description: 'Downloads given YT Video and sends it as Audio',
     react: "✅",
     async execute(client, arg, M) {
