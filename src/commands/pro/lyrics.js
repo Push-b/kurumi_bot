@@ -4,9 +4,19 @@ module.exports = {
     description: 'Sends the lyrics of a given song',
     react: "✅",
         async execute(client, arg, M) {
-
-    const archer = (await client.DB.get('archer')) || []
+  const archer = (await client.DB.get('archer')) || []
    if (!archer.includes(M.from)) return M.reply(` *🟥 Bot is not enabled in current group ask mods to activate* `)
+        
+    const media = (await client.DB.get('media')) || []
+    if (!media.includes(M.from)) return M.reply(` *🟥 Media is not enabled in current group ask mods to enable or join support group* `)
+            
+  const economy = (await client.DB.get('economy')) || []
+
+   const cradits = (await client.cradit.get(`${M.sender}.wallet`)) || 0
+        
+    if ((cradits - 200) < 0) return M.reply('🟥 *You need $200 in your wallet to use this command. Type .daily to get ten thousand dollars*')
+        
+      await client.cradit.sub(`${M.sender}.wallet`, 200)
             
         if (!arg) return void M.reply('🟥 *Provide the name of the song to search the lyrics*')
         const term = arg.trim()
