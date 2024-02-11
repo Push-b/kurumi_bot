@@ -8,22 +8,7 @@ module.exports = {
     category: 'media',
     description: 'Downloads given YT Video and sends it as Audio',
     react: "✅",
-    async execute(client, arg, M) { 
-
-   const archer = (await client.DB.get('archer')) || []
-   if (!archer.includes(M.from)) return M.reply(` *🟥 Bot is not enabled in current group ask mods to activate* `)
-        
-    const media = (await client.DB.get('media')) || []
-    if (!media.includes(M.from)) return M.reply(` *🟥 Media is not enabled in current group ask mods to enable or join support group* `)
-            
-  const economy = (await client.DB.get('economy')) || []
-
-   const cradits = (await client.cradit.get(`${M.sender}.wallet`)) || 0
-        
-    if ((cradits - 1000) < 0) return M.reply('🟥 *You need $1000 in your wallet to use this command. Type .daily to get ten thousand dollars*')
-        
-      await client.cradit.sub(`${M.sender}.wallet`, 1000)
-
+    async execute(client, arg, M) {
         const link = async (term) => {
             const { videos } = await yts(term.trim())
             if (!videos || !videos.length) return null
