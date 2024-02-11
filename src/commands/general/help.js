@@ -81,6 +81,20 @@ if (hour >= 0 && hour < 12) {
           }
       })
     }
+
+ const command = client.cmd.get(arg) || client.cmd.find((cmd) => cmd.aliases && cmd.aliases.includes(arg));
+        
+    if (!command) {
+      return M.reply('Command not found');
+        }
+
+        const aliases = command.aliases ? command.aliases.join(', ') : 'No Aliases';
+        const cooldown = command.cool ? command.cool : 'No cooldown';
+        const description = command.description ? command.description : 'No Description'
+
+        const message = `🔴 *Command*: ${command.name}\n🟤 *Aliases*: ${aliases}\n🟢 *Category*: ${command.category}\n⚪ *Cooldown*: ${cooldown}\n🟠 *Desc*: ${description}`;
+
+ M.reply(message);
   }catch(err){
     await client.sendMessage(M.from , {image: {url: `${client.utils.errorChan()}`} , caption: `${client.utils.greetings()} Error-Chan Dis\n\nError:\n${err}`})
   }
