@@ -3,7 +3,7 @@ const yts = require("youtube-yts");
 module.exports = {
     name: 'search',
     aliases: ['search'],
-    category: 'proUsers',
+    category: 'media',
     description: 'Searches the video of the given query in YouTube',
     react: "✅",
     async execute(client, arg, M) {
