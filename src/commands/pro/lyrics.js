@@ -1,6 +1,6 @@
 module.exports = {
     name: 'lyrics',
-    category: 'proUsers',
+    category: 'media',
     description: 'Sends the lyrics of a given song',
     react: "✅",
         async execute(client, arg, M) {
