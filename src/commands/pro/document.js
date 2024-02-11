@@ -5,7 +5,7 @@ const yts = require("youtube-yts");
 module.exports = {
     name: 'audio',
     aliases: 'audio',
-    category: 'proUsers',
+    category: 'media',
     react: "✅",
     description: 'Downloads given YT Video and sends it as a document audio',
     async execute(client, arg, M) {
