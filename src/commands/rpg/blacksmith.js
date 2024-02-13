@@ -134,13 +134,10 @@ module.exports = {
     react: "✅",
     description: 'Blacksmith where weapons are made',
     async execute(client, arg, M) {
- const rpg = (await client.DB.get('rpg')) || []
-   if (!rpg.includes(M.from)) return M.reply(` *🟥 rpg is not enabled in current group ask mods to activate* `)
-    const createlist = ['createsword', 'createpickaxe', 'createarmor', 'createfishingrod']
-      const command = M.body.split(' ')[0].toLowerCase().slice(client.prefix.length).trim()
+        const command = M.body.split(' ')[0].toLowerCase().slice(client.prefix.length).trim()
         if (command === 'blacksmith') {
             const objKeys = Object.keys(blacksmith)
-            let text = '======🥢 BLACKSMITH🥢======\n\n'
+            let text = '====🥢 BLACKSMITH🥢====\n\n'
             for (const v of objKeys) {
                 const list = Object.fromEntries(Object.entries(blacksmith[v]))
                 const __list = Object.keys(list)
@@ -151,7 +148,7 @@ module.exports = {
                     for (let __c in blacksmith[v][abc].material) {
                         material += blacksmith[v][abc].material[__c] + __c + ' '
                     }
-                  items += `\n\n📗 *Type*: ${client.utils.capitalize(
+                    items += `\n\n📗 *Type*: ${client.utils.capitalize(
                         abc
                     )}\n⚖️ *Required*: ${material}\n💙 *Durability*: ${blacksmith[v][abc].durability}\n🪙 *Price*: ${blacksmith[v][abc].durability * 5
                         }\n*Example*: ${client.prefix}${v} ${abc}\n\n`
@@ -169,9 +166,10 @@ module.exports = {
                         ? 'pickaxe'
                         : 'fishingrod'
         if (await client.rpg.get(`${M.sender}[${type}]`))
-            return M.reply(`👴🏽⛏️ : *I see you still have ${type}, come when your ${type} is destroyed*`)
+            return M.reply(`👴🏽⛏️ : I see you still have ${type}, come when your ${type} is destroyed`)
         M.reply(
-            `👴🏽⛏️ : Woooh Looks like I managed to make your ${arg.trim()} ${type} with durability ${blacksmith[command][arg.trim()].durability}`
+            `👴🏽⛏️ : Looks like I managed to make your ${arg.trim()} ${type} with durability ${blacksmith[command][arg.trim()].durability
+            }`
         )
         const metalType = Object.keys(blacksmith[command])
         if (!metalType.includes(arg.trim())) return M.reply('Please give a valid type!')
