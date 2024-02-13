@@ -28,7 +28,7 @@ module.exports = {
         //client.contactDB
         await client.sendMessage(
           M.from, {
-          text: `🔋 UPTIME:* ${uptime}\n📡 Groups:* ${groupCount}\n🧸 USERS:* ${Object.values(await client.contactDB.all()).length}\n🗂️ COMMANDS:* ${client.cmd.size}\n🌀 Nodejs:* ${process.version}
+          text: `🔋 UPTIME:* ${uptime}\n📡 Groups:* ${groupCount}\n🧸 USERS:* ${Object.values(await client.contactDB.all()).length}\n🗂️ COMMANDS:* ${client.cmd.size}\n🌀 Nodejs:* ${process.version},
          contextInfo: {
          externalAdReply: {
         tittle: 'Wallet', 
@@ -40,3 +40,4 @@ module.exports = {
       })
     }
   }
+}
