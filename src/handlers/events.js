@@ -16,8 +16,8 @@ module.exports = EventsHandler = async (event, client) => {
                   .map((jid) => `@${jid.split('@')[0]}`)
                   .join(', ')}* 👋🏻, we're probably not gonna miss you.`
             : event.action === 'demote'
-            ? `Ara Ara, looks like *@${event.participants[0].split('@')[0]}* got Demoted`
-            : `Congratulations *@${event.participants[0].split('@')[0]}*, you're now an admin`
+            ? `LoL looks like *@${event.participants[0].split('@')[0]}* got Demoted`
+            : `Congratulations *@${event.participants[0].split('@')[0]}*, you're now an admin take good care of us`
     if (event.action === 'add') {
         const user = event.participants[0]
         const username = (await client.contact.getContact(user, client)).username
