@@ -23,7 +23,7 @@ module.exports = {
         await client.cradit.sub(`${M.sender}.wallet`, amount)
          await client.sendMessage(
           M.from, {
-          text: `You gave *${amount}* to *@${M.mentions[0].split('@')[0]}*, mentions: [M.mentions[0]] }`,
+          text: `You gave *${amount}* to *@${M.mentions[0].split('@')[0]}*`,
          contextInfo: {
          externalAdReply: {
         tittle: 'Wallet', 
