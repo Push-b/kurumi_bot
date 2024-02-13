@@ -26,15 +26,17 @@ module.exports = {
         }
            const uptime = formatTime(process.uptime())
         //client.contactDB
-        M.reply(
-         `\n*╭─「 ❯─「 Archer's info」─❮ 」*
-*│  🔋 UPTIME:* ${uptime}
-*│  🧸 USERS:* ${Object.values(await client.contactDB.all()).length}
-*│  🗂️ COMMANDS:* ${client.cmd.size}
-*│  📡 Groups:* ${groupCount}
-*│  🌀 Nodejs:* ${process.version}
-*│    º º º º「By Deryl」º º º º*
-*╰────────────┈`
-         )
+        await client.sendMessage(
+          M.from, {
+          text: `🔋 UPTIME:* ${uptime}\n📡 Groups:* ${groupCount}\n🧸 USERS:* ${Object.values(await client.contactDB.all()).length}\n🗂️ COMMANDS:* ${client.cmd.size}\n🌀 Nodejs:* ${process.version}
+         contextInfo: {
+         externalAdReply: {
+        tittle: 'Wallet', 
+         body: 'I N F O R M A T I O N ',
+        thumbnail: await client.utils.getBuffer('https://telegra.ph/file/505307775b32d70bb432e.jpg'),
+        mediaType: 1
+            }
+         }
+      })
     }
-}
+  }
