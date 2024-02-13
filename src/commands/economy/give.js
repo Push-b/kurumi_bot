@@ -21,10 +21,18 @@ module.exports = {
         if ((cradits - amount) < 0) return M.reply('You dont have that much in your wallet')
         await client.cradit.add(`${M.mentions[0]}.wallet`, amount)
         await client.cradit.sub(`${M.sender}.wallet`, amount)
-        client.sendMessage(
-            M.from,
-            { text: `You gave *${amount}* to *@${M.mentions[0].split('@')[0]}*`, mentions: [M.mentions[0]] },
-            { quoted: M }
-        )
+         await client.sendMessage(
+          M.from, {
+          text: `You gave *${amount}* to *@${M.mentions[0].split('@')[0]}*, mentions: [M.mentions[0]] }`,
+         contextInfo: {
+         externalAdReply: {
+        tittle: 'Wallet', 
+         body: 'D O L L A R S',
+        thumbnail: await client.utils.getBuffer(''),
+        mediaType: 1
+            }
+         }
+      })
     }
-}
+  } 
+        
