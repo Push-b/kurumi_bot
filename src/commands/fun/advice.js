@@ -25,7 +25,7 @@ module.exports = {
          externalAdReply: {
         tittle: 'Wallet', 
          body: 'A D V I C E',
-        thumbnail: await client.utils.getBuffer(thumbnailUrl),
+        thumbnail: await client.utils.getBuffer(''),
         mediaType: 1
             }
          }
