@@ -18,7 +18,7 @@ module.exports = {
         
      .then((response) => {
 
-      await client.sendMessage(
+      client.sendMessage(
           M.from, {
           text: `🧘 *Advice for you:* ${response.data.slip.advice}`,
          contextInfo: {
