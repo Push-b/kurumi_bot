@@ -33,7 +33,7 @@ const cradits = (await client.cradit.get(`${M.sender}.wallet`)) || 0
  await client.cradit.sub(`${M.sender}.wallet`, amount)
  await client.sendMessage(
           M.from, {
-          text:`>>> successfully deposited 💵${amount} in your bank`,
+          text:`💳 You have successfully deposited ${amount} to your bank\n 💵 Balance: ${walletBalance} dollars`,
          contextInfo: {
          externalAdReply: {
         tittle: 'Wallet', 
