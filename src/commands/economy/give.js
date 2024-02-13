@@ -27,8 +27,8 @@ module.exports = {
          contextInfo: {
          externalAdReply: {
         tittle: 'Wallet', 
-         body: 'D O L L A R S',
-        thumbnail: await client.utils.getBuffer(''),
+         body: '💵 D O L L A R S 💵',
+        thumbnail: await client.utils.getBuffer('https://telegra.ph/file/79d497d5662dc9a35bca5.jpg'),
         mediaType: 1
             }
          }
