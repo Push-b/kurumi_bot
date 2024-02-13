@@ -168,7 +168,7 @@ module.exports = {
         if (await client.rpg.get(`${M.sender}[${type}]`))
             return M.reply(`👴🏽⛏️ : I see you still have ${type}, come when your ${type} is destroyed`)
         M.reply(
-            `👴🏽⛏️ : Looks like I managed to make your ${arg.trim()} ${type} with durability ${blacksmith}[command][arg.trim()].durability)`
+            `👴🏽⛏️ : Looks like I managed to make your ${arg.trim()} ${type} with durability ${blacksmith}[command][arg.trim()].durability})`
              }
            )
         const metalType = Object.keys(blacksmith[command])
