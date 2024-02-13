@@ -19,11 +19,20 @@ module.exports = {
         const lastfishing = await client.DB.get(`${M.sender}.fishingcooldown`)
         if (lastfishing !== null && lastfishingtimeout - (Date.now() - lastfishing) > 0) {
             const lastfishingtime = ms(lastfishingtimeout - (Date.now() - lastfishing))
-            return M.reply(
-                `*You have to wait ${lastfishingtime.minutes} minute(s), ${lastfishingtime.seconds} second(s) for another fishing round*`
-            )
-        }
-        await client.DB.set(`${M.sender}.fishingcooldown`, Date.now())
+             await client.sendMessage(
+          M.from, {
+          text: `*You have to wait ${lastfishingtime.minutes} minute(s), ${lastfishingtime.seconds} second(s) for another fishing round*`,
+          contextInfo: {
+         externalAdReply: {
+        tittle: 'Wallet', 
+         body: '',
+        thumbnail: await client.utils.getBuffer(''),
+        mediaType: 1
+            }
+         }
+      })
+    }
+      await client.DB.set(`${M.sender}.fishingcooldown`, Date.now())
         const items = ['fish', 'trash', 'potion', 'wood', 'string']
         const item = items[Math.floor(Math.random() * items.length)]
         const random =
@@ -42,6 +51,17 @@ module.exports = {
             M.reply(`*Your fishingrod broke because ${random} damage*`)
         } else await client.rpg.sub(`${M.sender}.fishingrod`, random)
         await client.rpg.set(`${M.sender}[${item}]`, rewards)
-        M.reply(`You got _${rewards}-${client.utils.capitalize(item)}_ from fishing`)
-    }
+     await client.sendMessage(
+          M.from, {
+          text: `You got _${rewards}-${client.utils.capitalize(item)}_ from fishing`,
+         contextInfo: {
+         externalAdReply: {
+        tittle: 'Wallet', 
+         body: '',
+        thumbnail: await client.utils.getBuffer(''),
+        mediaType: 1
+            }
+         }
+      })
+   }
 }
