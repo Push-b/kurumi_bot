@@ -17,18 +17,12 @@ module.exports = {
      .get(`https://api.adviceslip.com/advice`)
         
      .then((response) => {
-
-      client.sendMessage(
-          M.from, {
-          text: `🧘 *Advice for you:* ${response.data.slip.advice}`,
-         contextInfo: {
-         externalAdReply: {
-        tittle: 'Wallet', 
-         body: 'A D V I C E',
-        thumbnail: await utils.getBuffer(''),
-        mediaType: 1
-            }
-         }
-      })
+            
+      const text = `🧘 *Advice for you:* ${response.data.slip.advice}`
+            
+      M.reply(text)
+     }).catch((err) => {
+             client.sendMessage(M.from , {image: {url: `${client.utils.errorChan()}`} , caption: `${client.utils.greetings()} Error-Chan Dis\n\nError:\n${err}`})
+        })
     }
-  }  
+}
