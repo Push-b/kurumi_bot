@@ -36,8 +36,9 @@ module.exports = {
         thumbnail: await client.utils.getBuffer('https://telegra.ph/file/505307775b32d70bb432e.jpg'),
         mediaType: 1
             }
-         }
-      })
+          }
+       })
+      }
     }
   }
-}
+ }
