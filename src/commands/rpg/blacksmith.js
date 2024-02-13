@@ -168,9 +168,9 @@ module.exports = {
         if (await client.rpg.get(`${M.sender}[${type}]`))
             return M.reply(`👴🏽⛏️ : I see you still have ${type}, come when your ${type} is destroyed`)
         M.reply(
-            `👴🏽⛏️ : Looks like I managed to make your ${arg.trim()} ${type} with durability ${blacksmith}[command][arg.trim()].durability})`
-             }
-           )
+            `👴🏽⛏️ : Looks like I managed to make your ${arg.trim()} ${type} with durability ${blacksmith[command][arg.trim()].durability
+            }`
+        )
         const metalType = Object.keys(blacksmith[command])
         if (!metalType.includes(arg.trim())) return M.reply('Please give a valid type!')
         const economy  = await client.cradit.get(`${M.sender}.wallet`) || 0;
