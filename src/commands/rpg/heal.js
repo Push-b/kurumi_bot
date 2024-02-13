@@ -15,6 +15,18 @@ module.exports = {
         const health_inc = parseInt(health) + 30 > 100 ? 100 - health : parseInt(health) + 30
         await client.rpg.set(`${M.sender}.health`, health_inc)
         await client.rpg.sub(`${M.sender}.potion`, 1)
-        return M.reply(`You healed ${health_inc}❤️hp!`)
+        await client.sendMessage(
+          M.from, {
+          text: `You healed ${health_inc}❤️hp!`,
+         contextInfo: {
+        externalAdReply: {
+         tittle: 'Wallet', 
+         body: '',
+        thumbnail: await client.utils.getBuffer(thumbnailUrl),
+        mediaType: 1
+            }
+         }
+      })
     }
-}
+  }
+    
