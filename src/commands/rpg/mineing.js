@@ -41,12 +41,12 @@ module.exports = {
         await client.DB.set(`${M.sender}.mine`, Date.now())
         if ((parseInt(pickaxe) - parseInt(elements[element].damage)) < 0) {
             M.reply(`Your broke due to ${elements[element].damage} damage`)
-            await client.rpg.delete(`${M.sender}.pickaxe`)
+            await client.rpg.delete(`${M.sender}.pickaxe.durability`)
             return
-        } else await client.rpg.sub(`${M.sender}.pickaxe`, `${elements[element].damage}`)
+        } else await client.rpg.sub(`${M.sender}.pickaxe.durability`, `${elements[element].damage}`)
         await client.rpg.add(`${M.sender}[${element}]`, elements[element].amount)
         M.reply(
-            `*You have collected _${elements[element].amount} ${element} elements_. Your pickaxe got ${parseInt(pickaxe) - parseInt(elements[element].damage) < 0
+            `*You have collected _${elements[element].amount} ${element} elements_. Your pickaxe got ${parseInt(pickaxe.durability) - parseInt(elements[element].damage) < 0
                 ? 'broken'
                 : `${elements[element].damage} damage`
             }*`
