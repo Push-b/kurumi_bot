@@ -97,8 +97,8 @@ module.exports = {
             }
          }
       })
-    },
-            setTimeout(async () => {
+    }
+           setTimeout(async () => {
                 const amount_damage =
                     armorType == 'iron'
                         ? damageCal(5, monster.requirehealth)
