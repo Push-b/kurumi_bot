@@ -85,7 +85,20 @@ module.exports = {
             if (level > 6 && !requireArmor.includes(swordType))
                 return M.reply('You do not have a high grade armor to fight the higher level monsters!!')
             await client.DB.set(`${M.sender}.lastHunt`, Date.now())
-            M.reply('*Your hunting is processing. So please wait it will take 4 Minutes*')
+         await client.sendMessage(
+          M.from, {
+          text: `*Your hunting is processing. So please wait it will take 4 Minutes* `,
+          contextInfo: {
+         externalAdReply: {
+         tittle: 'Wallet', 
+         body: '',
+        thumbnail: await client.utils.getBuffer(''),
+        mediaType: 1
+            }
+         }
+      })
+    }
+  }
             setTimeout(async () => {
                 const amount_damage =
                     armorType == 'iron'
@@ -106,7 +119,7 @@ module.exports = {
                         const getDamage = armor_damage - armor
                         await client.rpg.sub(`${M.sender}.health`, getDamage)
                         await client.rpg.delete(`${M.sender}.armor`)
-                        M.reply(`*Your 🛡️ *${armorType}* armor is broken now*`)
+                        M.reply(`*Your 🛡️ ${armorType} armor is broken now*`)
                     }
                 } else await client.rpg.sub(`${M.sender}.health`, health - monster.requirehealth)
                 const rewards = parseInt(Math.floor(Math.random() * 200 * monster.level))
@@ -123,12 +136,18 @@ module.exports = {
                 await client.rpg.sub(`${M.sender}.sword`, 1)
                 if ((sword - 1) == 0) M.reply(`Your 🗡️ *${swordType}* broke`) && client.rpg.delete(`${M.sender}.sword`)
                 await client.rpg.add(`${M.sender}.monster_valuables`, rewards_quantity)
-                M.reply(
-                    `*Congratulations 🎉 you collected ${rewards_quantity} valuables from hunting monsters*\n*Now you have ❤️ _Health:_ ${await client.rpg.get(
-                        `${M.sender}.health`
-                    )}*`
-                )
-            }, 240000)
-        }
+              await client.sendMessage(
+                  M.from, {
+                  text: `*Congratulations 🎉 you collected ${rewards_quantity} valuables from hunting monsters*\n*Now you have ❤️ _Health:_ ${await client.rpg.get(
+                 ${M.sender}.health`,
+                contextInfo: {
+                externalAdReply: {
+                tittle: 'Wallet', 
+                body: '',
+              thumbnail: await client.utils.getBuffer(thumbnailUrl),
+              mediaType: 1
+            }
+         }
+      })
     }
-}
+  }
