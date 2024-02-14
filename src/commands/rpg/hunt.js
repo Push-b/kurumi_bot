@@ -63,7 +63,7 @@ module.exports = {
         if (lastHunt !== null && lastHunttimeout - (Date.now() - lastHunt) > 0) {
             const lastHunttime = ms(lastHunttimeout - (Date.now() - lastHunt))
             return M.reply(
-                `*You have to wait ${lastHunttime.minutes} minute(s), ${lastHunttime.seconds} second(s) for another hunt*`
+                `⏳ *You have to wait ${lastHunttime.minutes} minute(s), ${lastHunttime.seconds} second(s) for another hunt*`
             )
         } else {
             const level = (await client.DB.get(`${M.sender}_LEVEL`)) || 1
@@ -85,7 +85,7 @@ module.exports = {
             if (level > 6 && !requireArmor.includes(swordType))
                 return M.reply('You do not have a high grade armor to fight the higher level monsters!!')
             await client.DB.set(`${M.sender}.lastHunt`, Date.now())
-          M.reply('*Your hunting is processing. So please wait it will take 4 Minutes*')
+          M.reply('⏳ *Your hunting is processing. So please wait it will take 4 Minutes*\n\n ⚔️ *Hunting started....*')
            setTimeout(async () => {
                 const amount_damage =
                     armorType == 'iron'
@@ -124,7 +124,7 @@ module.exports = {
                 if ((sword - 1) == 0) M.reply(`Your 🗡️ *${swordType}* broke`) && client.rpg.delete(`${M.sender}.sword`)
                 await client.rpg.add(`${M.sender}.monster_valuables`, rewards_quantity)
                 M.reply(
-                    `*Congratulations 🎉 you collected ${rewards_quantity} valuables from hunting monsters*\n*Now you have ❤️ _Health:_ ${await client.rpg.get(
+                    `*Congratulations 🎉 you collected ${rewards_quantity} valuables from hunting monsters 🧌*\n*Now you have ❤️ _Health:_ ${await client.rpg.get(
                         `${M.sender}.health`
                     )}*`
                 )
