@@ -85,19 +85,7 @@ module.exports = {
             if (level > 6 && !requireArmor.includes(swordType))
                 return M.reply('You do not have a high grade armor to fight the higher level monsters!!')
             await client.DB.set(`${M.sender}.lastHunt`, Date.now())
-         await client.sendMessage(
-          M.from, {
-          text: `⚔️ *Your hunting is processing. So please wait it will take 4 Minutes*⏳\n\n 🪃 *hunting started......⏳* `,
-          contextInfo: {
-         externalAdReply: {
-         tittle: 'Wallet', 
-         body: '',
-        thumbnail: await client.utils.getBuffer('https://telegra.ph/file/95f7638757dab1a44e423.jpg'),
-        mediaType: 1
-            }
-         }
-      })
-    }
+          M.reply('*Your hunting is processing. So please wait it will take 4 Minutes*')
            setTimeout(async () => {
                 const amount_damage =
                     armorType == 'iron'
