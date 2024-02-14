@@ -2,10 +2,9 @@ const axios = require('axios')
 
 module.exports = {
     name: "why",
-    alias: ["Why"],
-    desc: "Gives you random whys.",
-    usage:`${prefa}why`,
-    category: "Fun",
+    aliases: ["Why"],
+    description: "Gives you random whys.",
+    category: "fun",
     react:"📛",
 
  async execute(client, arg, M) {
