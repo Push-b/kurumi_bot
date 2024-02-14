@@ -147,5 +147,7 @@ module.exports = {
               mediaType: 1
             }
          }
-      }
+      })
     })
+  }
+}
