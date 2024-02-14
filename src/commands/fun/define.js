@@ -19,11 +19,17 @@ const res = data.data
 *📖 Definition:* ${res.meaning.replace(/\[|\]/g, '')}
 *💭 Example:* ${res.example.replace(/\[|\]/g, '')}
     `;
- await client.sendMessage(M.from, {image: {url: img} ,caption:reply},{quoted:M})
-  }
- .catch(err)(
-await client.sendMessage(M.from , {image: {url: `${client.utils.errorChan()}`} , caption: `${client.utils.greetings()} Error-Chan Dis\n${err}`})
-            )
-        }
+    client.sendMessage(
+          M.from,
+          {
+          image: {
+          url: img
+             },
+         caption: reply
+            },
+            {
+         quoted: M
+            }
+        )
     }
 }
