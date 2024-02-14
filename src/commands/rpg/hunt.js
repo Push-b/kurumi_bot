@@ -97,8 +97,7 @@ module.exports = {
             }
          }
       })
-    }
-  }
+    },
             setTimeout(async () => {
                 const amount_damage =
                     armorType == 'iron'
