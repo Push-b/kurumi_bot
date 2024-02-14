@@ -1,3 +1,4 @@
+const axios = require('axios')
 const ms = require('parse-ms')
 const percentageCal = (partialValue, totalValue) => {
     const percentage = (100 * partialValue) / totalValue
