@@ -10,7 +10,7 @@ module.exports = {
 
    await axios
         .get(
-          `${encodeURI(`http://api.brainshop.ai/get?bid=174519&key=ZeACimjk1Kd86Uyw&uid=[uid]&msg=${q}`)}`
+          `${encodeURI(`http://api.brainshop.ai/get?bid=174519&key=ZeACimjk1Kd86Uyw&uid=[uid]&msg=${arg}`)}`
         )
         .then((res) => {
           if (res.status !== 200)
