@@ -108,7 +108,7 @@ module.exports = {
                         await client.rpg.delete(`${M.sender}.armor`)
                         M.reply(`*Your 🛡️ ${armorType} armor is broken now*`)
                     }
-                } else await client.rpg.sub(`${M.sender}.health`)) || 20
+                } else await client.rpg.sub(`${M.sender}.health`) || 20
                 const rewards = parseInt(Math.floor(Math.random() * 200 * monster.level))
                 const rewards_quantity =
                     swordType == 'iron'
