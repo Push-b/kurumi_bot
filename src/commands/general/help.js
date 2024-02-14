@@ -74,7 +74,7 @@ if (hour >= 0 && hour < 12) {
              contextInfo: {
              externalAdReply: {
              tittle: 'ARCHER', 
-             body: 'https://chat.whatsapp.com/CUs2uABsCWrINrmln0UfjQ',
+             body: 'A   R   C   H   E   R',
             thumbnail: await client.utils.getBuffer(thumbnailUrl),
            mediaType: 1
              }
