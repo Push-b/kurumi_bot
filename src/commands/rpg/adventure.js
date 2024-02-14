@@ -42,21 +42,12 @@ module.exports = {
         if (!sword) return M.reply(`*You dont have a sword!!*`)
         if (health < 30) return M.reply(`*You dont have the required health ❤️*`)
         await client.DB.set(`${M.sender}.adventure`, Date.now())
-         await client.sendMessage(
-           M.from, {
-          text: `*You have _Health: ${percentageCal(10, health)}_ ❤️ reduction and your armor and sword got ${percentageCal(
+            M.reply(
+            `*You have _Health: ${percentageCal(10, health)}_ ❤️ reduction and your armor and sword got ${percentageCal(
                 30,
                 armor
-            )}, ${percentageCal(5, sword)} respectively damage*`,
-         contextInfo: {
-         externalAdReply: {
-        tittle: 'Wallet', 
-         body: 'A D V E N T U R E',
-        thumbnail: await client.utils.getBuffer(''),
-        mediaType: 1
-            }
-         }
-      })
+            )}, ${percentageCal(5, sword)} respectively damage*`
+        )
         await client.rpg.sub(`${M.sender}.armor.durability`, percentageCal(30, armor))
         await client.rpg.set(`${M.sender}.health`, health - percentageCal(10, health))
         await client.rpg.sub(`${M.sender}.sword.durability`, percentageCal(5, sword))
