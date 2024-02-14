@@ -17,7 +17,7 @@ const res = data.data
 *🔠 Word:* ${arg}
 *📖 Definition:* ${res.meaning.replace(/\[|\]/g, '')}
 *💭 Example:* ${res.example.replace(/\[|\]/g, '')}
-    `;
+    `,
     client.sendMessage(
           M.from,
           {
