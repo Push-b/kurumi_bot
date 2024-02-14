@@ -3,7 +3,7 @@ module.exports = {
     aliases: ['gc'],
     exp: 5,
     react: "✅",
-    category: 'moderation',
+    category: 'group',
     description: 'Closes or opens the group',
     async execute(client, arg, M) {
         const group = ['open', 'close']
