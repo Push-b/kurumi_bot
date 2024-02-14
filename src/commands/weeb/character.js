@@ -25,7 +25,7 @@ module.exports = {
         // M.reply(text);
         client.sendMessage(M.from, {
             image: {
-                url: chara.data.data[0].image.jpg.image_url
+                url: chara.data.data[0].image_url
             },
             caption: text
         })
