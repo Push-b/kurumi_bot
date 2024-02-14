@@ -108,7 +108,7 @@ module.exports = {
                         await client.rpg.delete(`${M.sender}.armor`)
                         M.reply(`*Your 🛡️ ${armorType} armor is broken now*`)
                     }
-                } else await client.rpg.sub(`${M.sender}.health`) || 20
+                 } else await client.rpg.sub(`${M.sender}.health`, health - monster.requirehealth)
                 const rewards = parseInt(Math.floor(Math.random() * 200 * monster.level))
                 const rewards_quantity =
                     swordType == 'iron'
@@ -120,23 +120,15 @@ module.exports = {
                                 : swordType == 'emerald'
                                     ? rewards * 8
                                     : rewards
-                await client.rpg.sub(`${M.sender}.sword`, 1)
+                await client.rpg.sub(`${M.sender}.sword.durability`, 1)
                 if ((sword - 1) == 0) M.reply(`Your 🗡️ *${swordType}* broke`) && client.rpg.delete(`${M.sender}.sword`)
                 await client.rpg.add(`${M.sender}.monster_valuables`, rewards_quantity)
-                const health = await client.rpg.get(`${M.sender}.health`) || 100
-              await client.sendMessage(
-                  M.from, {
-                  text: `⚔️ *Congratulations 🎉 you collected ${rewards_quantity} valuables from hunting monsters 🧌*\n\n*Now you have ❤️ _Health:_await client.rpg.get(${M.sender}.health`,
-                contextInfo: {
-                externalAdReply: {
-                tittle: 'Wallet', 
-                body: '',
-              thumbnail: await client.utils.getBuffer('https://telegra.ph/file/4c9e9c0e9012677f701ac.jpg'),
-              mediaType: 1
-            }
-          }
-       })
-     })
+                M.reply(
+                    `*Congratulations 🎉 you collected ${rewards_quantity} valuables from hunting monsters*\n*Now you have ❤️ _Health:_ ${await client.rpg.get(
+                        `${M.sender}.health`
+                    )}*`
+                )
+            }, 240000)
+        }
     }
-  }
 }
