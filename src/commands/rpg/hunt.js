@@ -138,7 +138,7 @@ module.exports = {
               await client.sendMessage(
                   M.from, {
                   text: `*Congratulations 🎉 you collected ${rewards_quantity} valuables from hunting monsters*\n\n*Now you have ❤️ _Health:_ ${await client.rpg.get(
-                 `${M.sender}.health`)
+                 `${M.sender}.health`),
                 contextInfo: {
                 externalAdReply: {
                 tittle: 'Wallet', 
