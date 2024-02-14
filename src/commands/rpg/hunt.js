@@ -145,8 +145,9 @@ module.exports = {
                 body: '',
               thumbnail: await client.utils.getBuffer(''),
               mediaType: 1
-            }
-         }
-      })
+             }
+           }
+        })
+      }
     }
   }
