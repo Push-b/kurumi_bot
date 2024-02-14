@@ -34,7 +34,7 @@ module.exports = {
         } else {
           const card = deck[index].split('-');
           const filePath = path.join(__dirname,'./cards.js');
-          const data = require(filePath);
+         const { data } = await axios.get("https://raw.githubusercontent.com/REDZEOX/Kitagawa-Marin/main/card.json");
           const cardsInTier = data.filter((cardData) => cardData.tier === card[1]);
           const cardData = cardsInTier.find((cardData) => cardData.title === card[0]);
           const cardUrl = cardData.url;
@@ -59,7 +59,7 @@ module.exports = {
         for (let i = 0; i < deck.length; i++) {
           const card = deck[i].split('-');
           const filePath = path.join(__dirname,'./cards.js');
-	  const data = require(filePath);
+	 const { data } = await axios.get("https://raw.githubusercontent.com/REDZEOX/Kitagawa-Marin/main/card.json");
           const cardsInTier = data.filter((cardData) => cardData.tier === card[1]);
           const cardData = cardsInTier.find((cardData) => cardData.title === card[0]);
           let cardUrl = cardData.url;
