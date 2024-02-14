@@ -87,12 +87,12 @@ module.exports = {
             await client.DB.set(`${M.sender}.lastHunt`, Date.now())
          await client.sendMessage(
           M.from, {
-          text: `*Your hunting is processing. So please wait it will take 4 Minutes* `,
+          text: `⚔️ *Your hunting is processing. So please wait it will take 4 Minutes*⏳\n\n 🪃 *hunting started......⏳* `,
           contextInfo: {
          externalAdReply: {
          tittle: 'Wallet', 
          body: '',
-        thumbnail: await client.utils.getBuffer(''),
+        thumbnail: await client.utils.getBuffer('https://telegra.ph/file/95f7638757dab1a44e423.jpg'),
         mediaType: 1
             }
          }
@@ -138,12 +138,12 @@ module.exports = {
                 const health = await client.rpg.get(`${M.sender}.health`) || 100
               await client.sendMessage(
                   M.from, {
-                  text: `*Congratulations 🎉 you collected ${rewards_quantity} valuables from hunting monsters*\n\n*Now you have ❤️ _Health:_await client.rpg.get(${M.sender}.health`,
+                  text: `⚔️ *Congratulations 🎉 you collected ${rewards_quantity} valuables from hunting monsters 🧌*\n\n*Now you have ❤️ _Health:_await client.rpg.get(${M.sender}.health`,
                 contextInfo: {
                 externalAdReply: {
                 tittle: 'Wallet', 
                 body: '',
-              thumbnail: await client.utils.getBuffer(''),
+              thumbnail: await client.utils.getBuffer('https://telegra.ph/file/4c9e9c0e9012677f701ac.jpg'),
               mediaType: 1
             }
          }
