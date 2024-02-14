@@ -16,9 +16,9 @@ const res = data.data
     const reply = `
 *🔠 Word:* ${arg}
 *📖 Definition:* ${res.meaning.replace(/\[|\]/g, '')}
-*💭 Example:* ${res.example.replace(/\[|\]/g, '')}
-    `,
-    client.sendMessage(
+*💭 Example:* ${res.example.replace(/\[|\]/g, '')}`
+   
+     await client.sendMessage(
           M.from,
           {
           image: {
