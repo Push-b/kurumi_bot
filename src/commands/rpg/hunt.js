@@ -149,4 +149,3 @@ module.exports = {
          }
       })
     })
-  }             
