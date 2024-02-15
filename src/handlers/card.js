@@ -8,7 +8,7 @@ module.exports = CardHandler = async (client, m) => {
     const cardgame = cardgames || [];
     // const jid = '120363043742977407@g.us'; //send group
 
-    // if (cardgame.length > 0) {
+     // if (cardgame.length > 0) {
     //   const randomIndex = Math.floor(Math.random() * cardgame.length)
     //   const randomJid = cardgame[randomIndex]
     //   let jid = randomJid
@@ -26,7 +26,7 @@ module.exports = CardHandler = async (client, m) => {
   
         cron.schedule('*/20 * * * *', async () => {
           try {
-             const filePath = path.join(__dirname, './cards.js');
+             const filePath = path.join(__dirname, './card.json');
 	     const data = require(filePath);
 
 	     const index = Math.floor(Math.random() * data.length);
