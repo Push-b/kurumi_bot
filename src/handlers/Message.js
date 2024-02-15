@@ -55,7 +55,7 @@ module.exports = MessageHandler = async (messages, client) => {
                 if (groupCode !== groupNow) {
                     await client.sendMessage(from, { delete: M.key })
                      await client.groupParticipantsUpdate(from, [sender], 'remove')
-                     return M.reply('🟥 *Dont send a group link or you will be next*')
+                     return M.reply('🐦‍⬛ *Dont send a group link or you will be next*')
                 }
             }
         }
