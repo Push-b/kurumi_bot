@@ -12,7 +12,7 @@ const { MongoDriver } = require('quickmongo')
 const { Collection } = require('discord.js')
 const auth = require("./handlers/auth")
 const MessageHandler = require('./handlers/Message')
-const CardHandler = require('./handlers/cards.js')
+const CardHandler = require('./Handlers/card')
    // call the summon function
 const jid = "120363043742977407@g.us";
 
