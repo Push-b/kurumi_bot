@@ -20,7 +20,7 @@ module.exports = {
         if (!term) return M.reply('🟥 *Please use this command with a valid youtube contant link*')
         if (!YT.validateURL(term.trim())) return M.reply('🟥 *Please use this command with a valid youtube.com link*')
         const { videoDetails } = await YT.getInfo(term)
-         M.reply('*🎧....Downloading....🎧*')
+         M.reply('*Downloading....${videoDetails.title}*')
         if (Number(videoDetails.lengthSeconds) > 1800) return M.reply('Cannot download audio longer than 30 minutes')
         const audio = YT.getBuffer(term, 'audio')
             .then(async (res) => {
@@ -30,8 +30,8 @@ module.exports = {
         mimetype: 'audio/mpeg',
        contextInfo:{
         externalAdReply:{
-       Title: videoDetails.title,
-       body: videoDetails.title + '.ownerChannelName',
+       Title: videoDetails.ownerChannelName,
+       body: videoDetails.title + '.mp3',
       thumbnail: await client.utils.getBuffer(`https://i.ytimg.com/vi/${videoDetails.videoId}/maxresdefault.jpg`),
       mediaUrl: videoDetails.ownerChannelName,
       mediaType:2,
