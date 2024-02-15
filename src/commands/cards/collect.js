@@ -18,7 +18,7 @@ module.exports = {
 
     const card = await client.cards.get(`${M.from}.card`);
 
-    const cardgame = (await client.DB.get('card-game')) || []
+    const cardgame = (await client.DB.get('cardgame')) || []
 
 console.log(cardgame)
 
@@ -66,7 +66,7 @@ console.log(cardgame)
 
       if (!card) {
 
-        return M.reply("ðŸ™…â€â™€ï¸ Sorry, there are currently no available cards to claim!");
+        return M.reply("Sorry, there are currently no available cards to claim!");
 
       }
 
