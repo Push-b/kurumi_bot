@@ -7,7 +7,7 @@ module.exports = {
 
     async execute(client, arg, M) {
 
-        const toggleableGroupActions = ['archer','economy','media','rpg','card-game']
+        const toggleableGroupActions = ['archer','economy','media','rpg','cardgame']
 
         if (!arg)
 
