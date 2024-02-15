@@ -29,7 +29,7 @@ module.exports = MessageHandler = async (messages, client) => {
         const ActivateChatBot = (await client.DB.get('chatbot')) || []
         const banned = (await client.DB.get('banned')) || []
         const getCard = (await client.DB.get('cards')) || []
-        const cardgame = (await client.DB.get('card-game')) || []
+        const cardgame = (await client.DB.get('cardgame')) || []
         const auction = (await client.DB.get('auction')) || []
         const cshop = (await client.DB.get('cshop')) || []
         const economy = (await client.DB.get('economy')) || []
