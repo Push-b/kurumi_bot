@@ -9,7 +9,7 @@ module.exports = {
   description: "Swap two cards in your deck",
   async execute(client, arg, M) {
     
-    const cardgame = (await client.DB.get('card-game')) || []
+    const cardgame = (await client.DB.get('cardgame')) || []
     
   //  if(!cardgame.includes(M.from)){
    //   return M.reply("Card game is not enabled here")
