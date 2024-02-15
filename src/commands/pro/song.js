@@ -25,14 +25,13 @@ module.exports = {
         const audio = YT.getBuffer(term, 'audio')
             .then(async (res) => {
  await client.sendMessage(M.from, {image: {url: `https://i.ytimg.com/vi/${videoDetails.videoId}/maxresdefault.jpg`},
-       contextInfo:{
+        contextInfo:{
         externalAdReply:{
         document: res,
         fileName: videoDetails.title + '.mp3',
         mimetype: 'audio/mpeg',
        Title: 'videoDetails.title',
        body: '🎧 < D O C U M E N T > 🎧',
-      thumbnail: await client.utils.getBuffer(`https://i.ytimg.com/vi/${videoDetails.videoId}/maxresdefault.jpg`),
       mediaUrl: videoDetails.ownerChannelName,
       mediaType:2,
           }
