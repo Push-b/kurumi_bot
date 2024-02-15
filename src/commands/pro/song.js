@@ -32,7 +32,8 @@ module.exports = {
         externalAdReply:{
        Title: 'videoDetails.title',
        body: '🎧 < D O C U M E N T > 🎧',
-      thumbnail:  await client.utils.getBuffer(`https://i.ytimg.com/vi/${videoDetails.videoId}/maxresdefault.jpg`),
+      thumbnail: await client.utils.getBuffer(`https://i.ytimg.com/vi/${videoDetails.videoId}/maxresdefault.jpg`),
+      mediaUrl: videoDetails.ownerChannelName,
       mediaType:2,
           }
        }
