@@ -5,7 +5,7 @@ const path = require('path');
 
 module.exports = {
   name: 'setppgc',
-  category: 'moderation',
+  category: 'group',
   exp: 0,
   description: 'Change pic of group pfp',
   async execute(client, arg, M) {
