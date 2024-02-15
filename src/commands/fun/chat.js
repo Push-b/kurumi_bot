@@ -4,7 +4,7 @@ module.exports = {
     name: "chat",
     alias: ['botchat'],
     desc: "Gives you random advices for your broken life.",
-    category: "Fun",
+    category: "fun",
     react:"📛",
  async execute(client, arg, M) {
 
@@ -18,7 +18,7 @@ module.exports = {
           return M.reply(res.data.cnt);
         })
         .catch(() => {
-          M.reply(`Intriguing...`);
+          M.reply(`Yeah lets have a conversation...`);
         });
     } 
   };
