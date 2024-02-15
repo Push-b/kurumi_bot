@@ -24,8 +24,8 @@ module.exports = {
         if (Number(videoDetails.lengthSeconds) > 1800) return M.reply('Cannot download audio longer than 30 minutes')
         const audio = YT.getBuffer(term, 'audio')
             .then(async (res) => {
- await client.sendMessage(M.from, { 
-         document: res,
+ await client.sendMessage(M.from, {image: {url: `https://i.ytimg.com/vi/${videoDetails.videoId}/maxresdefault.jpg`},
+       document: res,
         fileName: videoDetails.title + '.mp3',
         mimetype: 'audio/mpeg',
        contextInfo:{
