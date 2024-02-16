@@ -44,22 +44,22 @@ module.exports = {
                 (term[1] || 1)
             if ((cradits - price) < 0)
                 return M.reply(`You dont have that much in your wallet to buy ${term[0].toLowerCase()} ${term[1] || 1}`)
-            await client.rpg.add(`${M.sender}[${term[0].toLowerCase()}]`, 10 * parseInt(term[1] || 1))
+            await client.media.add(`${M.sender}[${term[0].toLowerCase()}]`, 10 * parseInt(term[1] || 1))
             await client.cradit.sub(`${M.sender}.wallet`, price)
             M.reply(
-                `*Thank you 🎉 for your purches*\n*Now you have _${client.utils.capitalize(term[0])} : ${(await client.rpg.get(`${M.sender}[${term[0].toLowerCase()}]`)) || 0
+                `*Thank you 🎉 for your purches*\n*Now you have _${client.utils.capitalize(term[0])} : ${(await client.media.get(`${M.sender}[${term[0].toLowerCase()}]`)) || 0
                 }_*`
             )
         }
-        if (command == 'sell') {
+        if (command == 'selling') {
             if (!arg) return M.reply('Please give a item name')
             const term = arg.split(' ')
-            const sellItems = Object.keys(Object.assign({}, ...items[command]))
+            const sellingItems = Object.keys(Object.assign({}, ...items[command]))
             if (!sellItems.includes(term[0].toLowerCase())) return M.reply('Please give a valid item name')
-            const itemQuantity = await client.rpg.get(`${M.sender}[${term[0].toLowerCase()}]`)
+            const itemQuantity = await client.media.get(`${M.sender}[${term[0].toLowerCase()}]`)
             if (!itemQuantity) return M.reply('You do not have enough quantity to sell')
             const price = parseInt(Object.values(items[command][sellItems.indexOf(term[0].toLowerCase())]).join(''))
-            await client.rpg.sub(
+            await client.media.sub(
                 `${M.sender}[${term[0].toLowerCase()}]`,
                 'all' == term[1].toLowerCase() ? itemQuantity : 1
             )
