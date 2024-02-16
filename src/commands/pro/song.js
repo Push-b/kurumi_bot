@@ -10,9 +10,9 @@ module.exports = {
     react: "✅",
     async execute(client, arg, M) {
 
-     const musictoken = await client.rpg.get(`${M.sender}.musictoken`)
-     if (!musictoken) return M.reply(`🟥 You dont have any music token to download visit the shop and buy music token!`)
-     await client.rpg.sub(`${M.sender}.musictoken`, 1)
+     const musictoken = await client.media.get(`${M.sender}.musictoken`)
+     if (!musictoken) return M.reply(`🟥 You dont have any music token to download visit the media-shop and buy music tokens!`)
+     await client.media.sub(`${M.sender}.musictoken`, 1)
         const link = async (term) => {
             const { videos } = await yts(term.trim())
             if (!videos || !videos.length) return null
