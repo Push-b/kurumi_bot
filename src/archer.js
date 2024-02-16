@@ -89,7 +89,7 @@ const start = async () => {
     client.exp = client.DB.table('experience')
 
     //Cards
-    client.cards = client.DB.table('cards')
+    client.cards = client.DB.table('card_game')
 
     //Cradits
     client.cradit = client.DB.table('cradit')
@@ -100,8 +100,8 @@ const start = async () => {
     //potion
     client.chara = client.DB.table('chara')
     
-    //charm
-    client.charm = client.DB.table('charm')
+    //Media
+    client.media = client.DB.table('media')
     
     //Commands
     client.cmd = new Collection()
