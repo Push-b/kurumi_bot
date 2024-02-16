@@ -18,10 +18,10 @@ module.exports = {
     async execute(client, arg, M) {
      const command = M.body.split(' ')[0].toLowerCase().slice(client.prefix.length).trim()
         if (command == 'media-shop') {
-            const typeEmoji = ['🛍️','⚖️']
+            const typeEmoji = ['🏖️','⚖️']
             const moneyEmoji = ['💵','💵']
             const types = Object.keys(items)
-            let text = '*❰  ⁠● 🎧 Media token SHOP 🎧 ⁠●  ❱*'
+            let text = '*❰  ⁠● ⁠● ⁠● Media token Shop ⁠● ⁠● ⁠●  ❱*'
             for (const type of types) {
                 text += `\n\n*${typeEmoji[types.indexOf(type)]} ${client.utils.capitalize(type)}*\n`
                 items[type].filter((x) => {
@@ -30,11 +30,11 @@ module.exports = {
                     }
                 })
             }
-            text += `\n\n🧸 Use ${client.prefix}purchase <item_name> to get 10 tokens each time you purchase`
+            text += `\n\n📝 Use ${client.prefix}purchase <item_name_you_want> to get 10 tokens each time you purchase`
             M.reply(text)
         }
         if (command == 'purchase') {
-            if (!arg) return M.reply('Please give a item name')
+            if (!arg) return M.reply('🟥 Please give a item name')
             const term = arg.split(' ')
             const purchaseItems = Object.keys(Object.assign({}, ...items[command]))
             if (!purchaseItems.includes(term[0].toLowerCase())) return M.reply('Please give a valid item name')
@@ -43,7 +43,7 @@ module.exports = {
                 parseInt(Object.values(items[command][purchaseItems.indexOf(term[0].toLowerCase())]).join('')) *
                 (term[1] || 1)
             if ((cradits - price) < 0)
-                return M.reply(`You dont have that much in your wallet to buy ${term[0].toLowerCase()} ${term[1] || 1}`)
+                return M.reply(`🟥 You dont have that much in your wallet to buy ${term[0].toLowerCase()} ${term[1] || 1}`)
             await client.media.add(`${M.sender}[${term[0].toLowerCase()}]`, 10 * parseInt(term[1] || 1))
             await client.cradit.sub(`${M.sender}.wallet`, price)
             M.reply(
@@ -52,12 +52,12 @@ module.exports = {
             )
         }
         if (command == 'selling') {
-            if (!arg) return M.reply('Please give a item name')
+            if (!arg) return M.reply('🟥 Please give a item name')
             const term = arg.split(' ')
             const sellingItems = Object.keys(Object.assign({}, ...items[command]))
-            if (!sellItems.includes(term[0].toLowerCase())) return M.reply('Please give a valid item name')
+            if (!sellItems.includes(term[0].toLowerCase())) return M.reply('🟥 Please give a valid item name')
             const itemQuantity = await client.media.get(`${M.sender}[${term[0].toLowerCase()}]`)
-            if (!itemQuantity) return M.reply('You do not have enough quantity to sell')
+            if (!itemQuantity) return M.reply('🟥 You do not have enough quantity to sell')
             const price = parseInt(Object.values(items[command][sellItems.indexOf(term[0].toLowerCase())]).join(''))
             await client.media.sub(
                 `${M.sender}[${term[0].toLowerCase()}]`,
