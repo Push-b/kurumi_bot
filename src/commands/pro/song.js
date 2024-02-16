@@ -11,7 +11,7 @@ module.exports = {
     async execute(client, arg, M) {
 
      const musictoken = await client.media.get(`${M.sender}.musictoken`)
-     if (!musictoken) return M.reply(`🟥 You dont have any music token to download visit the media-shop and buy music tokens!`)
+     if (!musictoken) return M.reply(`🟥 You dont have any music token visit the .media-shop and buy music tokens!`)
      await client.media.sub(`${M.sender}.musictoken`, 1)
         const link = async (term) => {
             const { videos } = await yts(term.trim())
