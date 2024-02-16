@@ -40,7 +40,7 @@ module.exports = {
             if (!purchaseItems.includes(term[0].toLowerCase())) return M.reply('Please give a valid item name')
             const cradits = (await client.cradit.get(`${M.sender}.wallet`)) || 0
             const price =
-                parseInt(Object.values(items[command][buyItems.indexOf(term[0].toLowerCase())]).join('')) *
+                parseInt(Object.values(items[command][purchaseItems.indexOf(term[0].toLowerCase())]).join('')) *
                 (term[1] || 1)
             if ((cradits - price) < 0)
                 return M.reply(`You dont have that much in your wallet to buy ${term[0].toLowerCase()} ${term[1] || 1}`)
