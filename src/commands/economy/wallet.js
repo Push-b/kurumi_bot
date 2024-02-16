@@ -13,9 +13,9 @@ module.exports = {
      if (!economy.includes(M.from)) return M.reply(` *❌ Type .support to get Casino group* `)
 
     const thumbnailUrls = [
-    'https://telegra.ph/file/505307775b32d70bb432e.jpg',
-    'https://telegra.ph/file/505307775b32d70bb432e.jpg',
-    'https://telegra.ph/file/505307775b32d70bb432e.jpg',
+    'https://telegra.ph/file/9cd2636c54369e9ce47b1.jpg',
+    'https://telegra.ph/file/3fcf43fcbf902bd6ac8a5.jpg',
+    'https://telegra.ph/file/2a1deaf350fd7aa2b45e4.jpg',
 ];
 
 function getRandomThumbnailUrl() {
@@ -31,7 +31,7 @@ function getRandomThumbnailUrl() {
           contextInfo: {
          externalAdReply: {
         tittle: 'Wallet', 
-         body: '',
+         body: '👛  W  A  L  L  E  T  👛',
         thumbnail: await client.utils.getBuffer(thumbnailUrl),
         mediaType: 1
             }
