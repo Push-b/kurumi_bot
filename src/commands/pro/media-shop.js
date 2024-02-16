@@ -1,10 +1,10 @@
 const items = {
     buy: [
-        { music token: 10000 },
-        { tiktok token: 10000 },
-        { lyrics token: 1000 },
-        { video token: 3000 },
-        { spotify token: 1000 }
+        { musictoken: 10000 },
+        { tiktoktoken: 10000 },
+        { lyricstoken: 1000 },
+        { videotoken: 3000 },
+        { spotifytoken: 1000 }
     ]
 }
 
