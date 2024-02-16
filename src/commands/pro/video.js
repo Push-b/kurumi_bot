@@ -8,10 +8,12 @@ module.exports = {
     description: 'Downloads given YT Video',
     react: "✅",
     async execute(client, arg, M) {
-          const archer = (await client.DB.get('archer')) || []
-   if (!archer.includes(M.from)) return M.reply(` *🟥 Bot is not enabled in current group ask mods to activate* `)
+
         
         const link = async (term) => {
+     const videotoken = await client.media.get(`${M.sender}.videotoken`)
+     if (!videotoken) return M.reply(`🟥 You dont have any music token visit the *.media-shop* and buy music tokens!`)
+     await client.media.sub(`${M.sender}.videotoken`, 1)
             const { videos } = await yts(term.trim())
             if (!videos || !videos.length) return null
             return videos[0].url
