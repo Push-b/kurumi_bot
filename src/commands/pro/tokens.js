@@ -29,7 +29,7 @@ function getRandomThumbnailUrl() {
     return thumbnailUrls[randomIndex];
 }
   const thumbnailUrl = getRandomThumbnailUrl(); 
-  const tokens = await client.rpg.get(M.sender)
+  const tokens = await client.media.get(M.sender)
   if (!tokens) return M.reply('You dont have any media tokens')
   for (const [key, value] of Object.entries(tokens)) {
   await client.sendMessage(
