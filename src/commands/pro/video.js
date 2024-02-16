@@ -9,20 +9,25 @@ module.exports = {
     react: "✅",
     async execute(client, arg, M) {
   const link = async (term) => {
-       const videotoken = await client.media.get(`${M.sender}.videotoken`)
+      
+     const videotoken = await client.media.get(`${M.sender}.videotoken`)
      if (!videotoken) return M.reply(`🟥 You dont have any video token visit the *.media-shop* and buy video tokens!`)
      await client.media.sub(`${M.sender}.videotoken`, 1)
+        }
+           const link = async (term) => {
             const { videos } = await yts(term.trim())
             if (!videos || !videos.length) return null
             return videos[0].url
         }
-        if (!arg) return M.reply('')
+        if (!arg) return M.reply('🟥 Please use this command with a valid youtube.com link')
         const validPathDomains = /^https?:\/\/(youtu\.be\/|(www\.)?youtube\.com\/(embed|v|shorts)\/)/
         const term = validPathDomains.test(arg) ? arg.trim() : await link(arg)
-        if (!term) return M.reply('🟥 *Please use this command with a valid youtube contant link*')
+        if (!term) return M.reply('🟥 Please use this command with a valid youtube content link')
+        if (!YT.validateURL(term.trim())) return M.reply('🟥 Please use this command with a valid youtube.com link')
         const { videoDetails } = await YT.getInfo(term)
-        if (Number(videoDetails.lengthSeconds) > 1800) return M.reply('Cannot download audio longer than 30 minutes')
-        const audio = YT.getBuffer(term, 'audio')
+        M.reply('*sending.....*')
+        if (Number(videoDetails.lengthSeconds) > 1800) return M.reply('Cannot download video longer than 30 minutes')
+        const audio = YT.getBuffer(term, 'video')
             .then(async (res) => {
  await client.sendMessage(M.from, { 
          document: res,
