@@ -33,8 +33,8 @@ module.exports = {
             text += `\n\n🧧 Use ${client.prefix}purchase <item_name>`
             M.reply(text)
         }
-        if (command == 'buy') {
-            if (!arg) return M.reply('Please give a item name')
+        if (command == 'purchase') {
+            if (!arg) return M.reply('Please give a item name you want to purchase')
             const term = arg.split(' ')
             const purchaseItems = Object.keys(Object.assign({}, ...items[command]))
             if (!purchaseItems.includes(term[0].toLowerCase())) return M.reply('Please provide a valid media type to purchase your token')
