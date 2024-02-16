@@ -34,7 +34,7 @@ function getRandomThumbnailUrl() {
   for (const [key, value] of Object.entries(tokens)) {
   await client.sendMessage(
           M.from, {
-          text: `➜  ${key}:* ${typeof value == 'number' ? value : '\n\n' + objToString(value)}`,
+          text: `*➜  ${key}:* ${typeof value == 'number' ? value : '\n\n' + objToString(value)}`,
          contextInfo: {
          externalAdReply: {
          tittle: 'Wallet', 
