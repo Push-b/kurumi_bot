@@ -9,7 +9,8 @@ const items = {
         { diamond: 61500 },
         { ironpickaxe: 1000000 },
         { goldpickaxe: 1000000 },
-        { emerald: 80050 }
+        { emerald: 80050 },
+        { musictoken: 1000 }
     ]
 }
 
