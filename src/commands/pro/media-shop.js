@@ -30,7 +30,7 @@ module.exports = {
                     }
                 })
             }
-            text += `\n\n🧧 Use ${client.prefix}purchase <item_name>`
+            text += `\n\n🧸 Use ${client.prefix}purchase <item_name> to get 10 tokens each time you purchase`
             M.reply(text)
         }
         if (command == 'purchase') {
