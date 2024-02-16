@@ -9,6 +9,9 @@ module.exports = {
     react: "✅",
     async execute(client, arg, M) {
   const link = async (term) => {
+       const videotoken = await client.media.get(`${M.sender}.videotoken`)
+     if (!videotoken) return M.reply(`🟥 You dont have any video token visit the *.media-shop* and buy video tokens!`)
+     await client.media.sub(`${M.sender}.videotoken`, 1)
             const { videos } = await yts(term.trim())
             if (!videos || !videos.length) return null
             return videos[0].url
