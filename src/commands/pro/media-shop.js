@@ -30,7 +30,7 @@ module.exports = {
                     }
                 })
             }
-            text += `\n\n🧧 Use ${client.prefix}buy <item_name>`
+            text += `\n\n🧧 Use ${client.prefix}purchase <item_name>`
             M.reply(text)
         }
         if (command == 'purchase') {
