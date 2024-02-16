@@ -21,7 +21,7 @@ module.exports = {
             const typeEmoji = ['🛍️','⚖️']
             const moneyEmoji = ['💵','💵']
             const types = Object.keys(items)
-            let text = '*━━━━❰⭐Media token SHOP⭐❱━━━━*'
+            let text = '*❰  ⁠● 🎧 Media token SHOP 🎧 ⁠●  ❱*'
             for (const type of types) {
                 text += `\n\n*${typeEmoji[types.indexOf(type)]} ${client.utils.capitalize(type)}*\n`
                 items[type].filter((x) => {
