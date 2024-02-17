@@ -4,7 +4,7 @@ const yts = require("youtube-yts");
 module.exports = {
     name: 'video',
     aliases: ['video'],
-    category: 'proUsers',
+    category: 'media',
     description: 'Downloads given YT Video',
     react: "✅",
     async execute(client, arg, M) {
