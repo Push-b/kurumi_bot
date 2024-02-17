@@ -5,7 +5,7 @@ module.exports = {
  description: 'Downloads media from instagram',
   react: "🎵",
       async execute(client, arg, M) {
-        if (!arg.urls.length) return void (await M.reply('❌ Please provide a instagram URL'))
+        if (!arg) return void (await M.reply('❌ Please provide a instagram URL'))
         const [url] = arg.urls
         if (
             !(
