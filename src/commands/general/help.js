@@ -8,7 +8,6 @@ module.exports = {
     async execute(client, arg, M) {
 
     const thumbnailUrls = [
-    'https://telegra.ph/file/505307775b32d70bb432e.jpg',
     'https://telegra.ph/file/e57a9fe22877ee9f69ac7.jpg',
     'https://telegra.ph/file/eedb459ccf531467b5b9a.jpg',
     'https://telegra.ph/file/bbb5df0e235374328c473.jpg',
