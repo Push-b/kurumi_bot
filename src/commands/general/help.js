@@ -51,10 +51,10 @@ if (hour >= 0 && hour < 12) {
       let commands = ''
       
       for (const category of commandList) {
-        commands += `*❰  ⁠● ⁠● ⁠●   ${client.utils.capitalize(
+        commands += `*❰  ⁠● ⁠● ⁠● ⁠●  ${client.utils.capitalize(
           category,
           true
-          )}   ● ⁠● ⁠●  ❱*  \n\n\`\`\`⁠➜${categories[category].map((cmd) => 
+          )}  ⁠● ● ⁠● ⁠●  ❱*  \n\n\`\`\`⁠➜${categories[category].map((cmd) => 
             `${cmd}`).join('・|⁠・')}\`\`\`\n\n`
         
         }
@@ -74,7 +74,7 @@ if (hour >= 0 && hour < 12) {
              contextInfo: {
              externalAdReply: {
              tittle: 'ARCHER', 
-             body: 'A     R     C     H     E     R',
+             body: 'A       R       C       H       E       R',
             thumbnail: await client.utils.getBuffer(thumbnailUrl),
            mediaType: 1
              }
