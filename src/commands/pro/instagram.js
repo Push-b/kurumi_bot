@@ -5,8 +5,8 @@ module.exports = {
  description: 'Downloads media from instagram',
   react: "🎵",
       async execute(client, arg, M) {
-        if (!arg) return void (await M.reply('❌ Please provide a instagram URL'))
-        const [url] = M.urls
+        if (!arg.length === 0) return M.reply('❌ Please provide a instagram URL'))
+          let urlInsta = args[0];
         if (
             !(
                 url.includes('instagram.com/p/') ||
@@ -14,12 +14,12 @@ module.exports = {
                 url.includes('instagram.com/tv/')
             )
         )
-            return void (await M.reply(`❌ Wrong URL! Only Instagram posted videos, tv and reels can be downloaded`))
-        await this.client.util
+            return M.reply(`❌ Wrong URL! Only Instagram posted videos, tv and reels can be downloaded`))
+        await client.util
             .fetch(`https://weeb-api.vercel.app/insta?url=${url}`)
             .then(({ urls }) => {
                 urls.forEach(async ({ url, type }) => {
-                    const buffer = await this.client.util.fetchBuffer(url)
+                    const buffer = await client.util.fetchBuffer(url)
                     await M.reply(buffer, type)
                 })
             })
