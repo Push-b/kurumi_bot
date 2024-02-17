@@ -3,8 +3,7 @@ const items = {
         { musictoken: 10000 },
         { tiktoktoken: 10000 },
         { lyricstoken: 1000 },
-        { videotoken: 3000 },
-        { spotifytoken: 1000 }
+        { videotoken: 3000 }
     ]
 }
 
