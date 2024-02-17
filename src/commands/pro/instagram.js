@@ -14,7 +14,7 @@ module.exports = {
                 url.includes('instagram.com/tv/')
             )
         )
-            return M.reply(`❌ Wrong URL! Only Instagram posted videos, tv and reels can be downloaded`))
+            return M.reply(`❌ Wrong URL! Only Instagram posted videos, tv and reels can be downloaded`)
         await client.util
             .fetch(`https://weeb-api.vercel.app/insta?url=${url}`)
             .then(({ urls }) => {
@@ -23,6 +23,6 @@ module.exports = {
                     await M.reply(buffer, type)
                 })
             })
-            .catch(() => M.reply('Error while getting video/image data'))
+            .catch(() => M.reply('Error while getting video/image data')
     }
 }
