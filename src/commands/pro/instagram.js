@@ -6,7 +6,7 @@ module.exports = {
   react: "🎵",
       async execute(client, arg, M) {
         if (!arg) return void (await M.reply('❌ Please provide a instagram URL'))
-        const [url] = arg.urls
+        const [url] = M.urls
         if (
             !(
                 url.includes('instagram.com/p/') ||
