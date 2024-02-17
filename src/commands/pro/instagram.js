@@ -23,6 +23,9 @@ module.exports = {
                     await M.reply(buffer, type)
                 })
             })
-            .catch(() => M.reply('Error while getting video/image data')
-    }
-}
+            .catch((error) => {
+        console.log(error);
+        return M.reply(`Error private / not found`);
+      });
+  },
+};
