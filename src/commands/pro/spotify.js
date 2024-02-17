@@ -8,7 +8,10 @@ module.exports = {
     react: "✅",
     description: 'Downloads given spotify track and sends it as Audio',
     async execute(client, arg, M) {
-        if (!arg) return M.reply('Please use command with a valid spotify link')
+   const spotifytoken = await client.media.get(`${M.sender}.spotifytoken`)
+     if (!spotifytoken) return M.reply(`🟥 You dont have any spotify token visit the .media-shop and buy spotify tokens!`)
+     await client.media.sub(`${M.sender}.spotifytoken`, 1)
+        if (!arg) return M.reply('🟥 Please use command with a valid spotify link')
         const audioSpotify = await spotifydl(arg.trim()).catch((err) => {
             return M.reply(err.toString())
             client.log(err, 'red')
