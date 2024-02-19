@@ -73,8 +73,8 @@ if (hour >= 0 && hour < 12) {
               text: `*👋 Hello ${pushName} l'm ${process.env.NAME}. A whatsApp-Bot created by the NCT Association*\n\n >>> *Help menu is designed to help you get started with the Bot*\n\n ${commands}\n⛩️ *Thanks for using Archer. If you find me helpful, please share me with your friends and leave a review.*` ,
              contextInfo: {
              externalAdReply: {
-             tittle: 'ARCHER', 
-             body: 'A       R       C       H       E       R',
+             tittle: 'Archer', 
+             body: 'A R C H E R',
             thumbnail: await client.utils.getBuffer(thumbnailUrl),
            mediaType: 1
              }
