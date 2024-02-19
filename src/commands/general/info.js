@@ -24,6 +24,7 @@ module.exports = {
             let cpus = os.cpus(),
         }
         const uptime = formatTime(process.uptime())
+        let cpus = os.cpus()
         //client.contactDB
         M.reply(
          `\n*╭─「 ❯─「 Archer's info」─❮ 」*
