@@ -21,6 +21,7 @@ module.exports = {
             const minutes = Math.floor((seconds % (60 * 60)) / 60)
             const secs = Math.floor(seconds % 60)
             return `${pad(hours)}:${pad(minutes)}:${pad(secs)}`
+            let cpus = os.cpus(),
         }
         const uptime = formatTime(process.uptime())
         //client.contactDB
@@ -30,8 +31,12 @@ module.exports = {
 *│  🎊 USERS:* ${Object.values(await client.contactDB.all()).length}
 *│  📝 COMMANDS:* ${client.cmd.size}
 *│  🛡️ Groups:* ${groupCount}
+*│  🛡️ Nodejs:* ${process.version}
+*│  🛡️ Memory: ${ client.utils.formatSize(os.totalmem() - os.freemem()) + '/' + client.utils.formatSize(os.totalmem())}
+*│  🛡️ CPU: ${cpus[0].model} ${cpus.length > 1 ? `(${cpus.length} core)` : ''}
+*│  🛡️ Platform: ${os.platform()}
 *│    º º º º「By Deryl」º º º º*
-*╰────────────┈`
+*╰────────────┈*`
          )
     }
 }
