@@ -1,3 +1,5 @@
+const axios = require("axios")
+
 module.exports = {
  command: 'instagram',
  aliases: ['ig'],
