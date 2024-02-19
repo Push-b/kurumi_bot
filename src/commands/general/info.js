@@ -23,7 +23,7 @@ module.exports = {
             return `${pad(hours)}:${pad(minutes)}:${pad(secs)}`
         }
         const uptime = formatTime(process.uptime())
-        let cpus = os.cpus()
+        const cpus = os.cpus()
         //client.contactDB
         M.reply(
          `\n*╭─「 ❯─「 Archer's info」─❮ 」*
