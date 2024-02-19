@@ -5,28 +5,17 @@ module.exports = {
  description: 'Downloads media from instagram',
   react: "🎵",
       async execute(client, arg, M) {
-        if (!arg.length === 0) return M.reply('❌ Please provide a instagram URL')
-       const url = arg[0];
-
-        if (
-            !(
-                url.includes('instagram.com/p/') ||
-                url.includes('instagram.com/reel/') ||
-                url.includes('instagram.com/tv/')
-            )
-        ) {   return M.reply(`❌ Wrong URL! Only Instagram posted videos, TV, and reels can be downloaded`)
-        }
-        await client.utils
-            .fetch(`https://weeb-api.vercel.app/insta?url=${url}`)
-            .then(({ urls }) => {
-                urls.forEach(async ({ url, type }) => {
-                    const buffer = await client.util.fetchBuffer(url)
-                    await M.reply(buffer, type)
-                })
-            })
-            .catch((error) => {
-        console.log(error);
-        return M.reply(`Error private / not found`);
-      });
-  },
-};
+   if (!arg)
+        return client.sendMessage(M.from, { text: `⚠️ Please provide a Instagram Video link !` }, { quoted: M });
+      if (!arg.includes("instagram.com"))
+        return client.sendMessage(M.from, { text: `⚠️ Please provide a valid Instagram Video link !` }, { quoted: M });
+  
+      const url = arg.split(" ");
+      M.reply("*Mattekudasai, aku sama...*");
+      const res = await axios.get(`https://weeb-api.vercel.app/insta?url=${url}`);
+      const scrappedURL = res.data.videoUrl;
+  
+      return client.sendMessage(M.from, { video: { url: scrappedURL }, caption: `For Aku by aku` }, { quoted: M });
+    }
+  };
+  
