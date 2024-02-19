@@ -9,10 +9,6 @@ module.exports = {
     description: 'Downloads given YT Video and sends it as Audio',
     react: "✅",
     async execute(client, arg, M) {
-
-     const musictoken = await client.media.get(`${M.sender}.musictoken`)
-     if (!musictoken) return M.reply(`🟥 You dont have any music token visit the .media-shop and buy music tokens!`)
-     await client.media.sub(`${M.sender}.musictoken`, 1)
         const link = async (term) => {
             const { videos } = await yts(term.trim())
             if (!videos || !videos.length) return null
@@ -24,6 +20,9 @@ module.exports = {
         if (!term) return M.reply('🟥 *Please use this command with a valid youtube contant link*')
         if (!YT.validateURL(term.trim())) return M.reply('🟥 *Please use this command with a valid youtube.com link*')
         const { videoDetails } = await YT.getInfo(term)
+       const musictoken = await client.media.get(`${M.sender}.musictoken`)
+     if (!musictoken) return M.reply(`🟥 You dont have any music token visit the .media-shop and buy music tokens!`)
+     await client.media.sub(`${M.sender}.musictoken`, 1)
          M.reply(videoDetails.title + '.mp3')
         if (Number(videoDetails.lengthSeconds) > 1800) return M.reply('Cannot download audio longer than 30 minutes')
         const audio = YT.getBuffer(term, 'audio')
