@@ -28,17 +28,8 @@ module.exports = {
         const cpus = os.cpus()
         //client.contactDB
         M.reply(
-         `\n*╭─「 ❯─「 Archer's info」─❮ 」*
-*│  🎚️ UPTIME:* ${uptime}
-*│  🎊 USERS:* ${Object.values(await client.contactDB.all()).length}
-*│  📝 COMMANDS:* ${client.cmd.size}
-*│  🛡️ Groups:* ${groupCount}
-*│  🛡️ Nodejs:* ${process.version}
-*│  🛡️ Memory: ${ client.utils.formatSize(os.totalmem() - os.freemem()) + '/' + client.utils.formatSize(os.totalmem())}
-*│  🛡️ CPU: ${cpus[0].model} ${cpus.length > 1 ? `(${cpus.length} core)` : ''}
-*│  🛡️ Platform: ${os.platform()}
-*│    º º º º「By Deryl」º º º º*
-*╰────────────┈*`
+         `\n⏲️ *UPTIME:* ${uptime}\n🪩 *USERS:* ${Object.values(await client.contactDB.all()).length}\n🗃️ *COMMANDS:* ${client.cmd.size}\n📡 *Groups:* ${groupCount} \n🔮 *Nodejs:* ${process.version}\n🌀 *Memory:* ${ client.utils.formatSize(os.totalmem() - os.freemem()) + '/' + client.utils.formatSize(os.totalmem())}\n💻 *CPU:* ${cpus[0].model} ${cpus.length > 1 ? `(${cpus.length} core)` : ''}\n🌐 *Platform:* ${os.platform()}\n\n
+   º º º º「 By Deryl 」º º º º*`
          )
     }
 }
