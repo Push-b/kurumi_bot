@@ -22,15 +22,15 @@ module.exports = {
     if(!economy.includes(M.from)) return M.reply("*❌ Type .support to get Casino group*")
 
 
-        const symbols = [
+          const symbols = [
 
   new SlotSymbol('a', {
 
     display: '🎱',
 
-    points: 1,
+    points: 2,
 
-    weight: 10
+    weight: 40
 
   }),
 
@@ -38,9 +38,9 @@ module.exports = {
 
     display: '🎳',
 
-    points: 2,
+    points: 4,
 
-    weight: 15
+    weight: 30
 
   }),
 
@@ -50,7 +50,7 @@ module.exports = {
 
     points: 0,
 
-    weight: 9
+    weight: 20
 
   }),
 
@@ -58,37 +58,25 @@ module.exports = {
 
     display: '🃏',
 
-    points: 2,
+    points: 6,
 
-    weight: 5
+    weight: 10
 
   })
 
 ]
 
- const thumbnailUrls = [
-    'https://telegra.ph/file/505307775b32d70bb432e.jpg',
-    'https://telegra.ph/file/505307775b32d70bb432e.jpg',
-    'https://telegra.ph/file/505307775b32d70bb432e.jpg',
-];
+        if (!arg) return M.reply('Please provide the amount')
 
-function getRandomThumbnailUrl() {
-    const randomIndex = Math.floor(Math.random() * thumbnailUrls.length);
-    return thumbnailUrls[randomIndex];
-}
- const thumbnailUrl = getRandomThumbnailUrl();  
-        
- if (!arg) return M.reply('Please provide the amount')
+        const amount = parseInt(arg)
 
-  const amount = parseInt(arg)
+        if (isNaN(amount)) return M.reply('Please provide the amount') 
 
-   if (isNaN(amount)) return M.reply('Please provide the amount') 
-
-   if (arg.startsWith('-') || arg.startsWith('+')) return M.reply('Please provide the amount')
+        if (arg.startsWith('-') || arg.startsWith('+')) return M.reply('Please provide the amount')
 
         const cradits = (await client.cradit.get(`${M.sender}.wallet`)) || 0
 
-        if (amount > 20000) return M.reply('🟥 *You cannot slot more than 20000 dollars in slot machine*')
+        if (amount > 200000000) return M.reply('🟥 *You cannot slot more than 200000000💵 in slot machine*')
 
         const machine = new SlotMachine(3, symbols).play()
 
@@ -96,11 +84,9 @@ function getRandomThumbnailUrl() {
 
         const points = machine.lines.reduce((total, line) => total + line.points, 0)
 
-         // Set win rate to 10%
-
         const resultAmount = points <= 0 ? -amount : amount * points
 
-        await client.cradit.add(`${M.sender}.wallet`, resultAmount - resultAmount/1)
+        await client.cradit.add(`${M.sender}.wallet`, resultAmount - resultAmount/2)
 
         let text = '🎰 *──❮ SLOT MACHINE ❯──* 🎰\n\n'
 
