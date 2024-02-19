@@ -11,8 +11,18 @@ module.exports = {
 
     const archer = (await client.DB.get('archer')) || []
    if (!archer.includes(M.from)) return M.reply(` *🟥 Bot is not enabled in current group ask mods to activate* `)
-        
-        const getGroups = await client.groupFetchAllParticipating()
+
+         const thumbnailUrls = [
+    'https://telegra.ph/file/e57a9fe22877ee9f69ac7.jpg',
+    'https://telegra.ph/file/eedb459ccf531467b5b9a.jpg',
+    'https://telegra.ph/file/bbb5df0e235374328c473.jpg',
+];
+
+function getRandomThumbnailUrl() {
+    const randomIndex = Math.floor(Math.random() * thumbnailUrls.length);
+    return thumbnailUrls[randomIndex];
+}
+     const getGroups = await client.groupFetchAllParticipating()
         const groups = Object.entries(getGroups)
         .slice(0)
         .map((entry) => entry[1])
@@ -26,10 +36,18 @@ module.exports = {
         }
         const uptime = formatTime(process.uptime())
         const cpus = os.cpus()
+        const thumbnailUrl = getRandomThumbnailUrl()
         //client.contactDB
-        M.reply(
-         `\n⏲️ *UPTIME:* ${uptime}\n🪩 *USERS:* ${Object.values(await client.contactDB.all()).length}\n🗃️ *COMMANDS:* ${client.cmd.size}\n📡 *Groups:* ${groupCount} \n🔮 *Nodejs:* ${process.version}\n🌀 *Memory:* ${ client.utils.formatSize(os.totalmem() - os.freemem()) + '/' + client.utils.formatSize(os.totalmem())}\n💻 *CPU:* ${cpus[0].model} ${cpus.length > 1 ? `(${cpus.length} core)` : ''}\n🌐 *Platform:* ${os.platform()}\n\n
-   º º º º「 By Deryl 」º º º º*`
-         )
+    await client.sendMessage(M.from, {image: {url:thumbnailUrl}, caption:`● ⏲️ *UPTIME:* ${uptime}\n● 🪩 *USERS:* ${Object.values(await client.contactDB.all()).length}\n● 🗃️ *COMMANDS:* ${client.cmd.size}\n● 📡 *Groups:* ${groupCount} \n● 🔮 *Nodejs:* ${process.version}\n● 🌀 *Memory:* ${ client.utils.formatSize(os.totalmem() - os.freemem()) + '/' + client.utils.formatSize(os.totalmem())}\n● 🌐 *Platform:* ${os.platform()}\n● 💻 *CPU:* ${cpus[0].model} ${cpus.length > 1 ? `(${cpus.length} core)` : ''}\n\n*º º º º「 By Deryl 」º º º º*}`,
+       contextInfo: {
+         externalAdReply: {
+        tittle: '', 
+         body: 'U   P   T   I   M   E',
+        thumbnail: await client.utils.getBuffer(thumbnailUrl),
+        mediaType: 1                        
+                    }
+                }
+            }
+        );
     }
-}
+};
