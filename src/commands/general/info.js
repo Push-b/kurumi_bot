@@ -21,7 +21,6 @@ module.exports = {
             const minutes = Math.floor((seconds % (60 * 60)) / 60)
             const secs = Math.floor(seconds % 60)
             return `${pad(hours)}:${pad(minutes)}:${pad(secs)}`
-            let cpus = os.cpus(),
         }
         const uptime = formatTime(process.uptime())
         let cpus = os.cpus()
