@@ -22,8 +22,7 @@ module.exports = {
 
     const earnings = calculateEarnings(parsedAmount, parsedDuration);
     const userId = M.sender;
-    const economy = await client.econ.findOne({ userId });
-    const cradits = economy.wallet || 0
+     const cradits = (await client.cradit.get(`${M.sender}.wallet`)) || 0
     if (parsedAmount > cradits) return M.reply('You don\'t have enough yens in your wallet');
     if (!economy) {
       const newEconomy = new client.econ({ userId });
