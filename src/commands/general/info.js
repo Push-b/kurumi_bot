@@ -41,8 +41,8 @@ function getRandomThumbnailUrl() {
     await client.sendMessage(M.from, {image: {url:thumbnailUrl}, caption:`\n● ⏲️ *UPTIME:* ${uptime}\n● 🪩 *USERS:* ${Object.values(await client.contactDB.all()).length}\n● 🗃️ *COMMANDS:* ${client.cmd.size}\n● 📡 *Groups:* ${groupCount} \n● 🔮 *Nodejs:* ${process.version}\n● 🌀 *Memory:* ${ client.utils.formatSize(os.totalmem() - os.freemem()) + '/' + client.utils.formatSize(os.totalmem())}\n● 🌐 *Platform:* ${os.platform()}\n● 💻 *CPU:* ${cpus[0].model} ${cpus.length > 1 ? `(${cpus.length} core)` : ''}\n\n*º º º º「 By Deryl 」º º º º*`,
        contextInfo: {
          externalAdReply: {
-        tittle: '', 
-         body: 'U   P   T   I   M   E',
+        tittle: 'Uptime', 
+         body: '',
         thumbnail: await client.utils.getBuffer(thumbnailUrl),
         mediaType: 1                        
                     }
