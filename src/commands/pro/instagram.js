@@ -13,7 +13,7 @@ module.exports = {
                 url.includes('instagram.com/reel/') ||
                 url.includes('instagram.com/tv/')
             )
-        ) {   return M.reply(`❌ Wrong URL! Only Instagram posted videos, TV, and reels can be downloaded`))
+        ) {   return M.reply(`❌ Wrong URL! Only Instagram posted videos, TV, and reels can be downloaded`)
         }
         await client.utils
             .fetch(`https://weeb-api.vercel.app/insta?url=${url}`)
