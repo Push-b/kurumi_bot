@@ -42,7 +42,7 @@ function getRandomThumbnailUrl() {
        contextInfo: {
          externalAdReply: {
         tittle: 'Uptime', 
-         body: '',
+         body: 'U  P  T  I  M  E',
         thumbnail: await client.utils.getBuffer(thumbnailUrl),
         mediaType: 1                        
                     }
