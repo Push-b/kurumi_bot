@@ -110,11 +110,6 @@ module.exports = CardHandler = async (client, m) => {
   
   }
     }
-    
-    } catch(error){
-        console.log(error)
-    }
-
 }
 function newFunction() {
   return "cardgame";
