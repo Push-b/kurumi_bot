@@ -2,7 +2,7 @@ const cron = require("node-cron")
 const axios = require('axios')
 const path = require('path')
 require("./Message");
-require('./archer')
+
 module.exports = CardHandler = async (client, m) => {
   try {
     let cardgame = await client.DB.get("cardgame");
