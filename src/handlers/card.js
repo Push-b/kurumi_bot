@@ -6,9 +6,10 @@ module.exports = CardHandler = async (client, m) => {
   try {
     let cardgames = await client.DB.get("cardgame");
     const cardgame = cardgames || [];
-    // const jid = '120363043742977407@g.us'; //send group
+    // const jid = '27787800567-1632642032@g.us'; //send group
+    // const jid = '27787800567-1632642032@g.us'
 
-     // if (cardgame.length > 0) {
+    // if (cardgame.length > 0) {
     //   const randomIndex = Math.floor(Math.random() * cardgame.length)
     //   const randomJid = cardgame[randomIndex]
     //   let jid = randomJid
@@ -114,7 +115,7 @@ module.exports = CardHandler = async (client, m) => {
 
 }
 function newFunction() {
-  return "card-game";
+  return "cardgame";
 }
 
 			  
