@@ -99,4 +99,4 @@ module.exports = CardHandler = async (client, m) => {
       await client.sendMessage(jid , {image: {url: `${client.utils.errorChan()}`} , caption: `${client.utils.greetings()} Error-Chan Dis\n\nCommand no error wa:\n${err}`})
      }
   },
-};
+}}
