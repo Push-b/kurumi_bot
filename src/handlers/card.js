@@ -97,15 +97,6 @@ module.exports = CardHandler = async (client, m) => {
     } catch (err) {
       console.log(err)
       await client.sendMessage(jid , {image: {url: `${client.utils.errorChan()}`} , caption: `${client.utils.greetings()} Error-Chan Dis\n\nCommand no error wa:\n${err}`})
-    }
-  
-    cron.schedule('*/5 * * * *', () => {
-      client.cards.delete(`${jid}.card`);
-      client.cards.delete(`${jid}.card_price`);
-      console.log(`Card deleted after 5minutes`)
-            })
-          })
-        }
-      }
-    }
-  }
+     }
+  },
+};
