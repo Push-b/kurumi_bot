@@ -56,21 +56,15 @@ console.log(cardgame)
 
     }
 
-    try{
-
       if (!card) {
 
         return M.reply("🙅‍♀️ Sorry, there are currently no available cards to claim!");
 
       }
 
-  
+    if(wallet === 0) return M.reply("You have empty wallet")
 
-      if(wallet === 0) return M.reply("You have empty wallet")
-
-  
-
-      if ((wallet - cardPrice) < 0) return M.reply(`You dont have that much in your wallet ${wallet}`)
+  if ((wallet - cardPrice) < 0) return M.reply(`You dont have that much in your wallet ${wallet}`)
 
       const [title, tier] = card.split("-");
 
