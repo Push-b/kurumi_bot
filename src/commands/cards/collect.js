@@ -48,19 +48,11 @@ console.log(cardgame)
 
      await client.DB.set('claimed-cards', claimedCards);
 
-    }
-
-    try{
-
       if (!card) {
 
         return M.reply("Sorry, there are currently no available cards to claim!");
-
-      }
-
-  
-
-      if(wallet === 0) return M.reply("You have empty wallet")
+   
+    if(wallet === 0) return M.reply("You have empty wallet")
 
   
 
@@ -94,7 +86,7 @@ console.log(cardgame)
 
       
 
-      let text = `ðŸƒ ${title} (${tier}) have safely stored in your deck!`
+      let text = ` ${title} (${tier}) have safely stored in your deck!`
 
       if (deck.length < 12) {
 
