@@ -94,4 +94,3 @@ module.exports = CardHandler = async (client, m) => {
         })
       } 
    }	
-}
