@@ -31,6 +31,7 @@ module.exports = MessageHandler = async (messages, client) => {
         const banned = (await client.DB.get('banned')) || []
         const getCard = (await client.DB.get('cards')) || []
         const cardgame = (await client.DB.get('cardgame')) || []
+        const jid = '120363043742977407@g.us';
         const auction = (await client.DB.get('auction')) || []
         const cshop = (await client.DB.get('cshop')) || []
         const economy = (await client.DB.get('economy')) || []
@@ -81,7 +82,7 @@ module.exports = MessageHandler = async (messages, client) => {
             }
         }
         
-        const jid = '120363043742977407@g.us';
+    //    const jid = '120363043742977407@g.us';
         setInterval(async () => {
         await spawnCard(jid);
         }, 30000);
@@ -114,7 +115,7 @@ module.exports = MessageHandler = async (messages, client) => {
        setTimeout(() => cool.delete(`${sender}${command.name}`), cooldownAmount);     
           }
        }
-       command.execute(client, arg, M)
+     //  command.execute(client, arg, M)
              
       // console.log(body)
       // AI chatting using
