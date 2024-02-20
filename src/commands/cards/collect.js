@@ -18,7 +18,7 @@ module.exports = {
 
     const card = await client.cards.get(`${M.from}.card`);
 
-    const cardgame = (await client.DB.get('card-game')) || []
+    const cardgame = (await client.DB.get('cardgame')) || []
 
 console.log(cardgame)
 
@@ -58,7 +58,7 @@ console.log(cardgame)
 
     if(!cardgame.includes(M.from)){
 
-      return M.reply("Card-game is not enabled here")
+      return M.reply("Cardgame is not enabled here")
 
     }
 
