@@ -38,7 +38,7 @@ module.exports = {
 
       //Check if user deck is empty or not and sends card in deck
       if (deck.length > 0) {
-        tr += "*🎴 Your Deck:*\n";
+        tr += "*🎴 Your Deck:*\n\n";
         const sortedDeck = deck.sort((a, b) => a.split("-")[1] - b.split("-")[1]);
         sortedDeck.forEach((card, index) => {
           const [name, tier] = card.split("-");
@@ -46,7 +46,7 @@ module.exports = {
         });
       }
             
-      tr += "*🎴 Your Collection:*\n";
+      tr += "*🎴 Your Collection:*\n\n";
      
       //split " - " from db
       const sortedCollection = uniqueCards.sort((a, b) => a.split("-")[1] - b.split("-")[1]);
