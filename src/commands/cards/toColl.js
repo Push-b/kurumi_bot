@@ -38,7 +38,7 @@ module.exports = {
     
     await client.DB.set(`${M.sender}_Deck`, deck);
 
-    const { data } = await axios.get('https://raw.githubusercontent.com/REDZEOX/Kitagawa-Marin/main/card.json');
+    const  data  = await client.axios.fetch('https://raw.githubusercontent.com/REDZEOX/Kitagawa-Marin/main/card.json');
     
     const cardData = data.find((cardData) => cardData.title === card.split("-")[0] && cardData.tier === card.split("-")[1]);
     
