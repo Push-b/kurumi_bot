@@ -14,7 +14,7 @@ const auth = require("./handlers/auth")
 const MessageHandler = require('./handlers/Message')
 const CardHandler = require('./handlers/card')
    // call the summon function
-const jid = "120363043742977407@g.us";
+const jid = '120363043742977407@g.us';
 
 const EventsHandler = require('./handlers/events')
 const contact = require('./lib/contacts')
@@ -89,7 +89,7 @@ const start = async () => {
     client.exp = client.DB.table('experience')
 
     //Cards
-    client.cards = client.DB.table('card_game')
+    client.cards = client.DB.table('cardgame')
 
     //Cradits
     client.cradit = client.DB.table('cradit')
