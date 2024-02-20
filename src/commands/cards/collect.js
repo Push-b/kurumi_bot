@@ -14,12 +14,6 @@ module.exports = {
 
   async execute(client, arg, M) {
 
-    
-
-    const card = await client.cards.get(`${M.from}.card`);
-
-    const cardgame = (await client.DB.get('cardgame')) || []
-
 console.log(cardgame)
 
     const cardPrice = await client.cards.get(`${M.from}.card_price`);
@@ -53,12 +47,6 @@ console.log(cardgame)
      claimedCards.push(card);
 
      await client.DB.set('claimed-cards', claimedCards);
-
-     
-
-    if(!cardgame.includes(M.from)){
-
-      return M.reply("Card game is not enabled here")
 
     }
 
@@ -96,7 +84,7 @@ console.log(cardgame)
 
       if (wallet < cardPrice) {
 
-        M.reply("ðŸ¤‘ Sorry, it seems like you don't have enough money in your wallet to claim this card!");
+        M.reply(" Sorry, it seems like you don't have enough money in your wallet to claim this card!");
 
       } else {
 
@@ -114,7 +102,7 @@ console.log(cardgame)
 
       } else {
 
-        text = `ðŸƒ ${title} (${tier}) have safely stored in your collection!`
+        text = ` ${title} (${tier}) have safely stored in your collection!`
 
         collection.push(card);
 
@@ -134,7 +122,7 @@ console.log(cardgame)
 
         await M.reply(
 
-          'ðŸŽ‰ You have successfully claimed'.concat(
+          ' You have successfully claimed'.concat(
 
             ' *',
 
