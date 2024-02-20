@@ -91,5 +91,33 @@ module.exports = CardHandler = async (client, m) => {
             url: obj.url,
           },
           caption: `🃏 *Card Appeared* 🃏\n\n Name: ${obj.title}\n\n🎐 Tier: ${obj.tier}\n\n🪩 Price: ${price}\n\n📤 *Info:* buy cards.\n\n🔖 [ Use *${process.env.PREFIX}collect* to claim the card, *${process.env.PREFIX}collection* to see your *Cards* ]\n\n©️ *Shinob*`,
-        })
-      } 	
+        });
+      } 
+     
+    } catch (err) {
+      console.log(err)
+      await client.sendMessage(jid , {image: {url: `${client.utils.errorChan()}`} , caption: `${client.utils.greetings()} Error-Chan Dis\n\nCommand no error wa:\n${err}`})
+    }
+  
+    cron.schedule('*/5 * * * *', () => {
+      client.cards.delete(`${jid}.card`);
+      client.cards.delete(`${jid}.card_price`);
+      console.log(`Card deleted after 5minutes`)
+  
+    })
+  
+  });
+  
+  }
+    }
+    
+    } catch(error){
+        console.log(error)
+    }
+
+}
+function newFunction() {
+  return "card-game";
+}
+
+			  	
