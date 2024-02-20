@@ -22,7 +22,7 @@ module.exports = {
       let tr = `* Name:* ${(await client.contact.getContact(M.sender, client)).username}\n*🏷️ Tag:* #${tag}\n\n *🔖 Total claimed Cards in Collection:* ${uniqueCards.length}↯\n\n`;
       for (let i = 0; i < uniqueCards.length; i++) {
         let card = uniqueCards[i].split("-");
-        const  data  = await client.axios.get("https://raw.githubusercontent.com/REDZEOX/Kitagawa-Marin/main/card.json");
+        const  data  = await client.axios.fetch("https://raw.githubusercontent.com/REDZEOX/Kitagawa-Marin/main/card.json");
         const newArray = data.filter(function (I) {
           return I.tier == card[1];
         });
@@ -36,7 +36,7 @@ module.exports = {
           return M.reply(`Invalid card index. Your deck has ${collection.length} cards.`);
         }
         const card = collection[index].split('-');
-        const { data } = await axios.get("https://raw.githubusercontent.com/REDZEOX/Kitagawa-Marin/main/card.json");
+        const data  = await axios.client.fetch("https://raw.githubusercontent.com/REDZEOX/Kitagawa-Marin/main/card.json");
         const cardsInTier = data.filter((cardData) => cardData.tier === card[1]);
         const cardData = cardsInTier.find((cardData) => cardData.title === card[0]);
         const cardUrl = cardData.url;
@@ -49,7 +49,7 @@ module.exports = {
         const cardSet = new Set();
         for (let i = 0; i < collection.length; i++) {
           const card = collection[i].split('-');
-          const { data } = await axios.get("https://raw.githubusercontent.com/REDZEOX/Kitagawa-Marin/main/card.json");
+          const data  = await client.axios.fetch("https://raw.githubusercontent.com/REDZEOX/Kitagawa-Marin/main/card.json");
           const cardsInTier = data.filter((cardData) => cardData.tier === card[1]);
           const cardData = cardsInTier.find((cardData) => cardData.title === card[0]);
           let cardUrl = cardData.url;
