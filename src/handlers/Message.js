@@ -83,9 +83,9 @@ module.exports = MessageHandler = async (messages, client) => {
         }
         
     //    const jid = '120363043742977407@g.us';
-        setInterval(async () => {
-        await spawnCard(jid);
-        }, 30000);
+      //  setInterval(async () => {
+    //    await spawnCard(jid);
+   //     }, 30000);
          
         //Banned system
         if (banned.includes(sender)) return M.reply('🟥 *Bro You are banned from using the bot commands*')
@@ -101,20 +101,20 @@ module.exports = MessageHandler = async (messages, client) => {
        }
         
         // command cooldown
-        const cooldownAmount = (command.cool ?? 3) * 1000;
-        const time = cooldownAmount + Date.now();
-        const senderIsMod = client.mods.includes(sender.split('@')[0]);
+     //   const cooldownAmount = (command.cool ?? 3) * 1000;
+      //  const time = cooldownAmount + Date.now();
+      //  const senderIsMod = client.mods.includes(sender.split('@')[0]);
      
-        if (!senderIsMod && cool.has(`${sender}${command.name}`)) {
-       const cd = cool.get(`${sender}${command.name}`);
-      const remainingTime = client.utils.convertMs(cd - Date.now());
-     return M.reply(`You are on a cooldown. Wait *${remainingTime}* ${remainingTime > 1 ? 'seconds' : 'second'} before using this command again.`);     
-      } else {    
-       if (!senderIsMod) {
-       cool.set(`${sender}${command.name}`, time);
-       setTimeout(() => cool.delete(`${sender}${command.name}`), cooldownAmount);     
-          }
-       }
+     //   if (!senderIsMod && cool.has(`${sender}${command.name}`)) {
+     //  const cd = cool.get(`${sender}${command.name}`);
+    //  const remainingTime = client.utils.convertMs(cd - Date.now());
+// return M.reply(`You are on a cooldown. Wait *${remainingTime}* ${remainingTime > 1 ? 'seconds' : 'second'} before using this command again.`);     
+     // } else {    
+     //  if (!senderIsMod) {
+     //  cool.set(`${sender}${command.name}`, time);
+     //  setTimeout(() => cool.delete(`${sender}${command.name}`), cooldownAmount);     
+     //     }
+    //   }
      //  command.execute(client, arg, M)
              
       // console.log(body)
