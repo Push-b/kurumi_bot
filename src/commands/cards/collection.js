@@ -22,7 +22,7 @@ module.exports = {
       let tr = `* Name:* ${(await client.contact.getContact(M.sender, client)).username}\n*🏷️ Tag:* #${tag}\n\n *🔖 Total claimed Cards in Collection:* ${uniqueCards.length}↯\n\n`;
       for (let i = 0; i < uniqueCards.length; i++) {
         let card = uniqueCards[i].split("-");
-        const { data } = await axios.get("https://raw.githubusercontent.com/REDZEOX/Kitagawa-Marin/main/card.json");
+        const  data  = await client.axios.get("https://raw.githubusercontent.com/REDZEOX/Kitagawa-Marin/main/card.json");
         const newArray = data.filter(function (I) {
           return I.tier == card[1];
         });
