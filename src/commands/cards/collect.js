@@ -6,13 +6,19 @@ module.exports = {
 
   exp: 0,
 
-  react: "âœ…",
+  react: "✅",
 
   category: "card game",
 
   description: "Claim the card",
 
   async execute(client, arg, M) {
+
+    
+
+    const card = await client.cards.get(`${M.from}.card`);
+
+    const cardgame = (await client.DB.get('card-game')) || []
 
 console.log(cardgame)
 
@@ -48,11 +54,19 @@ console.log(cardgame)
 
      await client.DB.set('claimed-cards', claimedCards);
 
+    }
+
+    try{
+
       if (!card) {
 
-        return M.reply("Sorry, there are currently no available cards to claim!");
-   
-    if(wallet === 0) return M.reply("You have empty wallet")
+        return M.reply("🙅‍♀️ Sorry, there are currently no available cards to claim!");
+
+      }
+
+  
+
+      if(wallet === 0) return M.reply("You have empty wallet")
 
   
 
@@ -64,11 +78,11 @@ console.log(cardgame)
 
       if (deck.includes(card)) {
 
-        return M.reply(`ðŸ›‘ You already have the card ðŸƒ ${title} (Tier ${tier}) in your deck.`);
+        return M.reply(`🛑 You already have the card 🃏 ${title} (Tier ${tier}) in your deck.`);
 
       } else if (collection.includes(card)) {
 
-        return M.reply(`ðŸ›‘ You already have the card ðŸƒ ${title} (Tier ${tier}) in your collection.`);
+        return M.reply(`🛑 You already have the card 🃏 ${title} (Tier ${tier}) in your collection.`);
 
       }
 
@@ -76,7 +90,7 @@ console.log(cardgame)
 
       if (wallet < cardPrice) {
 
-        M.reply(" Sorry, it seems like you don't have enough money in your wallet to claim this card!");
+        M.reply("🤑 Sorry, it seems like you don't have enough money in your wallet to claim this card!");
 
       } else {
 
@@ -86,7 +100,7 @@ console.log(cardgame)
 
       
 
-      let text = ` ${title} (${tier}) have safely stored in your deck!`
+      let text = `🃏 ${title} (${tier}) have safely stored in your deck!`
 
       if (deck.length < 12) {
 
@@ -94,7 +108,7 @@ console.log(cardgame)
 
       } else {
 
-        text = ` ${title} (${tier}) have safely stored in your collection!`
+        text = `🃏 ${title} (${tier}) have safely stored in your collection!`
 
         collection.push(card);
 
@@ -114,7 +128,7 @@ console.log(cardgame)
 
         await M.reply(
 
-          ' You have successfully claimed'.concat(
+          '🎉 You have successfully claimed'.concat(
 
             ' *',
 
