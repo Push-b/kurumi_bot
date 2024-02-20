@@ -56,7 +56,7 @@ console.log(cardgame)
 
      
 
-    if(!card-game.includes(M.from)){
+    if(!cardgame.includes(M.from)){
 
       return M.reply("Card-game is not enabled here")
 
