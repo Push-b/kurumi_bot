@@ -2,9 +2,10 @@ const cron = require("node-cron")
 const axios = require('axios')
 const path = require('path')
 require("./Message");
+require('./archer')
 module.exports = CardHandler = async (client, m) => {
   try {
-    let cardgames = await client.DB.get("cardgame");
+    let cardgame = await client.DB.get("cardgame");
     const cardgame = cardgames || [];
     // const jid = '120363043742977407@g.us'; //send group
     // const jid = '120363196346357953@g.us'; // send group
