@@ -35,7 +35,7 @@ module.exports = MessageHandler = async (messages, client) => {
         const economy = (await client.DB.get('economy')) || []
         const game = (await client.DB.get('game')) || []
         const mod = (await client.DB.get('mod')) || []
-        const jid = "120363043742977407@g.us"
+        const jid = '120363043742977407@g.us'
         const support = (await client.DB.get('support')) || []
         const sale = (await client.DB.get('sale')) || []
         
@@ -60,10 +60,10 @@ module.exports = MessageHandler = async (messages, client) => {
             }
         }
         
-   //       const jid = "120363043742977407@g.us";
+   //       const jid = '120363043742977407@g.us';
  //             setInterval(async () => {
   //           await spawnCard(jid);
-   //        }, 60000);
+   //        }, 30000);
          
         //Banned system
         if (banned.includes(sender)) return M.reply('🟥 *Bro You are banned from using the bot commands*')
