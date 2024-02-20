@@ -24,6 +24,7 @@ module.exports = MessageHandler = async (messages, client) => {
         const cmdName = body.slice(client.prefix.length).trim().split(/ +/).shift().toLowerCase()
         const arg = body.replace(cmdName, '').slice(1).trim()
         const groupMembers = gcMeta?.participants || []
+         const isSticker = M.type === 'stickerMessage';
         const groupAdmins = groupMembers.filter((v) => v.admin).map((v) => v.id)
         const ActivateMod = (await client.DB.get('mod')) || []
         const ActivateChatBot = (await client.DB.get('chatbot')) || []
