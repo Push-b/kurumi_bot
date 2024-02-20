@@ -1,4 +1,4 @@
-const axios = require("axios");
+const path = require('path');
 
 module.exports = {
   name: "ToDeck",
@@ -29,7 +29,8 @@ module.exports = {
       deck.push(card);
       await client.DB.set(`${M.sender}_Collection`, collection);
       await client.DB.set(`${M.sender}_Deck`, deck);
-      const { data } = await axios.get("https://raw.githubusercontent.com/REDZEOX/Kitagawa-Marin/main/card.json");
+       const filePath = path.join(__dirname,'./card.json');
+        const data = require(filePath);
       const newArray = data.filter(function (I) {
         return I.tier == card.split("-")[1];
       });
