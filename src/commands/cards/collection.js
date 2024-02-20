@@ -19,7 +19,7 @@ module.exports = {
       }
       const uniqueCards = collection.filter((card, index) => collection.indexOf(card) === index);
       let tag = M.sender.substring(3, 7);
-      let tr = `* Name:* ${(await client.contact.getContact(M.sender, client)).username}\n*🏷️ Tag:* #${tag}\n\n *🔖 Total claimed Cards in Collection:* ${uniqueCards.length}↯\n\n`;
+      let tr = `\n*🏷️ Tag:* #${tag}\n\n *🔖 Total claimed Cards in Collection:* ${uniqueCards.length}↯\n\n`;
       for (let i = 0; i < uniqueCards.length; i++) {
         let card = uniqueCards[i].split("-");
        const filePath = path.join(__dirname,'./card.json');
