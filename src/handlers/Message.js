@@ -30,7 +30,6 @@ module.exports = MessageHandler = async (messages, client) => {
         const banned = (await client.DB.get('banned')) || []
         const getCard = (await client.DB.get('cards')) || []
         const cardgame = (await client.DB.get('cardgame')) || []
-        const CardHandler = require('./handlers/card')
            // call the summon function
         const jid = '120363043742977407@g.us';
         const auction = (await client.DB.get('auction')) || []
