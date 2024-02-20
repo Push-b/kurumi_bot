@@ -91,7 +91,7 @@ module.exports = CardHandler = async (client, m) => {
             url: obj.url,
           },
           caption: `🃏 *Card Appeared* 🃏\n\n Name: ${obj.title}\n\n🎐 Tier: ${obj.tier}\n\n🪩 Price: ${price}\n\n📤 *Info:* buy cards.\n\n🔖 [ Use *${process.env.PREFIX}collect* to claim the card, *${process.env.PREFIX}collection* to see your *Cards* ]\n\n©️ *Shinob*`,
-        }
+        })
       } 
    }	
 }
