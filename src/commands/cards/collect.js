@@ -54,7 +54,15 @@ console.log(cardgame)
 
      await client.DB.set('claimed-cards', claimedCards);
 
+     
+
+    if(!cardgame.includes(M.from)){
+
+      return M.reply("Card game is not enabled here")
+
     }
+
+    try{
 
       if (!card) {
 
@@ -62,9 +70,13 @@ console.log(cardgame)
 
       }
 
-    if(wallet === 0) return M.reply("You have empty wallet")
+  
 
-  if ((wallet - cardPrice) < 0) return M.reply(`You dont have that much in your wallet ${wallet}`)
+      if(wallet === 0) return M.reply("You have empty wallet")
+
+  
+
+      if ((wallet - cardPrice) < 0) return M.reply(`You dont have that much in your wallet ${wallet}`)
 
       const [title, tier] = card.split("-");
 
