@@ -127,7 +127,7 @@ const start = async () => {
             })
             client.log('Commands loaded!')
         }
-        readCommand(join(__dirname, '.', 'Commands'))
+        readCommand(join(__dirname, '.', 'commands'))
     }
 
     await EconomyDb.deleteMany({})
