@@ -1,4 +1,5 @@
-const axios = require("axios");
+const path = require('path')
+
 module.exports = {
   name: "salecard",
   aliases: ["sale"],
@@ -27,7 +28,8 @@ module.exports = {
         return M.reply("❗ Invalid card index!");
       }
 
-      const { data } = await axios.get('https://raw.githubusercontent.com/REDZEOX/Kitagawa-Marin/main/card.json');
+      const filePath = path.join(__dirname, './card.json');
+	    const data = require(filePath);
       const cardsInTier = data.filter((cardData) => cardData.tier === cardToSell[1]);
       const cardData = cardsInTier.find((cardData) => cardData.title === cardToSell[0]);  
       const cardUrl = cardData.url;
