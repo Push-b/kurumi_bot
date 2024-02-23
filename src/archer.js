@@ -12,9 +12,10 @@ const { MongoDriver } = require('quickmongo')
 const { Collection } = require('discord.js')
 const auth = require("./handlers/auth")
 const MessageHandler = require('./handlers/Message')
-const CardHandler = require('./handlers/card')
+const CardHandler = require('./Handlers/card')
    // call the summon function
-const jid = '120363043742977407@g.us';
+const jid = "27787800567-1632642032@g.us";
+
 
 const EventsHandler = require('./handlers/events')
 const contact = require('./lib/contacts')
@@ -89,7 +90,7 @@ const start = async () => {
     client.exp = client.DB.table('experience')
 
     //Cards
-    client.cards = client.DB.table('cardgame')
+    client.cards = client.DB.table('cards')
 
     //Cradits
     client.cradit = client.DB.table('cradit')
