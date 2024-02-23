@@ -10,14 +10,13 @@ const {
 const { QuickDB } = require('quick.db')
 const { MongoDriver } = require('quickmongo')
 const { Collection } = require('discord.js')
-const auth = require("./handlers/auth")
+const auth = require("./Handlers/auth")
 const MessageHandler = require('./handlers/Message')
 const CardHandler = require('./handlers/card')
    // call the summon function
 const jid = "27787800567-1632642032@g.us";
 
-
-const EventsHandler = require('./handlers/events')
+const EventsHandler = require('./handlers/Events')
 const contact = require('./lib/contacts')
 const gpt = require('./lib/gpt')
 const utils = require('./lib/function')
@@ -67,11 +66,10 @@ const start = async () => {
 
     //Config
     client.name = process.env.NAME || 'Archer'
-    client.prefix = process.env.PREFIX || '.'
-    client.proUser = (process.env.proUser  || '263788671478').split(',')
+    client.prefix = process.env.PREFIX || '/'
     client.writesonicAPI = process.env.WRITE_SONIC || null
     client.bgAPI = process.env.BG_API_KEY || null
-    client.mods = (process.env.MODS || '263788671478').split(',')
+    client.mods = (process.env.MODS || '').split(',')
 
     //Database
     client.DB = new QuickDB({
@@ -101,8 +99,8 @@ const start = async () => {
     //potion
     client.chara = client.DB.table('chara')
     
-    //Media
-    client.media = client.DB.table('media')
+    //charm
+    client.charm = client.DB.table('charm')
     
     //Commands
     client.cmd = new Collection()
@@ -132,7 +130,7 @@ const start = async () => {
             })
             client.log('Commands loaded!')
         }
-        readCommand(join(__dirname, '.', 'commands'))
+        readCommand(join(__dirname, '.', 'Commands'))
     }
     
       
@@ -162,9 +160,11 @@ const start = async () => {
         if (connection === 'open') {
             client.state = 'open'
             loadCommands()
-            client.log('🤖 you have did it once again Deryl')
+            client.log('🤖 you have made it once again Deryl Archer is ready!!')
         }
     })
+
+    CardHandler(client)
 
     app.get('/', (req, res) => {
         res.status(300).setHeader('Content-Type', 'image/png').send(client.QR)
