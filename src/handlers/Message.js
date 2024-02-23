@@ -125,7 +125,7 @@ module.exports = MessageHandler = async (messages, client) => {
         const command =
             client.cmd.get(cmdName) || client.cmd.find((cmd) => cmd.aliases && cmd.aliases.includes(cmdName))
 
-        if (!command) return M.reply('No such command! Use a valid command from *+help.*')
+        if (!command) return M.reply('🟥 *No such command found*')
        
 
         if(command.react){
