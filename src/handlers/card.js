@@ -6,7 +6,7 @@ module.exports = CardHandler = async (client, m) => {
   try {
     let cardgames = await client.DB.get("card-game");
     const cardgame = cardgames || [];
-    // const jid = '27787800567-1632642032@g.us'; //send group
+    //  const jid = "120363043742977407@g.us" //send group
     // const jid = '27787800567-1632642032@g.us'
 
     // if (cardgame.length > 0) {
