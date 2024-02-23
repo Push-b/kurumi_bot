@@ -18,7 +18,7 @@ module.exports = {
 
     const card = await client.cards.get(`${M.from}.card`);
 
-    const cardgame = (await client.DB.get('cardgame')) || []
+    const cardgame = (await client.DB.get('card-game')) || []
 
 console.log(cardgame)
 
