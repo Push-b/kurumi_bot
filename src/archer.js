@@ -6,29 +6,31 @@ const {
     fetchLatestBaileysVersion,
     makeInMemoryStore,
     delay
-} = require('@whiskeysockets/baileys')
+} = require('@WhiskeySockets/baileys')
 const { QuickDB } = require('quick.db')
 const { MongoDriver } = require('quickmongo')
 const { Collection } = require('discord.js')
 const auth = require("./handlers/auth")
 const MessageHandler = require('./handlers/Message')
-const CardHandler = require('./handlers/card')
-const econ = require("./Database/Models/economy")
 const EventsHandler = require('./handlers/Events')
 const contact = require('./lib/contacts')
 const gpt = require('./lib/gpt')
 const utils = require('./lib/function')
-const app = require('express')()
+const YT = require('./lib/YT')
+const AI_lib = require('./lib/AI_lib')
+const express = require("express");
+const app = express();
 const qr = require('qr-image')
 const mongoose = require('mongoose')
 const P = require('pino')
-const axios = require('axios')
 const { Boom } = require('@hapi/boom')
 const { join } = require('path')
 const { readdirSync, writeFileSync, unlink } = require('fs-extra')
 const port = process.env.PORT || 3000
 const driver = new MongoDriver(process.env.URL)
 const chalk = require('chalk')
+const EconomyDb = require('./handlers/economy.js')
+
 
 const start = async () => {
       await mongoose.connect(process.env.SESSION_URL);
