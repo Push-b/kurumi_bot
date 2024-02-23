@@ -30,8 +30,7 @@ module.exports = MessageHandler = async (messages, client) => {
         const ActivateChatBot = (await client.DB.get('chatbot')) || []
         const banned = (await client.DB.get('banned')) || []
         const getCard = (await client.DB.get('cards')) || []
-        const cardgame = (await client.DB.get('cardgame')) || []
-        const jid = '120363043742977407@g.us';
+        const cardgame = (await client.DB.get('card-game')) || []
         const auction = (await client.DB.get('auction')) || []
         const cshop = (await client.DB.get('cshop')) || []
         const economy = (await client.DB.get('economy')) || []
@@ -82,10 +81,10 @@ module.exports = MessageHandler = async (messages, client) => {
             }
         }
         
-    //    const jid = '120363043742977407@g.us';
-      //  setInterval(async () => {
-    //    await spawnCard(jid);
-   //     }, 30000);
+  //       const jid = "263733096498-1500737942@g.us";
+ //                setInterval(async () => {
+  //        await spawnCard(jid);
+   //    }, 60000);
          
         //Banned system
         if (banned.includes(sender)) return M.reply('🟥 *Bro You are banned from using the bot commands*')
