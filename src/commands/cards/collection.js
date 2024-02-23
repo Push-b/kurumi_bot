@@ -62,5 +62,5 @@ module.exports = {
         }
         await client.sendMessage(M.from, tr);
         }
-      },
+      }),
     };
