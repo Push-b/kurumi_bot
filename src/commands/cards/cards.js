@@ -1,4 +1,4 @@
-const axios = require("axios");
+const path = require("path");
 
 module.exports = {
   name: "card",
@@ -61,7 +61,9 @@ module.exports = {
       
       const card = uniqueCards[index].split("-");
      
-      const { data } = await axios.get("https://raw.githubusercontent.com/REDZEOX/Kitagawa-Marin/main/card.json");
+      const filePath = path.join(__dirname, './card.json');
+      
+	     const data = require(filePath);
       
       const newArray = data.filter(function (I) {
         return I.tier == card[1];
