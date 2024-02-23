@@ -12,7 +12,7 @@ module.exports = {
     //User collection , deck and card-gamer enabler
     const collection = await client.DB.get(`${M.sender}_Collection`) || [];
     
- //   const cardgame = (await client.DB.get('cardgame')) || []
+ //   const cardgame = (await client.DB.get('card-game')) || []
     
     const deck = await client.DB.get(`${M.sender}_Deck`) || [];
 
