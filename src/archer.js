@@ -6,24 +6,19 @@ const {
     fetchLatestBaileysVersion,
     makeInMemoryStore,
     delay
-} = require('@WhiskeySockets/baileys')
+} = require('@whiskeysockets/baileys')
 const { QuickDB } = require('quick.db')
 const { MongoDriver } = require('quickmongo')
 const { Collection } = require('discord.js')
 const auth = require("./handlers/auth")
 const MessageHandler = require('./handlers/Message')
 const CardHandler = require('./handlers/card')
-   // call the summon function
-const jid = "27787800567-1632642032@g.us";
-
-const EventsHandler = require('./handlers/events')
+const econ = require("./Database/Models/economy")
+const EventsHandler = require('./handlers/Events')
 const contact = require('./lib/contacts')
 const gpt = require('./lib/gpt')
 const utils = require('./lib/function')
-const YT = require('./lib/YT')
-const AI_lib = require('./lib/AI_lib')
-const express = require("express");
-const app = express();
+const app = require('express')()
 const qr = require('qr-image')
 const mongoose = require('mongoose')
 const P = require('pino')
@@ -36,21 +31,6 @@ const driver = new MongoDriver(process.env.URL)
 const chalk = require('chalk')
 
 const start = async () => {
-    // if (process.env.SESSION) {
-    //     const { data } = await axios.get(process.env.SESSION)
-    //     writeFileSync('./session', JSON.stringify(data))
-    // }
-    // const { state, saveCreds } = await useMultiFileAuthState('./session')
-    
-    // const clearState = () => unlink('./session')
-
-    // const client = Baileys({
-    //     version: (await fetchLatestBaileysVersion()).version,
-    //     auth: state,
-    //     logger: P({ level: 'silent' }),
-    //     printQRInTerminal: true
-    // })
-
       await mongoose.connect(process.env.SESSION_URL);
 
   const { useAuthFromDatabase } = new auth(process.env.SESSION);
@@ -65,12 +45,11 @@ const start = async () => {
     })
 
     //Config
-    client.name = process.env.NAME || 'Archer'
+    client.name = process.env.NAME || 'Bot-Haven'
     client.prefix = process.env.PREFIX || '!'
-    client.proUser = (process.env.proUser  || '263788671478').split(',')
-    client.writesonicAPI = process.env.WRITE_SONIC || null
+    client.openAi = process.env.openAi || null
     client.bgAPI = process.env.BG_API_KEY || null
-    client.mods = (process.env.MODS || '263788671478').split(',')
+    client.mods = (process.env.MODS || '923087880256').split(',')
 
     //Database
     client.DB = new QuickDB({
@@ -82,26 +61,17 @@ const start = async () => {
     //Contacts
     client.contact = contact
 
-    //Open AI
-    client.AI = AI_lib
-
     //Experience
     client.exp = client.DB.table('experience')
 
     //Cards
     client.cards = client.DB.table('cards')
 
-    //Cradits
-    client.cradit = client.DB.table('cradit')
-
     //RPG
     client.rpg = client.DB.table('rpg_game')
-    
-    //potion
-    client.chara = client.DB.table('chara')
-    
-    //charm
-    client.charm = client.DB.table('charm')
+
+    //ecnomy 
+    client.econ = econ
     
     //Commands
     client.cmd = new Collection()
@@ -112,8 +82,6 @@ const start = async () => {
     //GPT
     client.gpt = gpt
 
-    //YT gif
-    client.YT = YT;
 
     //Colourful
     client.log = (text, color = 'green') =>
@@ -149,6 +117,7 @@ const start = async () => {
                 client.log('Connecting...')
                 setTimeout(() => start(), 3000)
             } else {
+                client.log('Disconnected.', true)
                 clearState()
                 client.log('Starting...')
                 setTimeout(() => start(), 3000)
@@ -161,12 +130,14 @@ const start = async () => {
         if (connection === 'open') {
             client.state = 'open'
             loadCommands()
-            client.log('🤖 you have made it once aggain Deryl!!')
+            client.log('🤖 you have made it once again Deryl!')
         }
     })
 
+    CardHandler(client)
+
     app.get('/', (req, res) => {
-        res.status(300).setHeader('Content-Type', 'image/png').send(client.QR)
+        res.status(200).setHeader('Content-Type', 'image/png').send(client.QR)
     })
 
     client.ev.on('messages.upsert', async (messages) => await MessageHandler(messages, client))
