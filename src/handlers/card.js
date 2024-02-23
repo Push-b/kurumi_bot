@@ -80,7 +80,7 @@ module.exports = CardHandler = async (client, m) => {
         const cgif = await client.utils.gifToMp4(giif);
         return client.sendMessage(jid, {
           video: cgif,
-          caption: `🎴 *━『 Woah a rare card spawn 』━* 🎴\n\n🧧 Name: ${obj.title}\n\n🎐 Tier: ${obj.tier}\n\n🪩 Price: ${price}\n\n📤 *Info:* buy cards.\n\n🔖 [ Use *${process.env.PREFIX}collect* to claim the card, *${process.env.PREFIX}collection* to see your *Cards* ]`,
+          caption: `🧧 *━『 Woah a rare card spawn 』━* 🧧\n\n🎃 Name: ${obj.title}\n\n🌐 Tier: ${obj.tier}\n\n🌀 Price: ${price}\n\n📤 *Info:* collect as much as you can.\n\n🔮 [ Use *${process.env.PREFIX}collect* to claim the card, *${process.env.PREFIX}collection* to see your *Cards* ]`,
           gifPlayback: true,
         });
       } else {
@@ -88,7 +88,7 @@ module.exports = CardHandler = async (client, m) => {
           image: {
             url: obj.url,
           },
-          caption: `🃏 *Card Appeared* 🃏\n\n Name: ${obj.title}\n\n🎐 Tier: ${obj.tier}\n\n🪩 Price: ${price}\n\n📤 *Info:* buy cards.\n\n🔖 [ Use *${process.env.PREFIX}collect* to claim the card, *${process.env.PREFIX}collection* to see your *Cards* ]\n\n©️ *Shinob*`,
+          caption: `🃏 *Anime Card Appeared* 🃏\n\n 👤 Name: ${obj.title}\n\n🌀 Tier: ${obj.tier}\n\n🍥 Price: ${price}\n\n📤 *Info:* collect as much as you can .\n\n🔮 [ Use *${process.env.PREFIX}collect* to claim the card, *${process.env.PREFIX}collection* to see your *Cards collection* ]`,
         });
       } 
      
