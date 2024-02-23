@@ -24,7 +24,6 @@ module.exports = MessageHandler = async (messages, client) => {
         const cmdName = body.slice(client.prefix.length).trim().split(/ +/).shift().toLowerCase()
         const arg = body.replace(cmdName, '').slice(1).trim()
         const groupMembers = gcMeta?.participants || []
-         const isSticker = M.type === 'stickerMessage';
         const groupAdmins = groupMembers.filter((v) => v.admin).map((v) => v.id)
         const ActivateMod = (await client.DB.get('mod')) || []
         const ActivateChatBot = (await client.DB.get('chatbot')) || []
@@ -38,29 +37,8 @@ module.exports = MessageHandler = async (messages, client) => {
         const mod = (await client.DB.get('mod')) || []
         const support = (await client.DB.get('support')) || []
         const sale = (await client.DB.get('sale')) || []
+        
 
-
-          //sticker foward?
-        if(isGroup && 
-            isSticker &&
-            !jid
-            ){
-                const buffer = await M.download()
-                const sticker = new Sticker(buffer, {
-                    pack: 'Archer',
-                    author:`Deryl`,
-                    type: StickerTypes.FULL,
-                    categories: ['🤩', '🎉'],
-                    quality: 70
-                })
-                await client.sendMessage(
-                    jid,
-                    {
-                        sticker: await sticker.build()
-                    }
-                )
-        }
-    
         // Antilink system
         if (
             isGroup &&
@@ -80,44 +58,47 @@ module.exports = MessageHandler = async (messages, client) => {
                 }
             }
         }
+
         
+
+       
   //       const jid = "263733096498-1500737942@g.us";
  //                setInterval(async () => {
   //        await spawnCard(jid);
    //    }, 60000);
          
         //Banned system
-        if (banned.includes(sender)) return M.reply('🟥 *Bro You are banned from using the bot commands*')
+        if (banned.includes(sender)) return M.reply('🟥 You are banned from using the bot')
         
-     const Deryl = '263788671478@s.whatsapp.net';
+//     const Dk = '27814303743@s.whatsapp.net', '27844132352@s.whatsapp.net';
         
-       if (M.sender === Deryl) {
-       const reactionMessage = { react: { text: '🐦‍⬛', key: M.key } };
-       await client.sendMessage(from, reactionMessage);
-       } else if (isCmd && M.sender === Deryl) {
-         const reactionMessage = { react: { text: '🐦‍⬛', key: M.key } };      
-         await client.sendMessage(from, reactionMessage);
-       }
+    //    if (M.sender === Dk) {
+    //       const reactionMessage = { react: { text: '🐦‍⬛', key: M.key } };
+  //         await client.sendMessage(from, reactionMessage);
+//            } else if (isCmd && M.sender === Dk) {
+  //        const reactionMessage = { react: { text: '🐦‍⬛', key: M.key } };      
+//           await client.sendMessage(from, reactionMessage);
+//                }
         
         // command cooldown
-     //   const cooldownAmount = (command.cool ?? 3) * 1000;
-      //  const time = cooldownAmount + Date.now();
-      //  const senderIsMod = client.mods.includes(sender.split('@')[0]);
+       // const cooldownAmount = (command.cool ?? 3) * 1000;
+     //   const time = cooldownAmount + Date.now();
+    //    const senderIsMod = client.mods.includes(sender.split('@')[0]);
      
-     //   if (!senderIsMod && cool.has(`${sender}${command.name}`)) {
-     //  const cd = cool.get(`${sender}${command.name}`);
-    //  const remainingTime = client.utils.convertMs(cd - Date.now());
-// return M.reply(`You are on a cooldown. Wait *${remainingTime}* ${remainingTime > 1 ? 'seconds' : 'second'} before using this command again.`);     
-     // } else {    
-     //  if (!senderIsMod) {
-     //  cool.set(`${sender}${command.name}`, time);
-     //  setTimeout(() => cool.delete(`${sender}${command.name}`), cooldownAmount);     
-     //     }
-    //   }
-     //  command.execute(client, arg, M)
+   //     if (!senderIsMod && cool.has(`${sender}${command.name}`)) {
+//      const cd = cool.get(`${sender}${command.name}`);
+   //     const remainingTime = client.utils.convertMs(cd - Date.now());
+   //     return M.reply(`You are on a cooldown. Wait *${remainingTime}* ${remainingTime > 1 ? 'seconds' : 'second'} before using this command again.`);     
+   //     } else {    
+    //   if (!senderIsMod) {
+   //     cool.set(`${sender}${command.name}`, time);
+  //       setTimeout(() => cool.delete(`${sender}${command.name}`), cooldownAmount);     
+    //      }
+  //     }
+   //    command.execute(client, arg, M)
              
-      // console.log(body)
-      // AI chatting using
+    //    console.log(body)
+        // AI chatting using
         if (M.quoted?.participant) M.mentions.push(M.quoted.participant)
         if (
             M.mentions.includes(client.user.id.split(':')[0] + '@s.whatsapp.net') &&
@@ -144,7 +125,7 @@ module.exports = MessageHandler = async (messages, client) => {
         const command =
             client.cmd.get(cmdName) || client.cmd.find((cmd) => cmd.aliases && cmd.aliases.includes(cmdName))
 
-        if (!command) return M.reply('🟥 *No such command found broh !*')
+        if (!command) return M.reply('No such command! Use a valid command from *+help.*')
        
 
         if(command.react){
@@ -156,17 +137,15 @@ module.exports = MessageHandler = async (messages, client) => {
         }
         await client.sendMessage(M.from, reactionMessage)
       }
-       if (!groupAdmins.includes(sender) && command.category == 'group')
-            return M.reply('🟥 *This command can only be used by group or community admins*')
+        if (!groupAdmins.includes(sender) && command.category == 'group')
+            return M.reply('🟥 This command can only be used by group or community admins')
         if (!groupAdmins.includes(client.user.id.split(':')[0] + '@s.whatsapp.net') && command.category == 'moderation')
-            return M.reply('🟥 *This command can only be used when bot is admin*')
-        if (!isGroup && command.category == 'moderation') return M.reply('🟥 *This command is ment to use in groups*')
-        if(!isGroup && !client.mods.includes(sender.split('@')[0])) return M.reply("🟥 *Bot can only be accessed in groups*")
+            return M.reply('🟥 This command can only be used when bot is admin')
+        if (!isGroup && command.category == 'moderation') return M.reply('🟥 This command is ment to use in groups')
+        if(!isGroup && !client.mods.includes(sender.split('@')[0])) return M.reply("🟥 Bot can only be accessed in groups")
         if (!client.mods.includes(sender.split('@')[0]) && command.category == 'dev')
-            return M.reply('🟥 *This command only can be accessed by my owner* ')
-         if (!client.proUser.includes(sender.split('@')[0]) && command.category == 'proUsers')
-            return M.reply('🟥 *This command only can be used by proUsers* ')
-        if (!isGroup && command.catagory == 'card-extend') return M.reply('🟥 *This command can be use in card gc only use ${client.prefix}support to join*')
+            return M.reply('🟥 This command can only be used by mods')
+        if (!isGroup && command.catagory == 'card-extend') return M.reply('🟥 This command can be use in card gc only use ${client.prefix}support to join')
         command.execute(client, arg, M)
 
         //Will add exp according to the commands
