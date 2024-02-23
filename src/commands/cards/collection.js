@@ -1,4 +1,4 @@
-const axios = require("axios");
+const path = require('path');
 
 module.exports = {
   name: "collection",
@@ -60,7 +60,7 @@ module.exports = {
           }
           cardText += `🔰Card ${i+1}:\n\n🌟Tier: ${card[1]}\n\n💎Name ${card[0]}\n`;
         }
-        await client.sendMessage(M.from, tr)
+        await client.sendMessage(M.from, tr);
         }
-      }
-    } 
+      },
+    };
