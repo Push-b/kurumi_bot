@@ -61,6 +61,10 @@ module.exports = {
           cardText += `🔰Card ${i+1}:\n\n🌟Tier: ${card[1]}\n\n💎Name ${card[0]}\n`;
         }
         await client.sendMessage(M.from, tr);
-        }
-      }),
-    };
+         }
+    } catch (err) {
+      await client.sendMessage(M.from, {image: {url: `${client.utils.errorChan()}`}, caption: `${client.utils.greetings()} Error-Chan Dis\n\nError:\n${err}`});
+    }
+  },
+};
+      
