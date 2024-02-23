@@ -14,7 +14,7 @@ const auth = require("./handlers/auth")
 const MessageHandler = require('./handlers/Message')
 const EventsHandler = require('./handlers/events')
 const contact = require('./lib/contacts')
-const CardHandler = require('./Handlers/card')
+const CardHandler = require('./handlers/card')
    // call the summon function
 const jid = "27787800567-1632642032@g.us";
 const gpt = require('./lib/gpt')
