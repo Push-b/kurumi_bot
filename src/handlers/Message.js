@@ -24,7 +24,6 @@ module.exports = MessageHandler = async (messages, client) => {
         const cmdName = body.slice(client.prefix.length).trim().split(/ +/).shift().toLowerCase()
         const arg = body.replace(cmdName, '').slice(1).trim()
         const groupMembers = gcMeta?.participants || []
-         const isSticker = M.type === 'stickerMessage';
         const groupAdmins = groupMembers.filter((v) => v.admin).map((v) => v.id)
         const ActivateMod = (await client.DB.get('mod')) || []
         const ActivateChatBot = (await client.DB.get('chatbot')) || []
@@ -35,31 +34,10 @@ module.exports = MessageHandler = async (messages, client) => {
         const cshop = (await client.DB.get('cshop')) || []
         const economy = (await client.DB.get('economy')) || []
         const game = (await client.DB.get('game')) || []
+        const jid = "120363043742977407@g.us";
         const mod = (await client.DB.get('mod')) || []
         const support = (await client.DB.get('support')) || []
         const sale = (await client.DB.get('sale')) || []
-
-
-          //sticker foward?
-        if(isGroup && 
-            isSticker &&
-            !jid
-            ){
-                const buffer = await M.download()
-                const sticker = new Sticker(buffer, {
-                    pack: 'Archer',
-                    author:`Deryl`,
-                    type: StickerTypes.FULL,
-                    categories: ['🤩', '🎉'],
-                    quality: 70
-                })
-                await client.sendMessage(
-                    jid,
-                    {
-                        sticker: await sticker.build()
-                    }
-                )
-        }
     
         // Antilink system
         if (
@@ -81,7 +59,7 @@ module.exports = MessageHandler = async (messages, client) => {
             }
         }
         
-  //       const jid = "263733096498-1500737942@g.us";
+  //       const jid =  const jid = "120363043742977407@g.us";
  //                setInterval(async () => {
   //        await spawnCard(jid);
    //    }, 60000);
