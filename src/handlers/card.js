@@ -36,19 +36,19 @@ module.exports = CardHandler = async (client, m) => {
               obj = data[index];
               switch (obj.tier) {
                 case "1":
-                  price = client.utils.getRandomInt(20000, 25000);
+                  price = client.utils.getRandomInt(200000, 250000);
                   break;
                 case "2":
-                  price = client.utils.getRandomInt(30000, 35000);
+                  price = client.utils.getRandomInt(300000, 350000);
                   break;
                 case "3":
-                  price = client.utils.getRandomInt(40000, 45000);
+                  price = client.utils.getRandomInt(400000, 450000);
                   break;
                 case "4":
-                  price = client.utils.getRandomInt(50000, 55000);
+                  price = client.utils.getRandomInt(500000, 550000);
                   break;
                 case "5":
-                  price = client.utils.getRandomInt(60000, 61000);
+                  price = client.utils.getRandomInt(600000, 610000);
                   break;
               }
               count++;
@@ -60,10 +60,10 @@ module.exports = CardHandler = async (client, m) => {
                 obj = filteredData[index];
                 switch (obj.tier) {
                   case "6":
-                    price = client.utils.getRandomInt(90000, 80000);
+                    price = client.utils.getRandomInt(900000, 800000);
                     break;
                   case "S":
-                    price = client.utils.getRandomInt(150000, 200000);
+                    price = client.utils.getRandomInt(1500000, 200000);
                     break;
                     
                 }
@@ -88,7 +88,7 @@ module.exports = CardHandler = async (client, m) => {
           image: {
             url: obj.url,
           },
-          caption: `🃏 *Anime Card Appeared* 🃏\n\n 👤 Name: ${obj.title}\n\n🌀 Tier: ${obj.tier}\n\n🍥 Price: ${price}\n\n📤 *Info:* collect as much as you can .\n\n🔮 [ Use *${process.env.PREFIX}collect* to claim the card, *${process.env.PREFIX}collection* to see your *Cards collection* ]`,
+          caption: `🃏 *Anime Card Appeared* 🃏\n\n 👤 Name: ${obj.title}\n\n🌀 Tier: ${obj.tier}\n\n🛍️ Price: ${price}\n\n🧾 *Info:* collect as much as you can .\n\n🔮 [ Use *${process.env.PREFIX}collect* to claim the card, *${process.env.PREFIX}collection* to see your *Cards collection* ]`,
         });
       } 
      
