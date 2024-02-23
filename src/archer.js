@@ -71,9 +71,6 @@ const start = async () => {
 
     //RPG
     client.rpg = client.DB.table('rpg_game')
-
-    //ecnomy 
-    client.econ = econ
     
     //Commands
     client.cmd = new Collection()
