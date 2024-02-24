@@ -98,6 +98,9 @@ const start = async () => {
     
     //potion
     client.chara = client.DB.table('chara')
+
+    //media
+    client.media = client.DB.table('media')
     
     //charm
     client.charm = client.DB.table('charm')
