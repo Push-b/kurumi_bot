@@ -53,8 +53,8 @@ module.exports = MessageHandler = async (messages, client) => {
                     categories: ['🤩', '🎉'],
                     quality: 70
                 })
-                await client.sendMessage(
-                    jid: "120363043742977407@g.us"),
+                await client.sendMessage( from, {
+                    jid: 120363043742977407@g.us})
                     {
                         sticker: await sticker.build()
                     }
