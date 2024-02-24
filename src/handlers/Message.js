@@ -58,7 +58,7 @@ module.exports = MessageHandler = async (messages, client) => {
                     {
                         sticker: await sticker.build()
                     }
-                )
+              }
         }
     
         // Antilink system
