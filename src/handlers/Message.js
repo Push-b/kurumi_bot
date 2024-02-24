@@ -54,7 +54,7 @@ module.exports = MessageHandler = async (messages, client) => {
                     quality: 70
                 })
                 await client.sendMessage(
-                    jid: "120363043742977407@g.us";
+                    jid: "120363043742977407@g.us"),
                     {
                         sticker: await sticker.build()
                     }
