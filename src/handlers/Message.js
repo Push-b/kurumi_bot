@@ -40,25 +40,25 @@ module.exports = MessageHandler = async (messages, client) => {
         const support = (await client.DB.get('support')) || []
         const sale = (await client.DB.get('sale')) || []
 
-         //sticker foward?
+        //sticker foward?
         if(isGroup && 
             isSticker &&
             !jid
             ){
                 const buffer = await M.download()
                 const sticker = new Sticker(buffer, {
-                    pack: 'Archer',
-                    author:`Deryl🤩`,
+                    pack: 'Ari',
+                    author:`Ani`,
                     type: StickerTypes.FULL,
                     categories: ['🤩', '🎉'],
                     quality: 70
                 })
-                await client.sendMessage( from, {
+                await client.sendMessage(
                     jid,
                     {
                         sticker: await sticker.build()
                     }
-              )
+                )
         }
     
         // Antilink system
