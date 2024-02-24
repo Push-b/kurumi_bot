@@ -15,7 +15,7 @@ module.exports = {
   
 const ariLogo = "https://telegra.ph/file/eedb459ccf531467b5b9a.jpg"
         
-        let supportG = `*━『 Music_Group 』━*\n\n➜ : https://chat.whatsapp.com/CUs2uABsCWrINrmln0UfjQ\n\n━『 Casino_Group 』━*\n\n➜ : https://chat.whatsapp.com/KAv2yWg258NHu8Xaq6WdWK\n\n*━『 Cardgame_and_rpg_Group 』━*\n\n➜ : https://chat.whatsapp.com/K1w7qWqNp9BBxUxrYA1QSr\n\n`
+        let supportG = `*━━━『 Music_Group 』━━━*\n\n➜ :  https://chat.whatsapp.com/CUs2uABsCWrINrmln0UfjQ\n\n*━━━『 Casino_Group 』━━━*\n\n➜ : https://chat.whatsapp.com/KAv2yWg258NHu8Xaq6WdWK\n\n*━━『 Cardgame_and_rpg_Group 』━━*\n\n➜ : https://chat.whatsapp.com/K1w7qWqNp9BBxUxrYA1QSr\n\n`
         let text = [
             "Together we rise, together we fall, but always together in this anime world we call home. Welcome to the support group.",
             "Behind every successful anime lover, there's a great support group. And you just found one.",
