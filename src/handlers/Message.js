@@ -54,11 +54,11 @@ module.exports = MessageHandler = async (messages, client) => {
                     quality: 70
                 })
                 await client.sendMessage( from, {
-                    jid: '120363043742977407@g.us'})
+                    jid,
                     {
                         sticker: await sticker.build()
                     }
-              }
+              )
         }
     
         // Antilink system
