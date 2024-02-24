@@ -21,7 +21,7 @@ module.exports = {
       M.reply('No Deck Founded');
     } 
     try{
-      const maxCardsInDeck = 12;
+      const maxCardsInDeck = 30;
       const cardsToMove = deck.slice(maxCardsInDeck);
       const cardsToKeep = deck.slice(0, maxCardsInDeck);
       const collection = await client.DB.get(`${M.sender}_Collection`) || [];
