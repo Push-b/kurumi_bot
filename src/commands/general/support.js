@@ -13,9 +13,9 @@ module.exports = {
         let randomRes = videos[Math.floor(Math.random() * videos.length)]
 
   
-const ariLogo = "https://telegra.ph/file/e435278bda4f546ba3cfa.jpg"
+const ariLogo = "https://telegra.ph/file/eedb459ccf531467b5b9a.jpg"
         
-        let supportG = `*━『 Archer_Support_Group 』━*\n\n  : https://chat.whatsapp.com/CUs2uABsCWrINrmln0UfjQ\n\n`
+        let supportG = `*━『 Music_Group 』━*\n\n  : https://chat.whatsapp.com/CUs2uABsCWrINrmln0UfjQ\n\n`
         let text = [
             "Together we rise, together we fall, but always together in this anime world we call home. Welcome to the support group.",
             "Behind every successful anime lover, there's a great support group. And you just found one.",
