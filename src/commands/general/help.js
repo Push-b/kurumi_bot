@@ -70,7 +70,7 @@ if (hour >= 0 && hour < 12) {
 
        await client.sendMessage(
           M.from, {
-              text: `\n*👋 Hello ${pushName} l'm ${process.env.NAME}, A whatsApp-Bot Built to make your boring WhatsApp experience into another level**\n\n >>> *Help menu is designed to help you get started with the Bot*\n\n ${commands}\n⛩️ *Thanks for using Archer. If you find me helpful, please share me with your friends and leave a review.*` ,
+              text: `\n*👋 Hello ${pushName} l'm ${process.env.NAME}, A whatsApp-Bot Built to make your boring WhatsApp experience into another level*\n\n ${commands}\n📡 *Thanks for using Archer. If you find me helpful, please share me with your friends and leave a review🌟.*` ,
              contextInfo: {
              externalAdReply: {
              tittle: 'Archer', 
