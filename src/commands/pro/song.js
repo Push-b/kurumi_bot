@@ -20,9 +20,6 @@ module.exports = {
         if (!term) return M.reply('🟥 *Please use this command with a valid youtube contant link*')
         if (!YT.validateURL(term.trim())) return M.reply('🟥 *Please use this command with a valid youtube.com link*')
         const { videoDetails } = await YT.getInfo(term)
-       const musictoken = await client.media.get(`${M.sender}.musictoken`)
-     if (!musictoken) return M.reply(`🟥 You dont have any music token visit the .media-shop and buy music tokens!`)
-     await client.media.sub(`${M.sender}.musictoken`, 1)
          M.reply(videoDetails.title + '.mp3')
         if (Number(videoDetails.lengthSeconds) > 1800) return M.reply('Cannot download audio longer than 30 minutes')
         const audio = YT.getBuffer(term, 'audio')
@@ -37,7 +34,7 @@ module.exports = {
        body: videoDetails.ownerChannelName,
       thumbnail: await client.utils.getBuffer(`https://i.ytimg.com/vi/${videoDetails.videoId}/maxresdefault.jpg`),
       mediaUrl: videoDetails.ownerChannelName,
-      mediaType:2,
+      mediaType:1,
           }
        }
     })
