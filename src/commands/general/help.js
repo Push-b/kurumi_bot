@@ -22,11 +22,11 @@ const now = new Date();
 const hour = now.getHours();
 let greeting;
 if (hour >= 0 && hour < 12) {
-    greeting = " Good Morning"; //good morning
+    greeting = "❤️ Good Morning"; //good morning
 } else if (hour >= 12 && hour < 18) {
-    greeting = " Good Afternoon"; //good afternoon
+    greeting = "❤️ Good Afternoon"; //good afternoon
 } else {
-    greeting = " Good Evening"; //good evening
+    greeting = "❤️ Good Evening"; //good evening
 }
         
  try {
@@ -36,7 +36,7 @@ if (hour >= 0 && hour < 12) {
       let pushName = M.pushName.trim();
   
       if (pushName.split(' ').length === 1) {
-        pushName = `${pushName} .`;
+        pushName = `${pushName} ,`;
       }
       
       const categories = client.cmd.reduce((obj, cmd) => {
@@ -54,7 +54,7 @@ if (hour >= 0 && hour < 12) {
         commands += `*❰  ⁠● ⁠● ⁠● ⁠●  ${client.utils.capitalize(
           category,
           true
-          )}  ⁠● ● ⁠● ⁠●  ❱*  \n\n\`\`\`⁠➜${categories[category].map((cmd) => 
+          )}  ⁠● ● ⁠● ⁠●  ❱*  \n\`\`\`⁠➜${categories[category].map((cmd) => 
             `${cmd}`).join('・|⁠・')}\`\`\`\n\n`
         
         }
@@ -70,7 +70,7 @@ if (hour >= 0 && hour < 12) {
 
        await client.sendMessage(
           M.from, {
-              text: `\n*👋 Hello ${pushName} l'm ${process.env.NAME}. A whatsApp-Bot created by the NCT Association*\n\n >>> *Help menu is designed to help you get started with the Bot*\n\n ${commands}\n⛩️ *Thanks for using Archer. If you find me helpful, please share me with your friends and leave a review.*` ,
+              text: `\n*👋 Hello ${pushName} l'm ${process.env.NAME}, A whatsApp-Bot Built to make your boring WhatsApp experience into another level**\n\n >>> *Help menu is designed to help you get started with the Bot*\n\n ${commands}\n⛩️ *Thanks for using Archer. If you find me helpful, please share me with your friends and leave a review.*` ,
              contextInfo: {
              externalAdReply: {
              tittle: 'Archer', 
