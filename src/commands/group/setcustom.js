@@ -13,9 +13,9 @@ module.exports = {
     M.reply('please write the fucking text')
   }
 
-  const customWelcomeMsgs = await DB.get("customWelcomeMsgs") || {};
+  const customWelcomeMsgs = await client.DB.get("customWelcomeMsgs") || {};
   customWelcomeMsgs[groupId] = `${text}`;
-  await DB.set("customWelcomeMsgs", customWelcomeMsgs);
+  await client.DB.set("customWelcomeMsgs", customWelcomeMsgs);
 
   await client.sendMessage(
     M.from,
