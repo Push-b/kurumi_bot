@@ -14,7 +14,7 @@ module.exports = {
   }
 
   const customWelcomeMsgs = await client.DB.get("customWelcomeMsgs") || {};
-  customWelcomeMsgs[groupId] = `${text}`;
+  customWelcomeMsgs[groupId] = `${arg}`;
   await client.DB.set("customWelcomeMsgs", customWelcomeMsgs);
 
   await client.sendMessage(
