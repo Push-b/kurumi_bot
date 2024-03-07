@@ -4,9 +4,6 @@ module.exports = {
     description: 'Sends the lyrics of a given song',
     react: "✅",
         async execute(client, arg, M) {  
-    const lyricstoken = await client.media.get(`${M.sender}.lyricstoken`)
-     if (!lyricstoken) return M.reply(`🟥 You dont have any lyrics token visit the *.media-shop* and buy lyrics tokens!`)
-     await client.media.sub(`${M.sender}.lyricstoken`, 1)
         if (!arg) return void M.reply('🟥 *Provide the name of the song to search the lyrics*')
         const term = arg.trim()
         const data = await client.utils.fetch(`https://weeb-api.vercel.app/genius?query=${term}`)
