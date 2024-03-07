@@ -10,9 +10,6 @@ module.exports = {
     description: 'Downloads given YT Video and sends it as a document audio',
     async execute(client, arg, M) {
         const link = async (term) => {
-      const musictoken = await client.media.get(`${M.sender}.musictoken`)
-     if (!musictoken) return M.reply(`🟥 You dont have any music token visit the *.media-shop* and buy music tokens!`)
-     await client.media.sub(`${M.sender}.musictoken`, 1)
             const { videos } = await yts(term.trim())
             if (!videos || !videos.length) return null
             return videos[0].url
