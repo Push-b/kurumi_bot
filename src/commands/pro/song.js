@@ -1,7 +1,6 @@
 const YT = require('../../lib/YT')
 // const yts = require('yt-search')
 const yts = require("youtube-yts");
-const axios = require('axios')
 
 module.exports = {
     name: 'play',
