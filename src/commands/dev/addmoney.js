@@ -8,10 +8,10 @@ module.exports = {
     async execute(client, arg, M) {
       if (M.quoted?.participant) M.mentions.push(M.quoted.participant)
             
-      if (!M.mentions.length) return M.reply('You must tag the user to ban him/her.')
+      if (!M.mentions.length) return M.reply('🛑 You must tag the user.')
       
       if (!arg) {
-        return M.reply('*Please provide the amount to add*');
+        return M.reply('*🛑 Please provide the amount to add*');
     }
 
     const amountToAdd = parseInt(arg.split(' ')[0])
