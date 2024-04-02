@@ -9,7 +9,7 @@ module.exports = {
         const archer = (await client.DB.get('archer')) || []
    if (!archer.includes(M.from)) return M.reply(`🟥 *Bot is not enabled in current group ask mods to activate* `)
         
-        const toggleableGroupActions = ['mod', 'events', 'invitelink', 'chatbot' ]
+        const toggleableGroupActions = ['mod', 'events' ]
         if (!arg)
             return M.reply(
                 `Please provide a valid toggleable GroupActions\n\n*Available:* \n${toggleableGroupActions.join('\n')}`
