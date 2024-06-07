@@ -6,7 +6,7 @@ module.exports = {
     description: 'Demotes the taged user',
     async execute(client, arg, M) {
         
-        if (!M.mentions.length) return M.reply('🟥 *You must tag the user to demote broh!*')
+        if (!M.mentions.length) return M.reply('*You must tag the user to demote broh!*')
         const groupMetadata = await client.groupMetadata(M.from)
         const groupMembers = groupMetadata?.participants || []
         const groupAdmins = groupMembers.filter((v) => v.admin).map((v) => v.id)
