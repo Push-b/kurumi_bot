@@ -19,6 +19,6 @@ module.exports = {
             const Actives = (await client.DB.get(arg)) || []
         if (!Actives.includes(M.from)) return M.reply(`🟥 ${client.utils.capitalize(arg)} is already in off your group`)
         await client.DB.pull(arg, M.from)
-        M.reply(`Success deactivating ${client.utils.capitalize(arg)} in your group`)
+        M.reply(`✅ deactivating ${client.utils.capitalize(arg)} in your group`)
     }
 }
