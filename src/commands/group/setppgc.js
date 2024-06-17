@@ -6,7 +6,6 @@ const path = require('path');
 module.exports = {
   name: 'setppgc',
   category: 'group',
-  exp: 0,
   description: 'Change pic of group pfp',
   async execute(client, arg, M) {
     const content = JSON.stringify(M.quoted);
