@@ -2,7 +2,6 @@ module.exports = {
     name: 'rule',
     aliases: ['rules'],
     category: 'general',
-    cool: 30,
     react: "✅",
     description: 'Bot rules',
     async execute(client, arg, M) {
