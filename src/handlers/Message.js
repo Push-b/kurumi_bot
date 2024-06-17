@@ -40,93 +40,32 @@ module.exports = MessageHandler = async (messages, client) => {
         const support = (await client.DB.get('support')) || []
         const sale = (await client.DB.get('sale')) || []
 
-        //sticker foward?
-        if(isGroup && 
-            isSticker &&
-            !jid
-            ){
-                const buffer = await M.download()
-                const sticker = new Sticker(buffer, {
-                    pack: 'Ari',
-                    author:`Ani`,
-                    type: StickerTypes.FULL,
-                    categories: ['🤩', '🎉'],
-                    quality: 70
-                })
-                await client.sendMessage(
-                    jid,
-                    {
-                        sticker: await sticker.build()
-                    }
-                )
-        }
-    
-        // Antilink system
-        if (
-            isGroup &&
-            ActivateMod.includes(from) &&
-            groupAdmins.includes(client.user.id.split(':')[0] + '@s.whatsapp.net') &&
-            body
-        ) {
+         // Antilink system
+        if (isGroup && isMod(from) && groupAdmins.includes(client.user.id.split(':')[0] + '@s.whatsapp.net') && body) {
             const groupCodeRegex = body.match(/chat.whatsapp.com\/(?:invite\/)?([\w\d]*)/)
             if (groupCodeRegex && groupCodeRegex.length === 2 && !groupAdmins.includes(sender)) {
-                const groupCode = groupCodeRegex[1]
-                const groupNow = await client.groupInviteCode(from)
+                const groupCode = groupCodeRegex[1];
+                const groupNow = await client.groupInviteCode(from);
 
                 if (groupCode !== groupNow) {
-                    await client.sendMessage(from, { delete: M.key })
-                     await client.groupParticipantsUpdate(from, [sender], 'remove')
-                     return M.reply('🐦‍⬛ *Dont send a group link or you will be next*')
+                    await client.sendMessage(from, { delete: M.key });
+                    await client.groupParticipantsUpdate(from, [sender], 'remove');
+                    return M.reply("🐦‍⬛ *Don't send a group link or you will be removed*");
                 }
             }
         }
-        
-  //       const jid =  const jid = "120363043742977407@g.us";
- //                setInterval(async () => {
-  //        await spawnCard(jid);
-   //    }, 60000);
-         
-        //Banned system
-        if (banned.includes(sender)) return M.reply('🟥 *Bro You are banned from using the bot commands*')
-        
-     const Deryl = '263788671478@s.whatsapp.net';
-        
-       if (M.sender === Deryl) {
-       const reactionMessage = { react: { text: '🐦‍⬛', key: M.key } };
-       await client.sendMessage(from, reactionMessage);
-       } else if (isCmd && M.sender === Deryl) {
-         const reactionMessage = { react: { text: '🐦‍⬛', key: M.key } };      
-         await client.sendMessage(from, reactionMessage);
-       }
-        
-        // command cooldown
-     //   const cooldownAmount = (command.cool ?? 3) * 1000;
-      //  const time = cooldownAmount + Date.now();
-      //  const senderIsMod = client.mods.includes(sender.split('@')[0]);
-     
-     //   if (!senderIsMod && cool.has(`${sender}${command.name}`)) {
-     //  const cd = cool.get(`${sender}${command.name}`);
-    //  const remainingTime = client.utils.convertMs(cd - Date.now());
-// return M.reply(`You are on a cooldown. Wait *${remainingTime}* ${remainingTime > 1 ? 'seconds' : 'second'} before using this command again.`);     
-     // } else {    
-     //  if (!senderIsMod) {
-     //  cool.set(`${sender}${command.name}`, time);
-     //  setTimeout(() => cool.delete(`${sender}${command.name}`), cooldownAmount);     
-     //     }
-    //   }
-     //  command.execute(client, arg, M)
-             
-      // console.log(body)
-      // AI chatting using
+      
+        // Banned system
+        if (isCmd && banned.includes(sender)) return M.reply('🔴 *You are banned from using bot commands*')
+
+        // Group responses
+        if (body === 'test' || body === 'Test') return M.reply(`🐦‍⬛ everything is working just fine ${M.pushName}`)
+        if (body === 'kurumi' || body === 'Kurumi') return M.reply('Kurumi is a bot created for entertainment purposes')
+
         if (M.quoted?.participant) M.mentions.push(M.quoted.participant)
-        if (
-            M.mentions.includes(client.user.id.split(':')[0] + '@s.whatsapp.net') &&
-            !isCmd &&
-            isGroup &&
-            ActivateChatBot.includes(from)
-        ) {
+        if (M.mentions.includes(client.user.id.split(':')[0] + '@s.whatsapp.net') && !isCmd && isGroup && ActivateChatBot.includes(from)) {
             const text = await axios.get(`https://api.simsimi.net/v2/?text=${emojiStrip(body)}&lc=en&cf=true`)
-            M.reply(body == 'hi' ? `Hey ${M.pushName} whats up?` : text.data.messages[0].text)
+            M.reply(body == 'hi' ? `Hey ${M.pushName}, what's up?` : text.data.messages[0].text)
         }
 
         // Logging Message
@@ -138,68 +77,49 @@ module.exports = MessageHandler = async (messages, client) => {
             )}`,
             'yellow'
         )
-        
 
         if (!isCmd) return
-        const command =
-            client.cmd.get(cmdName) || client.cmd.find((cmd) => cmd.aliases && cmd.aliases.includes(cmdName))
+        const command = client.cmd.get(cmdName) || client.cmd.find((cmd) => cmd.aliases && cmd.aliases.includes(cmdName))
 
-        if (!command) return M.reply('🟥 *No such command found broh !*')
-       
+        if (!command) return M.reply('🔴 *No such command found!*');
 
-        if(command.react){
-          const reactionMessage = {
-            react: {
-                text: command.react, // use an empty string to remove the reaction
-                key: M.key
+        if (command.react) {
+            const reactionMessage = {
+                react: {
+                    text: command.react, // use an empty string to remove the reaction
+                    key: M.key
+                }
+            };
+            await client.sendMessage(M.from, reactionMessage);
+        }
+
+        // command cooldown
+        const cooldownAmount = (command.cool ?? 3) * 1000;
+        const time = cooldownAmount + Date.now();
+        const senderIsMod = client.mods.includes(sender.split('@')[0]);
+     
+        if (!senderIsMod && cool.has(`${sender}${command.name}`)) {
+            const cd = cool.get(`${sender}${command.name}`);
+            const remainingTime = client.utils.convertMs(cd - Date.now());
+            return M.reply(`You are on a cooldown. Wait *${remainingTime}* ${remainingTime > 1 ? 'seconds' : 'second'} before using this command again.`);     
+        } else {    
+            if (!senderIsMod) {
+                cool.set(`${sender}${command.name}`, time);
+                setTimeout(() => cool.delete(`${sender}${command.name}`), cooldownAmount);     
             }
         }
-        await client.sendMessage(M.from, reactionMessage)
-      }
-       if (!groupAdmins.includes(sender) && command.category == 'group')
-            return M.reply('🟥 *This command can only be used by group or community admins*')
+        
+        if (!groupAdmins.includes(sender) && command.category == 'group')
+            return M.reply('🔴 *This command can only be used by group admins*');
         if (!groupAdmins.includes(client.user.id.split(':')[0] + '@s.whatsapp.net') && command.category == 'moderation')
-            return M.reply('🟥 *This command can only be used when bot is admin*')
-        if (!isGroup && command.category == 'moderation') return M.reply('🟥 *This command is ment to use in groups*')
-        if(!isGroup && !client.mods.includes(sender.split('@')[0])) return M.reply("🟥 *Bot can only be accessed in groups*")
-        if (!client.mods.includes(sender.split('@')[0]) && command.category == 'dev')
-            return M.reply('🟥 *This command only can be accessed by my owner* ')
-         if (!client.proUser.includes(sender.split('@')[0]) && command.category == 'proUsers')
-            return M.reply('🟥 *This command only can be used by proUsers* ')
-        if (!isGroup && command.catagory == 'card-extend') return M.reply('🟥 *This command can be use in card gc only use ${client.prefix}support to join*')
+            return M.reply('🔴 *This command can only be used when the bot is admin*');
+        if (!isGroup && command.category == 'moderation') return M.reply('🔴 *This command is meant to be used in groups only*');
+        if (!isGroup && !client.mods.includes(sender.split('@')[0])) return M.reply("🔴 *Bot can only be accessed in groups*");
+        if (!isMod(sender) && command.category == 'dev')
+            return M.reply('🔴 *This command can only be accessed by my owner*');
+        if (!isGroup && command.category == 'card-extend') return M.reply('🔴 *This command can be used in card game group*')
+        
         command.execute(client, arg, M)
-
-        //Will add exp according to the commands
-        await client.exp.add(sender, command.exp)
-
-        //Level up
-        let gifRandom = [
-            "https://media.tenor.com/-n2jhe7c1MUAAAAC/anime-my-dress-up-darling.gif",
-            "https://media.tenor.com/PcwaCZsRQuwAAAAC/marin-kitagawa.gif",
-            "https://media.tenor.com/NJ7lf-8yDVsAAAAC/kitagawa-marin.gif",
-            "https://media.tenor.com/DO2R1nI7hOcAAAAC/marin-kitagawa.gif",
-            "https://media.tenor.com/evACdtEThkYAAAAC/marin-kitagawa.gif",
-            "https://media.tenor.com/KRfvIWIgtToAAAAC/dress-up-darling-marin-kitagawa.gif"
-        ]
-        let ran = gifRandom[Math.floor(Math.random() * gifRandom.length)]
-        const level = (await client.DB.get(`${sender}_LEVEL`)) || 0
-        const experience = await client.exp.get(sender)
-        const { requiredXpToLevelUp } = getStats(level)
-        if (requiredXpToLevelUp > experience) return null
-        await client.DB.add(`${sender}_LEVEL`, 1)
-        client.sendMessage(
-            from,
-            {
-                video: {
-                    url: ran
-                },
-                caption: `\n\n\nCongratulations you leveled up from *${level} ---> ${level + 1}* 🎊\n\n\n`,
-                gifPlayback: false
-            },
-            {
-                quoted: M
-            }
-        )
     } catch (err) {
         client.log(err, 'red')
     }
