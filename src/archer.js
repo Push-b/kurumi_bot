@@ -34,21 +34,17 @@ const driver = new MongoDriver(process.env.URL)
 const chalk = require('chalk')
 const EconomyDb = require('./handlers/economy.js')
 
-const start = async () => {
-    // if (process.env.SESSION) {
-    //     const { data } = await axios.get(process.env.SESSION)
-    //     writeFileSync('./session', JSON.stringify(data))
-    // }
-    // const { state, saveCreds } = await useMultiFileAuthState('./session')
-    
-    // const clearState = () => unlink('./session')
+const cardResponse = new Map();
+const auctionResponse = new Map();
+const pokemonMap = new Map();
+const sellResponse = new Map();
+const pokemonMoveLearningMap = new Map();
+const evoMap = new Map();
 
-    // const client = Baileys({
-    //     version: (await fetchLatestBaileysVersion()).version,
-    //     auth: state,
-    //     logger: P({ level: 'silent' }),
-    //     printQRInTerminal: true
-    // })
+// Import logMessage function
+const { logMessage } = require("./lib/log")
+
+const start = async () => {
 
       await mongoose.connect(process.env.SESSION_URL);
 
@@ -65,11 +61,20 @@ const start = async () => {
 
     //Config
     client.name = process.env.NAME || 'Archer'
-    client.prefix = process.env.PREFIX || '!'
+    client.owner = process.env.OWNER || 'Aku'
+    client.prefix = process.env.PREFIX || '.'
     client.proUser = (process.env.proUser  || '263788671478').split(',')
     client.writesonicAPI = process.env.WRITE_SONIC || null
     client.bgAPI = process.env.BG_API_KEY || null
     client.mods = (process.env.MODS || '263788671478').split(',')
+
+       // Devs
+    client.aucMap = auctionResponse;
+    client.sellMap = sellResponse;
+    client.pokemonResponse = pokemonMap;
+    client.pokemonMoveLearningResponse = pokemonMoveLearningMap;
+    client.pokemonEvolutionResponse = evoMap;
+
 
     //Database
     client.DB = new QuickDB({
@@ -83,9 +88,6 @@ const start = async () => {
 
     //Open AI
     client.AI = AI_lib
-
-    //Experience
-    client.exp = client.DB.table('experience')
 
     //Cards
     client.cards = client.DB.table('cards')
@@ -107,6 +109,9 @@ const start = async () => {
     
     //Commands
     client.cmd = new Collection()
+
+     // Events
+    client.pkmn = client.DB.table('pkmn')
 
     //Utils
     client.utils = utils
@@ -140,6 +145,8 @@ const start = async () => {
   //connection updates
     client.ev.on('connection.update', async (update) => {
         const { connection, lastDisconnect } = update
+        const groupId = "120363305285331029@g.us"; // Replace with your group ID
+
         if (update.qr) {
             client.log(`[${chalk.red('!')}]`, 'white')
             client.log(`Scan the QR code above | You can also authenicate in http://localhost:${port}`, 'blue')
@@ -163,7 +170,7 @@ const start = async () => {
         if (connection === 'open') {
             client.state = 'open'
             loadCommands()
-            client.log('🤖 you have made it once again Deryl!!')
+            client.log(`🤖 you have made it once again ${client.owner}!!`)
         }
     })
     
