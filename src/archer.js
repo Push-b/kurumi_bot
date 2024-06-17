@@ -58,13 +58,6 @@ const start = async () => {
     client.bgAPI = process.env.BG_API_KEY || null
     client.mods = (process.env.MODS || '263788671478').split(',')
 
-       // Devs
-    client.aucMap = auctionResponse;
-    client.sellMap = sellResponse;
-    client.pokemonResponse = pokemonMap;
-    client.pokemonMoveLearningResponse = pokemonMoveLearningMap;
-    client.pokemonEvolutionResponse = evoMap;
-
 
     //Database
     client.DB = new QuickDB({
