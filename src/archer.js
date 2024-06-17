@@ -34,16 +34,6 @@ const driver = new MongoDriver(process.env.URL)
 const chalk = require('chalk')
 const EconomyDb = require('./handlers/economy.js')
 
-const cardResponse = new Map();
-const auctionResponse = new Map();
-const pokemonMap = new Map();
-const sellResponse = new Map();
-const pokemonMoveLearningMap = new Map();
-const evoMap = new Map();
-
-// Import logMessage function
-const { logMessage } = require("./lib/log")
-
 const start = async () => {
 
       await mongoose.connect(process.env.SESSION_URL);
