@@ -1,37 +1,21 @@
 module.exports = {
-
   name: 'mods',
-
-  aliases: ['mod'],
-
+  aliases: ['modlist'],
   category: 'general',
-  
-//  cool: 4,
-
-  react: "✅",
-
-  description: 'Get information bot information',
-
+  react: 'ℹ️',
+  description: 'Displays the list of current mods',
   async execute(client, arg, M) {
+      if (!client.mods.length) return M.reply('🔴 *No mods available*');
 
-  let mods = client.mods
-     
-  for(let i=0;i<mods.length;i++){
-      
-  let hmm = mods[i]
+      let modList = '🛡️ *Current Mods* 🛡️\n\n';
+      for (let mod of client.mods) {
+          const contact = await client.contact.getContact(`${mod}@s.whatsapp.net`, client);
+          modList += `@${contact.username}\n`;
+      }
 
-  await client.sendMessage(
-          M.from, {
-          text:`>>>${i+1}\n*Contact:* http://wa.me/+${mods[i]}`,
-         contextInfo: {
-         externalAdReply: {
-         tittle: 'Wallet', 
-         body: 'M  O  D  S',
-        thumbnail: await client.utils.getBuffer('https://telegra.ph/file/505307775b32d70bb432e.jpg'),
-        mediaType: 1
-            }
-         }
-      })
-    }
+      await client.sendMessage(M.from, {
+          text: modList,
+          mentions: client.mods.map(mod => `${mod}@s.whatsapp.net`)
+      });
   }
-}
+};
