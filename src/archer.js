@@ -50,13 +50,13 @@ const start = async () => {
     })
 
     //Config
-    client.name = process.env.NAME || 'Archer'
-    client.owner = process.env.OWNER || 'Aku'
-    client.prefix = process.env.PREFIX || '.'
-    client.proUser = (process.env.proUser  || '263788671478').split(',')
+    client.name = process.env.NAME || 'GETO'
+    client.owner = process.env.OWNER || 'JFLEX'
+    client.prefix = process.env.PREFIX || '!'
+    client.proUser = (process.env.proUser  || '255786535571').split(',')
     client.writesonicAPI = process.env.WRITE_SONIC || null
     client.bgAPI = process.env.BG_API_KEY || null
-    client.mods = (process.env.MODS || '263788671478').split(',')
+    client.mods = (process.env.MODS || '255786535571').split(',')
 
 
     //Database
