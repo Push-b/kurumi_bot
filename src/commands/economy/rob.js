@@ -4,7 +4,6 @@ module.exports = {
     name: 'rob',
     aliases: ['attack'],
     category: 'economy',
-    exp: 5,
     react: "✅",
     description: 'Attend to rob the mentioned user',
     async execute(client, arg, M) {
