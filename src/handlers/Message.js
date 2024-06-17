@@ -34,6 +34,7 @@ module.exports = MessageHandler = async (messages, client) => {
         const auction = (await client.DB.get('auction')) || []
         const cshop = (await client.DB.get('cshop')) || []
         const economy = (await client.DB.get('economy')) || []
+       const isMod = (sender) => client.mods.includes(sender.split('@')[0]);
         const game = (await client.DB.get('game')) || []
         const jid = "120363043742977407@g.us";
         const mod = (await client.DB.get('mod')) || []
