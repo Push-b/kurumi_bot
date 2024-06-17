@@ -1,7 +1,6 @@
 module.exports = {
     name: 'group',
     aliases: ['gc'],
-    exp: 5,
     react: "✅",
     category: 'group',
     description: 'Closes or opens the group',
