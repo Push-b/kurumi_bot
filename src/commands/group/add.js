@@ -1,6 +1,5 @@
 module.exports = {
     name: 'add',
-    exp: 10,
     category: 'group',
     description: 'add user to a group',
     async execute(client, arg, M) {
