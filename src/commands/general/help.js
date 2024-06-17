@@ -2,7 +2,6 @@ module.exports = {
     name: 'help',
     aliases: ['h', 'menu', 'list'],
     category: 'general',
-    exp: 10,
     react: "🏹",
     description: 'Displays the command list or specific command info',
     async execute(client, arg, M) {
@@ -51,10 +50,10 @@ if (hour >= 0 && hour < 12) {
       let commands = ''
       
       for (const category of commandList) {
-        commands += `*❰  ⁠● ⁠● ⁠● ⁠●  ${client.utils.capitalize(
+        commands += `*━━━❰  ${client.utils.capitalize(
           category,
           true
-          )}  ⁠● ● ⁠● ⁠●  ❱*  \n\n\`\`\`⁠➜${categories[category].map((cmd) => 
+          )}  ⁠❱━━━*  \n\n\`\`\`⁠➜${categories[category].map((cmd) => 
             `${cmd}`).join('・|⁠・')}\`\`\`\n\n`
         
         }
@@ -70,11 +69,11 @@ if (hour >= 0 && hour < 12) {
 
        await client.sendMessage(
           M.from, {
-              text: `\n*👋 Hello ${pushName} l'm ${process.env.NAME}, A whatsApp-Bot Built to make your boring WhatsApp experience into another level*\n\n ${commands}\n📡 *Thanks for using Archer. If you find me helpful, please share me with your friends and leave a review🌟.*` ,
+              text: `\n*👋 Hello ${pushName} l'm ${process.env.NAME}, A whatsApp-Bot Built to make your boring WhatsApp experience into another level*\n\n ${commands}\n📡 *Thanks for using Kurumi Tokisaki. If you find me helpful, please share me with your friends and leave a review🌟.*` ,
              contextInfo: {
              externalAdReply: {
-             tittle: 'Archer', 
-             body: 'A R C H E R',
+             tittle: '', 
+             body: '',
             thumbnail: await client.utils.getBuffer(thumbnailUrl),
            mediaType: 1
              }
