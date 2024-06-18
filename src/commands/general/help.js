@@ -47,8 +47,14 @@ module.exports = {
                         `${cmd}`).join(', ')}\`\`\`\n\n`;
                 }
 
-                let message = `*BOT NAME*: Kurumi Tokisaki\n *USER*: ${pushName}\nPREFIX: ${client.prefix}\n\nThis help menu is designed to help you get started with the bot.\n\n⟾ *📪Command List📪*\n\n${commands}`;
-                message += `📚Notes: *➪Use ${client.prefix}help <command_name> for more info of a specific command.*\n*➪Example: +help hello.*`;
+        await client.sendMessage(
+       M.from, {
+        text:`╭────────────────
+┣ *Name: Kurumi Tokisaki*
+┣ *User: ${pushName}*
+┣ *Prefix : << ${client.prefix} >>*
+┣ *Owner: Deryl*
+╰────────────────\n\nThis help menu is designed to help you get started with the bot.\n\n⟾ *📪Command List📪*\n\n${commands}\n\n📚Notes: *➪Use ${client.prefix}help <command_name> for more info of a specific command.*\n*➪Example: ${client.prefix}help bank.*`;
 
                 const imageUrls = [
                     'https://telegra.ph/file/08b8f4f754693568ce929.jpg',
