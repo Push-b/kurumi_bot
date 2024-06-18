@@ -37,7 +37,8 @@ function getRandomThumbnailUrl() {
         const cpus = os.cpus()
         const thumbnailUrl = getRandomThumbnailUrl()
         //client.contactDB
-    await client.sendMessage(M.from, {image: {url:thumbnailUrl}, caption:`\n● ⏲️ *UPTIME:* ${uptime}\n● 🪩 *USERS:* ${Object.values(await client.contactDB.all()).length}\n● 🗃️ *COMMANDS:* ${client.cmd.size}\n● 📡 *Groups:* ${groupCount} \n● 🔮 *Nodejs:* ${process.version}\n● 🌀 *Memory:* ${ client.utils.formatSize(os.totalmem() - os.freemem()) + '/' + client.utils.formatSize(os.totalmem())}\n● 🌐 *Platform:* ${os.platform()}\n● 💻 *CPU:* ${cpus[0].model} ${cpus.length > 1 ? `(${cpus.length} core)` : ''}\n\n*º º º º「 By Deryl 」º º º º*`,
+    await client.sendMessage(M.from, {
+        text: `● ⏲️ *UPTIME:* ${uptime}\n● 🪩 *USERS:* ${Object.values(await client.contactDB.all()).length}\n● 🗃️ *COMMANDS:* ${client.cmd.size}\n● 📡 *Groups:* ${groupCount} \n● 🔮 *Nodejs:* ${process.version}\n● 🌀 *Memory:* ${ client.utils.formatSize(os.totalmem() - os.freemem()) + '/' + client.utils.formatSize(os.totalmem())}\n● 🌐 *Platform:* ${os.platform()}\n● 💻 *CPU:* ${cpus[0].model} ${cpus.length > 1 ? `(${cpus.length} core)` : ''}\n\n*「 By Deryl 」*`,
        contextInfo: {
          externalAdReply: {
         tittle: 'Uptime', 
