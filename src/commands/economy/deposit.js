@@ -6,12 +6,6 @@ module.exports = {
     description: 'Deposits golds in your bank',
     async execute(client, arg, M) {
 
-  const archer = (await client.DB.get('archer')) || []
-   if (!archer.includes(M.from)) return M.reply(` *🟥 Bot is not enabled in current group ask mods to activate* `)
-        
-    const economy = (await client.DB.get('economy')) || []
-     if (!economy.includes(M.from)) return M.reply(` *❌ Type .support to get Casino group* `)
-
      const thumbnailUrls = [
     'https://telegra.ph/file/0ba278843b95f6ad9d4ec.jpg',
     'https://telegra.ph/file/fdf7042ca9594403dd760.jpg',
