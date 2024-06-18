@@ -8,9 +8,6 @@ module.exports = {
     description: 'Get information bot information',
     async execute(client, arg, M) {
 
-    const archer = (await client.DB.get('archer')) || []
-   if (!archer.includes(M.from)) return M.reply(` *🟥 Bot is not enabled in current group ask mods to activate* `)
-
          const thumbnailUrls = [
     'https://telegra.ph/file/e57a9fe22877ee9f69ac7.jpg',
     'https://telegra.ph/file/eedb459ccf531467b5b9a.jpg',
