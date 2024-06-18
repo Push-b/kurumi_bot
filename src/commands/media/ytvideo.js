@@ -26,23 +26,7 @@ module.exports = {
 
             const { videoDetails } = await YT.getInfo(term);
 
-            M.reply('Downloading has started, please wait...');
-
-            let text = `*Title:* ${videoDetails.title} | *Type:* Video | *From:* ${videoDetails.ownerChannelName}`;
-
-            // Sending thumbnail and video details
-            client.sendMessage(
-                M.from,
-                {
-                    image: {
-                        url: `https://i.ytimg.com/vi/${videoDetails.videoId}/maxresdefault.jpg`
-                        },
-                    caption: text
-                },
-                {
-                    quoted: M
-                }
-            );
+            M.reply(`Downloading: ${videoDetails.title}`);
 
             // Checking if the video is longer than 30 minutes
             if (Number(videoDetails.lengthSeconds) > 1800) return M.reply('Cannot download video longer than 30 minutes');
