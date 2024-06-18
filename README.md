@@ -67,6 +67,6 @@ SESSION_URL | Your Mongo URL will be used here ()
 <h2 align="center">🔰 Meet Kurumi Devs 🔰
 </h2>
 
-| [![Deryl](https://github.com/Push-b.png)](https://github.com/Push-b) Deryl | [![Aku the ovethinker](https://github.com/Eximinati.png)](https://github.com/Eximinati) Aku |
+| [![Deryl](https://github.com/Push-b.png)](https://github.com/Push-b) Stress_Giver | [![Aku the ovethinker](https://github.com/Eximinati.png)](https://github.com/Eximinati) Aku the overthinker |
 |--- | --- |
 | [Deryl](https://github.com/Push-b) Owner, developer, monthly maintainer,  function developer |  [Aku](https://github.com/Eximinati) co-Owner, developer, baileys and dependencies maintainer,  function developer |
