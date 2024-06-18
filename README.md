@@ -52,13 +52,21 @@ Click here<details Close>
       
 ENV | VALUES
 -- | --
-NAME | The name of your bot (Cyberpunk) 
-PREFIX | The prefix of your bot can be a symbol (:)
-MODS | Phone numbers in this format (`27817286416`) without `+` or `SPACE` and for more numbers put a "," between them.
+NAME | The name of your bot (Kurumi Tokisaki) 
+PREFIX | The prefix of your bot can be a symbol (/)
+MODS | Phone numbers in this format (`263788671***`) without `+` or `SPACE` and for more numbers put a "," between them.
 PORT | The port on which your bot will run (3000)
-WRITE_SONIC | A write sonic key for your bot ()
-BG_API_KEY | An Api key for remove background feature ()
-OPENAi | An Api key for the chat got feature ()
 MONGODB | Your MongoDB URL ()
 SESSION | Any random value and try to keep it copied
 SESSION_URL | Your Mongo URL will be used here ()
+
+<br>
+
+---
+
+<h2 align="center">🔰 Meet Kurumi Devs 🔰
+</h2>
+
+| [![Deryl](https://github.com/Push-b.png)](https://github.com/Push-b) Deryl | [![Aku the ovethinker](https://github.com/Eximinati.png)](https://github.com/Eximinati) Aku |
+|--- | --- |
+| [Deryl](https://github.com/Push-b) Owner, developer, monthly maintainer,  function developer |  [Aku](https://github.com/Eximinati) co-Owner, developer, baileys and dependencies maintainer,  function developer |
