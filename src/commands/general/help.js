@@ -55,7 +55,7 @@ module.exports = {
 ┣ *Prefix : << ${client.prefix} >>*
 ┣ *Owner: Deryl*
 ╰────────────────\n\nThis help menu is designed to help you get started with the bot.\n\n⟾ *📪Command List📪*\n\n${commands}\n\n📚Notes: *➪Use ${client.prefix}help <command_name> for more info of a specific command.*\n*➪Example: ${client.prefix}help bank.*`,
-
+       }
                 const imageUrls = [
                     'https://telegra.ph/file/08b8f4f754693568ce929.jpg',
                     'https://telegra.ph/file/11d09e8b609b2c6f221ca.jpg',
