@@ -14,9 +14,7 @@ Kurumi Tokisaki
 ## [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Rockstar-ExtraBold&color=FF0000&lines=ɪ'ᴍ+kurumi-Tokisaki+ᴀ+WhatsApp+ʙᴏᴛ;ᴍᴀᴅᴇ+ʙʏ+Deryl+and+Aku-the-overthinker.)](https://git.io/typing-svg)
 <br>
 
----
-
-<h2> 🎐 Deloying Platform 🎐
+<h2> 🎐 Deloying Buttons 🎐
 </h2> 
 Click here<details Close>
 
@@ -49,7 +47,3 @@ Click here<details Close>
 </details>
 
 <a><img src="https://i.ibb.co/7Kk6XSg/Rainbow.gif" width="100%">
-
-## Highlights
-
----
