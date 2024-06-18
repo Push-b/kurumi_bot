@@ -5,12 +5,7 @@ module.exports = {
     react: "✅",
     description: 'Invest money for a duration of time',
     async execute(client, arg, M) {
-        const archer = (await client.DB.get('archer')) || [];
-        if (!archer.includes(M.from)) return M.reply(`*🟥 Bot is not enabled in the current group. Ask mods to activate.*`);
-
-        const economy = (await client.DB.get('economy')) || [];
-        if (!economy.includes(M.from)) return M.reply(`*❌ Type .support to get access to the Casino group.*`);
-
+    
         const thumbnailUrls = [
             'https://telegra.ph/file/0ba278843b95f6ad9d4ec.jpg',
             'https://telegra.ph/file/fdf7042ca9594403dd760.jpg',
