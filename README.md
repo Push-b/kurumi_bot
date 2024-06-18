@@ -8,9 +8,8 @@
 
 <p align="center">
 Kurumi Tokisaki
-
-An Advanced Whatsapp Bot Created By Deryl.
-<h3 align="center"> Kurumi Tokisaki - ᴛʜᴇ ғᴜᴛᴜʀᴇ ɪꜱ ʜᴇʀᴇ
+  
+<h3 align="center"> The Future Is Here
 
 ## [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Rockstar-ExtraBold&color=FF0000&lines=ɪ'ᴍ+kurumi-Tokisaki+ᴀɴ+ᴀɪ+ʙᴏᴛ;ᴍᴀᴅᴇ+ʙʏ+Deryl+and+Aku-the-overthinker.)](https://git.io/typing-svg)
 <br>
