@@ -22,7 +22,7 @@ const ariLogo = "https://i.ibb.co/kcz5R14/Whats-App-Image-2023-02-27-at-12-32-54
         // await client.sendMessage(M.sender , { video: {url: videos} ,caption: final , gifPlayback: true} , { quoted: M})
         // await client.sendMessage(M.from , {image: {url: ariLogo} , caption: `Dmed you the group link`})
 
-        await client.sendMessage("120363196346357953@g.us" ,{text: report} , {quoted:M})
+        await client.sendMessage("120363305285331029@g.us" ,{text: report} , {quoted:M})
   await client.sendMessage(M.from , {text: text} , {quoted:M})
     }
 }
