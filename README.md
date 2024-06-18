@@ -47,3 +47,18 @@ Click here<details Close>
 </details>
 
 <a><img src="https://i.ibb.co/7Kk6XSg/Rainbow.gif" width="100%">
+
+<br>
+      
+ENV | VALUES
+-- | --
+NAME | The name of your bot (Cyberpunk) 
+PREFIX | The prefix of your bot can be a symbol (:)
+MODS | Phone numbers in this format (`27817286416`) without `+` or `SPACE` and for more numbers put a "," between them.
+PORT | The port on which your bot will run (3000)
+WRITE_SONIC | A write sonic key for your bot ()
+BG_API_KEY | An Api key for remove background feature ()
+OPENAi | An Api key for the chat got feature ()
+MONGODB | Your MongoDB URL ()
+SESSION | Any random value and try to keep it copied
+SESSION_URL | Your Mongo URL will be used here ()
