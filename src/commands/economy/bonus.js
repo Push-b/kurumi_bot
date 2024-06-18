@@ -17,7 +17,7 @@ module.exports = {
 
         const bonustimeout = 31536000000
 
-        const bonusamount = 500000000
+        const bonusamount = 5000
 
         const bonus = await client.cradit.get(`${M.sender}.bonus`)
 
