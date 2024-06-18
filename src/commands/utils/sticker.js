@@ -4,8 +4,6 @@ module.exports = {
     name: 'sticker',
     aliases: ['s'],
     category: 'utils',
-    exp: 1,
-    cool: 4,
     react: "✅",
     usage: 'Use :sticker by quoting a image/gif <pack_name>|<author_name>',
     description: 'sticker command helps you to convert images or gifs to an sticker',
