@@ -6,11 +6,11 @@ module.exports = {
     description: 'Displays the command list or specific command info',
     async execute(client, arg, M) {
 
-    const thumbnailUrls = [
-    'https://telegra.ph/file/e57a9fe22877ee9f69ac7.jpg',
-    'https://telegra.ph/file/eedb459ccf531467b5b9a.jpg',
-    'https://telegra.ph/file/bbb5df0e235374328c473.jpg',
-];
+    //const thumbnailUrls = [
+    //'https://telegra.ph/file/e57a9fe22877ee9f69ac7.jpg',
+    //'https://telegra.ph/file/eedb459ccf531467b5b9a.jpg',
+    //'https://telegra.ph/file/bbb5df0e235374328c473.jpg',
+//];
 
 function getRandomThumbnailUrl() {
     const randomIndex = Math.floor(Math.random() * thumbnailUrls.length);
@@ -54,7 +54,7 @@ if (hour >= 0 && hour < 12) {
           category,
           true
           )}  ⁠❱━━━*  \n\n\`\`\`⁠➜${categories[category].map((cmd) => 
-            `${cmd}`).join('・|⁠・')}\`\`\`\n\n`
+            `${cmd}`).join(' , ')}\`\`\`\n\n`
         
         }
 
