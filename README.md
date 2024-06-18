@@ -3,7 +3,7 @@
 </div>
 <p align="center">
   
-  <img src="https://telegra.ph/file/ba671375fe7987044b96c.jpg" width="360" border="0" alt="PFP">
+  <img src="https://telegra.ph/file/1093c5445afbc5047f77b.jpg" width="360" border="0" alt="PFP">
 </h3>
 
 <p align="center">
