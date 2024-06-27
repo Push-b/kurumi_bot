@@ -1,6 +1,6 @@
 <div align="center">
 	
-![](https://typograssy.deno.dev/api?text=HELLO_I'M_KURUMI-MD_CREATED_BY_DERYL_ASSIST_BY_AKU_&_JFLEX-OG。!&l0=none&l1=216e39&l4=a3f0b0&bg=none&frame=none&speed=100&comment=)
+![](https://typograssy.deno.dev/api?text=HELLO_I'M_KURUMI-MD_CREATED_BY_DERYL_ASSIST_BY_AKU_AND_JFLEX-OG。!&l0=none&l1=216e39&l4=a3f0b0&bg=none&frame=none&speed=100&comment=)
 
 <h1 align="center"> Kurumi Tokisaki Bot
 
