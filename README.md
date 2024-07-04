@@ -74,3 +74,4 @@ SESSION_URL | Your Mongo URL will be used here ()
 | [![Deryl](https://github.com/Push-b.png)](https://github.com/Push-b) Stress_Giver | [![Aku the ovethinker](https://github.com/Eximinati.png)](https://github.com/Eximinati) Aku the thinker |
 |--- | --- |
 | [Deryl](https://github.com/Push-b) Owner, developer, monthly maintainer,  function developer |  [Aku](https://github.com/Eximinati) co-Owner, developer, baileys and dependencies maintainer,  function developer |
+| [![Deryl](https://github.com/Push-b.png)](https://github.com/Push-b) Stress_Giver | [![JFLEXthe coder assist](https://github.com/JFLEX019.png)](https://github.com/JFLEX019) JFLEX the coder aassist|
