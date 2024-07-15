@@ -11,7 +11,7 @@ Kurumi Tokisaki
   
 <h3 align="center"> The Future Is Here
 
-## [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Rockstar-ExtraBold&color=FF0000&lines=ɪ'ᴍ+kurumi-Tokisaki+ᴀ+WhatsApp+ʙᴏᴛ;ᴍᴀᴅᴇ+ʙʏ+Deryl+and+Aku-the-overthinker.)](https://git.io/typing-svg)
+## [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Rockstar-ExtraBold&color=FF0000&lines=ɪ'ᴍ+kurumi-Tokisaki+ᴀ+WhatsApp+ʙᴏᴛ;ᴍᴀᴅᴇ+ʙʏ+Deryl+,+Jflex-OG+and+Aku-the-overthinker.)](https://git.io/typing-svg)
 <br>
 
 <h2> 🎐 Deloying Buttons 🎐
