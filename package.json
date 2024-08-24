@@ -14,7 +14,7 @@
    "scripts": {
       "format": "prettier --write --config .prettierrc.json \"src/**/*.js\"",
       "start": "node --optimize_for_size --max_old_space_size=8192 src/archer.js"
-      "build": "yarn rimraf dist/ && yarn tsc -p .",
+      "build": "yarn rimraf dist/ && yarn tsc -p ."
       "postinstall": "yarn build"
    },
    "bugs": {
