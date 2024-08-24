@@ -14,6 +14,8 @@
    "scripts": {
       "format": "prettier --write --config .prettierrc.json \"src/**/*.js\"",
       "start": "node --optimize_for_size --max_old_space_size=8192 src/archer.js"
+      "build": "yarn rimraf dist/ && yarn tsc -p .",
+      "postinstall": "yarn build"
    },
    "bugs": {
       "url": "https://github.com/Debanjan-San/Bot-Haven/issues"
@@ -31,6 +33,7 @@
       "@shineiichijo/canvas-chan": "^1.0.1",
       "@wylie39/image-collage": "^0.1.0",
       "@yimura/scraper": "^1.2.4",
+      "@distube/ytdl-core": "latest",
       "api": "^5.0.8",
       "axios": "^1.4.0",
       "better-tord": "^1.3.7",
