@@ -25,6 +25,18 @@
   resolved "https://registry.yarnpkg.com/@adiwajshing/keyed-db/-/keyed-db-0.2.4.tgz#2a09e88fce20b2672deb60a7750c5fe3ab0dfd99"
   integrity sha512-yprSnAtj80/VKuDqRcFFLDYltoNV8tChNwFfIgcf6PGD4sjzWIBgs08pRuTqGH5mk5wgL6PBRSsMCZqtZwzFEw==
 
+"@distube/ytdl-core"@^4.13.5":
+"version": "4.13.5",
+ "resolved": "https://registry.npmjs.org/@distube/ytdl-core/-/ytdl-core-4.13.5.tgz",
+ "integrity": "sha512-g+4UJIR/auAJbia7iB0aWvaJDbs22P53NySWa47b1NT4xMTDJYguxHFArPrvRkcJrb/AgKjv/XoSZGghpL0CJA==",
+ "dependencies": {
+ "http-cookie-agent": "^6.0.5",
+ "m3u8stream": "^0.8.6",
+ "miniget": "^4.2.3",
+ "sax": "^1.4.1",
+ "tough-cookie": "^4.1.4",
+ "undici": "^6.19.2"
+
 "@apidevtools/openapi-schemas@^2.1.0":
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/@apidevtools/openapi-schemas/-/openapi-schemas-2.1.0.tgz#9fa08017fb59d80538812f03fc7cac5992caaa17"
