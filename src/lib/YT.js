@@ -12,7 +12,7 @@ const generateRandomFilename = (length) =>
         .toString('hex')
         .slice(0, length)
 
-//Downloading the video or audio file and returning it as a buffer
+ //Downloading the video or audio file and returning it as a buffer
 const getBuffer = (url, type) => {
     const filename = `${tmpdir()}/${generateRandomFilename(12)}.${type === 'audio' ? 'mp3' : 'mp4'}` // generate a random file name
     const stream = createWriteStream(filename)
