@@ -1,4 +1,4 @@
-getContact = async (jid, client) => {
+ getContact = async (jid, client) => {
     // Gets the arr of contacts
     const contact = await client.contactDB.get(jid)
     //console.log(contact)
