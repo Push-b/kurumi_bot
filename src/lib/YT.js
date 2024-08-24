@@ -1,5 +1,5 @@
-const ytdl = require('youtubedl-core')
-const { validateURL, getInfo } = require('youtubedl-core')
+const ytdl = require('@distube/ytdl-core')
+const { validateURL, getInfo } = require('@distube/ytdl-core')
 const { createWriteStream, readFile } = require('fs-extra')
 const { tmpdir } = require('os')
 const axios = require('axios')
