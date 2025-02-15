@@ -32,6 +32,7 @@
       "@wylie39/image-collage": "^0.1.0",
       "@yimura/scraper": "^1.2.4",
       "@distube/ytdl-core": "latest",
+      "api-dylux" : "1.8.5",
       "api": "^5.0.8",
       "axios": "^1.4.0",
       "better-tord": "^1.3.7",
